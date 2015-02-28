@@ -1,0 +1,8 @@
+
+# do not track the following types of files
+*.*~
+_*
+
+.vim
+
+
