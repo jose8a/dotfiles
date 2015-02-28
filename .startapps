@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#STARTAPPS=(dashboard iknowsit yojobs tabsets tempnotes)
+STARTAPPS=(trelloX dotfiles)
+
+launch_projects () {
+
+  for project in "${STARTAPPS[@]}"
+  do
+    project=${project}
+    osascript -e 'tell app "Terminal" to do script "mux '$project'" ' 
+  done
+}
+
+launch_projects
+
+
+

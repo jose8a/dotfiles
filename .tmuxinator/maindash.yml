@@ -1,0 +1,26 @@
+# ~/.tmuxinator/maindash.yml
+
+name: maindash
+root: /Users/jose8a/Dropbox/myWeb/dashboard
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+windows:
+  - main: vim index.html
+  - job: cd job && vim maindash.html
+  - mcu: cd mcu && vim tools.html
+  - fit: cd fit && vim HnFits.html
+  - hw: cd HW && vim tools.html
+  - sw: cd sw && vim gsp.html

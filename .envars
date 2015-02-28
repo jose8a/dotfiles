@@ -1,0 +1,37 @@
+
+########################################################
+# This file should hold all shell export'ed Environment
+#   variables.  It is launched from ~/.bashrc
+########################################################
+
+if [ $USER = jose8a ]; then
+	#echo "I am jose8a"
+	DBX="/Users/jose8a/Dropbox"
+fi
+
+if [ $USER = elchavo ]; then
+	#echo "I am elchavo"
+	DBX="/media/dbox/Dropbox/"
+fi
+
+# chavo's custom path shortcuts
+export PRJ=$DBX/myProjs
+export SWB=$DBX/ref_SW/SWbooks
+export SWS=$DBX/ref_SW/SWSchool
+export EMB=$DBX/myProjs/embedded
+export UDA=$DBX/ref_SW/SWSchool/UCTY
+export DOTPATH=$PRJ/dotfiles
+export MUXPATH=$DOTPATH/.tmuxinator
+export EDITOR='vim'
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+export HISTCONTROL=ignoredups:ignorespace
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+
