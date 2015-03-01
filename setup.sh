@@ -8,6 +8,8 @@ find . -maxdepth 1 -name ".*" | while read fname; do
   if [[ $fname =~ $regex ]]; then
     name="${BASH_REMATCH[1]}"
 
+    rm -v $HOME/$name
+
     ln -fs $PWD/$name $HOME/$name
     echo symlinked:  $HOME/$name "-->" $PWD/$name
   fi
