@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#STARTAPPS=(dashboard iknowsit yojobs tabsets tempnotes)
-STARTAPPS=(trelloX dotfiles)
+STARTAPPS=(dashboard iknowsit yojobs tabsets tempnotes)
 
 launch_projects () {
 

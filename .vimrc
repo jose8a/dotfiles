@@ -12,24 +12,24 @@ set nocompatible
     " Setup Bundle Support {
     " The next three lines ensure that the ~/.vim/bundle/ system works
         filetype off
-        set rtp+=~/.vim/bundle/vundle
-        call vundle#rc()
+        set rtp+=~/.vim/bundle/Vundle.vim
+        call vundle#begin()
     " }
 
 " }
 
-" Bundles {
+" Plugins {
     " Deps
-        Bundle 'gmarik/vundle'
-        Bundle 'MarcWeber/vim-addon-mw-utils'
-        Bundle 'tomtom/tlib_vim'
+        Plugin 'gmarik/Vundle.vim'
+        Plugin 'MarcWeber/vim-addon-mw-utils'
+        Plugin 'tomtom/tlib_vim'
         if executable('ack-grep')
             let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-            Bundle 'mileszs/ack.vim'
+            Plugin 'mileszs/ack.vim'
         elseif executable('ack')
-            Bundle 'mileszs/ack.vim'
+            Plugin 'mileszs/ack.vim'
         elseif executable('ag')
-            Bundle 'mileszs/ack.vim'
+            Plugin 'mileszs/ack.vim'
             let g:ackprg = 'ag --nogroup --nocolor --column'
         endif
 
@@ -58,126 +58,126 @@ set nocompatible
 
     " General
         if count(g:spf13_bundle_groups, 'general')
-            Bundle 'scrooloose/nerdtree'
-            Bundle 'wesleyche/SrcExpl'
+            Plugin 'scrooloose/nerdtree'
+            Plugin 'wesleyche/SrcExpl'
             " Pick one of taglist or tagbar (tagbar is newer)
-            "Bundle 'vim-scripts/taglist.vim'
-            Bundle 'fholgado/minibufexpl.vim'
-            Bundle 'tpope/vim-surround'
-            Bundle 'tpope/vim-obsession'
-            Bundle 'tpope/vim-tbone'
-            Bundle 'spf13/vim-autoclose'
-            Bundle 'kien/ctrlp.vim'
-            Bundle 'vim-scripts/sessionman.vim'
-            Bundle 'matchit.zip'
-            Bundle 'kana/vim-textobj-user'
-            Bundle 'michaeljsmith/vim-indent-object '
-            Bundle 'nelstrom/vim-textobj-rubyblock'
+            "Plugin 'vim-scripts/taglist.vim'
+            Plugin 'fholgado/minibufexpl.vim'
+            Plugin 'tpope/vim-surround'
+            Plugin 'tpope/vim-obsession'
+            Plugin 'tpope/vim-tbone'
+            Plugin 'spf13/vim-autoclose'
+            Plugin 'kien/ctrlp.vim'
+            Plugin 'vim-scripts/sessionman.vim'
+            Plugin 'matchit.zip'
+            Plugin 'kana/vim-textobj-user'
+            Plugin 'michaeljsmith/vim-indent-object'
+            Plugin 'nelstrom/vim-textobj-rubyblock'
                     "Use either vim-airline or powerline
-            Bundle 'bling/vim-airline'
-            ""Bundle 'Lokaltog/powerline'
-            Bundle 'Lokaltog/vim-easymotion'
-            Bundle 'jistr/vim-nerdtree-tabs'
-            Bundle 'mbbill/undotree'
-            Bundle 'myusuf3/numbers.vim'
-            Bundle 'nathanaelkane/vim-indent-guides'
-            Bundle 'vim-scripts/TaskList.vim'
-            Bundle 'mhinz/vim-startify'
+            Plugin 'bling/vim-airline'
+            ""Plugin 'Lokaltog/powerline'
+            Plugin 'Lokaltog/vim-easymotion'
+            Plugin 'jistr/vim-nerdtree-tabs'
+            Plugin 'mbbill/undotree'
+            Plugin 'myusuf3/numbers.vim'
+            Plugin 'nathanaelkane/vim-indent-guides'
+            Plugin 'vim-scripts/TaskList.vim'
+            Plugin 'mhinz/vim-startify'
             if !exists('g:spf13_no_views')
-                Bundle 'vim-scripts/restore_view.vim'
+                Plugin 'vim-scripts/restore_view.vim'
             endif
-            Bundle 'tpope/vim-abolish.git'
-            Bundle 'sjl/gundo.vim'
-            Bundle 'wesQ3/vim-windowswap'
-            Bundle 'samsonw/vim-task'
-            Bundle 'basepi/vim-conque'
-            Bundle 'terryma/vim-multiple-cursors'
+            Plugin 'tpope/vim-abolish.git'
+            Plugin 'sjl/gundo.vim'
+            Plugin 'wesQ3/vim-windowswap'
+            Plugin 'samsonw/vim-task'
+            Plugin 'basepi/vim-conque'
+            Plugin 'terryma/vim-multiple-cursors'
         endif
 
     " General Programming
         if count(g:spf13_bundle_groups, 'programming')
             " Pick one of the checksyntax, jslint, or syntastic
-            Bundle 'scrooloose/syntastic'
+            Plugin 'scrooloose/syntastic'
             " checksyntax-B appears to be same as checksyntax_vim, use only one
-            "Bundle 'vim-scripts/checksyntax-B'
-            "Bundle 'tomtom/checksyntax_vim'
-            Bundle 'tpope/vim-fugitive'
-            Bundle 'gregsexton/gitv'
-            Bundle 'airblade/vim-gitgutter'
-            Bundle 'mattn/webapi-vim'
-            Bundle 'mattn/gist-vim'
-            Bundle 'scrooloose/nerdcommenter'
-            Bundle 'godlygeek/tabular'
-            Bundle 'ervandew/supertab'
-            Bundle 'tpope/vim-dispatch'
-            Bundle 'majutsushi/tagbar'
+            "Plugin 'vim-scripts/checksyntax-B'
+            "Plugin 'tomtom/checksyntax_vim'
+            Plugin 'tpope/vim-fugitive'
+            Plugin 'gregsexton/gitv'
+            Plugin 'airblade/vim-gitgutter'
+            Plugin 'mattn/webapi-vim'
+            Plugin 'mattn/gist-vim'
+            Plugin 'scrooloose/nerdcommenter'
+            Plugin 'godlygeek/tabular'
+            Plugin 'ervandew/supertab'
+            Plugin 'tpope/vim-dispatch'
+            Plugin 'majutsushi/tagbar'
             ""if executable('ctags')
-            ""    Bundle 'majutsushi/tagbar'
+            ""    Plugin 'majutsushi/tagbar'
             ""endif
         endif
 
     " Misc
         if count(g:spf13_bundle_groups, 'misc')
-            ""Bundle 'sheerun/vim-polyglot'
-            ""Bundle 'joonty/vdebug'
-            Bundle 'thoughtbot/vim-rspec'
-            Bundle 'suan/vim-instant-markdown'
-            ""Bundle 'tpope/vim-markdown'
-            Bundle 'vim-pandoc/vim-pandoc'
-            Bundle 'vim-voom/VOoM'
-            Bundle 'spf13/vim-preview'
-            Bundle 'tpope/vim-cucumber'
-            Bundle 'quentindecock/vim-cucumber-align-pipes'
-            Bundle 'Puppet-Syntax-Highlighting'
+            ""Plugin 'sheerun/vim-polyglot'
+            ""Plugin 'joonty/vdebug'
+            Plugin 'thoughtbot/vim-rspec'
+            Plugin 'suan/vim-instant-markdown'
+            ""Plugin 'tpope/vim-markdown'
+            Plugin 'vim-pandoc/vim-pandoc'
+            Plugin 'vim-voom/VOoM'
+            Plugin 'spf13/vim-preview'
+            Plugin 'tpope/vim-cucumber'
+            Plugin 'quentindecock/vim-cucumber-align-pipes'
+            Plugin 'Puppet-Syntax-Highlighting'
         endif
 
     " Vim Colors
         if count(g:spf13_bundle_groups, 'vimcolors')
-            Bundle 'rking/vim-detailed'
-            Bundle 'altercation/vim-colors-solarized'
-            Bundle 'zeis/vim-kolor'
-            Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
-            "Bundle 'noah/vim256-color'
-            Bundle 'subosito/vim-256colors'
-            "Bundle 'flazz/vim-colorschemes'
-            "Bundle 'godlygeek/csapprox'
-            Bundle 'spf13/vim-colors'
+            Plugin 'rking/vim-detailed'
+            Plugin 'altercation/vim-colors-solarized'
+            Plugin 'zeis/vim-kolor'
+            Plugin 'daylerees/colour-schemes', { 'rtp': 'vim-themes/' }
+            "Plugin 'noah/vim256-color'
+            ""Plugin 'subosito/vim-256colors'
+            "Plugin 'flazz/vim-colorschemes'
+            "Plugin 'godlygeek/csapprox'
+            Plugin 'spf13/vim-colors'
         endif
 
     " Snippets & AutoComplete
         if count(g:spf13_bundle_groups, 'snipmate')
-            Bundle 'garbas/vim-snipmate'
-            Bundle 'honza/snipmate-snippets'
-            ""Bundle 'Valloric/YouCompleteMe'
-            ""Bundle 'marijnh/tern_for_vim'
-            ""Bundle 'scrooloose/snipmate-snippets'
+            Plugin 'garbas/vim-snipmate'
+            Plugin 'honza/vim-snippets'
+            ""Plugin 'Valloric/YouCompleteMe'
+            ""Plugin 'marijnh/tern_for_vim'
+            ""Plugin 'scrooloose/snipmate-snippets'
            " Source support_function.vim to support snipmate-snippets.
             if filereadable(expand("~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim"))
                 source ~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim
             endif
         elseif count(g:spf13_bundle_groups, 'neocomplcache')
-            Bundle 'Shougo/neocomplcache'
-            Bundle 'Shougo/neosnippet'
-            Bundle 'honza/snipmate-snippets'
-            Bundle 'jamescarr/snipmate-nodejs'
+            Plugin 'Shougo/neocomplcache'
+            Plugin 'Shougo/neosnippet'
+            Plugin 'honza/snipmate-snippets'
+            Plugin 'jamescarr/snipmate-nodejs'
         endif
 
     " Python
         if count(g:spf13_bundle_groups, 'python')
             " Pick either python-mode or pyflakes & pydoc
-            Bundle 'klen/python-mode'
-            Bundle 'python.vim'
-            Bundle 'python_match.vim'
-            Bundle 'pythoncomplete'
+            Plugin 'klen/python-mode'
+            Plugin 'python.vim'
+            Plugin 'python_match.vim'
+            Plugin 'pythoncomplete'
         endif
 
     " Ruby
         if count(g:spf13_bundle_groups, 'ruby')
-            Bundle 'tpope/vim-rails'
-            Bundle 'tpope/vim-rvm'
-            Bundle 'vim-scripts/simplefold'
-            Bundle 'vim-ruby/vim-ruby'
-            Bundle 'tpope/vim-endwise'
+            Plugin 'tpope/vim-rails'
+            Plugin 'tpope/vim-rvm'
+            Plugin 'vim-scripts/simplefold'
+            Plugin 'vim-ruby/vim-ruby'
+            Plugin 'tpope/vim-endwise'
             " the following lines are needed for ruby code completion, and also
             " make sure that the 'supertab' plugin is installed, otherwise tab-completion won't work
             autocmd FileType ruby set omnifunc=rubycomplete#Complete
@@ -189,66 +189,71 @@ set nocompatible
 
     " Javascript
         if count(g:spf13_bundle_groups, 'javascript')
-            ""Bundle 'leshill/vim-json'
-            ""Bundle 'groenewege/vim-less'
-            ""Bundle 'pangloss/vim-javascript'
-            ""Bundle 'briancollins/vim-jst'
-            ""Bundle 'kchmck/vim-coffee-script'
-            Bundle 'jelera/vim-javascript-syntax'
-            Bundle 'vim-scripts/JavaScript-Indent'
-            Bundle 'othree/javascript-libraries-syntax.vim'
-            Bundle 'mklabs/vim-backbone'
-            ""Bundle 'wookiehangover/jshint.vim'
-            ""Bundle '29decibel/vim-stringify'
-            ""Bundle 'digitaltoad/vim-jade'
-            ""Bundle 'myhere/vim-nodejs-complete'
-            ""Bundle 'sidorares/node-vim-debugger'
-            ""Bundle 'moll/vim-node'
-            ""Bundle 'guileen/vim-node'
-            ""Bundle 'ahayman/vim-nodejs-complete'
+            ""Plugin 'leshill/vim-json'
+            ""Plugin 'groenewege/vim-less'
+            ""Plugin 'pangloss/vim-javascript'
+            ""Plugin 'briancollins/vim-jst'
+            ""Plugin 'kchmck/vim-coffee-script'
+            Plugin 'jelera/vim-javascript-syntax'
+            Plugin 'vim-scripts/JavaScript-Indent'
+            Plugin 'othree/javascript-libraries-syntax.vim'
+            Plugin 'mklabs/vim-backbone'
+            ""Plugin 'wookiehangover/jshint.vim'
+            ""Plugin '29decibel/vim-stringify'
+            ""Plugin 'digitaltoad/vim-jade'
+            ""Plugin 'myhere/vim-nodejs-complete'
+            ""Plugin 'sidorares/node-vim-debugger'
+            ""Plugin 'moll/vim-node'
+            ""Plugin 'guileen/vim-node'
+            ""Plugin 'ahayman/vim-nodejs-complete'
         endif
 
     " Java
         if count(g:spf13_bundle_groups, 'scala')
-            Bundle 'derekwyatt/vim-scala'
-            Bundle 'derekwyatt/vim-sbt'
+            Plugin 'derekwyatt/vim-scala'
+            Plugin 'derekwyatt/vim-sbt'
         endif
 
     " HTML
         if count(g:spf13_bundle_groups, 'html')
-            Bundle 'mattn/emmet-vim'
-            Bundle 'amirh/HTML-AutoCloseTag'
-            " Bundle 'hail2u/vim-css3-syntax'
-            Bundle 'JulesWang/css.vim'
-            Bundle 'cakebaker/scss-syntax.vim'
-            Bundle 'skammer/vim-css-color'
-            Bundle 'groenewege/vim-less'
+            Plugin 'mattn/emmet-vim'
+            Plugin 'amirh/HTML-AutoCloseTag'
+            " Plugin 'hail2u/vim-css3-syntax'
+            Plugin 'JulesWang/css.vim'
+            Plugin 'cakebaker/scss-syntax.vim'
+            Plugin 'skammer/vim-css-color'
+            Plugin 'groenewege/vim-less'
                     " haml/sass/scss plugin
-            Bundle 'tpope/vim-haml'     
+            Plugin 'tpope/vim-haml'     
         endif
 
     " Vimux
         if count(g:spf13_bundle_groups, 'vimux')
-            Bundle 'jpalardy/vim-slime'
-            Bundle 'christoomey/vim-tmux-navigator'
-            Bundle 'benmills/vimux'
-            "Bundle 'julienr/vimux-pyutils'
-            "Bundle 'pgr0ss/vimux-ruby-test'
-            "Bundle 'cloud8421/vimux-cucumber'
+            Plugin 'jpalardy/vim-slime'
+            Plugin 'christoomey/vim-tmux-navigator'
+            Plugin 'benmills/vimux'
+            "Plugin 'julienr/vimux-pyutils'
+            "Plugin 'pgr0ss/vimux-ruby-test'
+            "Plugin 'cloud8421/vimux-cucumber'
             let g:slime_target = "tmux"
         endif
 
     " PHP
         if count(g:spf13_bundle_groups, 'php')
-            Bundle 'spf13/PIV'
+            Plugin 'spf13/PIV'
         endif
 
     " Twig
         if count(g:spf13_bundle_groups, 'twig')
-            Bundle 'beyondwords/vim-twig'
+            Plugin 'beyondwords/vim-twig'
         endif
     endif
 " }
+
+" --------------------------
+" All Vundle Plugins must be added before the following line:
+" --------------------------
+call vundle#end()
 
 " --------------------------
 "  required by vim-textobj
