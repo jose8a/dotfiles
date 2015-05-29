@@ -394,7 +394,7 @@ let g:enable_numbers = 0        " Numbers.vim turn off automatic number switchin
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use"
+set foldlevel=7         "this is just what i use"
 
 
 "-----------------------------------"
@@ -590,6 +590,16 @@ set shell=bash\ -i                      "set interactive bash as default vim she
 let g:instant_markdown_slow = 1         "only refresh on specific events
 let g:instant_markdown_autostart = 0    "Autostart off to manually control launch of preview window
 nnoremap <silent> <leader>im :InstantMarkdownPreview<CR>
+
+"------------------------"
+" 'Fenced' markdown syntax highlighting
+"   }--> ensure syntax highlighting for 'fenced' code in Markdown files
+"
+"   NOT NEEDED IF TPOPE's vim-markdown plugin is installed.  All recent Vim
+"   versions now include this plugin
+"------------------------"
+"au BufNewFile,BufReadPost *.md set filetype=markdown
+"let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
 "------------------------"
 " Vim-pandoc non-standard mappings

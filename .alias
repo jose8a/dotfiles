@@ -69,3 +69,4 @@ alias temp_tmux='$HOME/tmp/temp_tmux'
 alias dictionary="cat /usr/share/dict/words"
 alias dict="cat /usr/share/dict/words"
 alias words="cat /usr/share/dict/words"
+alias pyserver="python -m SimpleHTTPServer"
