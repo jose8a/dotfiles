@@ -419,6 +419,9 @@ autocmd FileType ruby nmap rr :w<SPACE>!ruby -c %<CR>
 :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
 :autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
 
+" Automatically strip trailing spaces on Save
+autocmd BufWritePre * :%s/\s\+$//e
+
 "-----------------------------------"
 " EASIER SPLITS & PANE NAVIGATION
 "-----------------------------------"
