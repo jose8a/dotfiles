@@ -1,0 +1,51 @@
+# ~/.tmuxinator/udaprojects.yml
+
+name: udaprojects
+root: /Users/jose8a/Dropbox/myProjs/jservices/udacity/fed_nano/projects
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - project1:
+      pre: cd udacity_portfolio && open index.html
+      layout: main-vertical
+      panes:
+        - vim index.html
+  - project2:
+      pre: cd udacity_resume && open index.html
+      layout: main-vertical
+      panes:
+        - vim index.html
+  - project3:
+      pre: cd udacity_frogger && open index.html
+      layout: main-vertical
+      panes:
+        - vim index.html
+  #- project4:
+  #   pre: cd udacity_frogger && open index.html
+  #    layout: main-vertical
+  #    panes:
+  #      - vim index.html
+  #- project5:
+    #pre: cd udacity_frogger && open index.html
+    #    layout: main-vertical
+    #  panes:
+    #      - vim index.html
+  - project6:
+      pre: cd feedreader_tdd && open index.html
+      layout: main-vertical
+      panes:
+        - vim index.html

@@ -224,7 +224,7 @@ set nocompatible
             Plugin 'skammer/vim-css-color'
             Plugin 'groenewege/vim-less'
                     " haml/sass/scss plugin
-            Plugin 'tpope/vim-haml'     
+            Plugin 'tpope/vim-haml'
         endif
 
     " Vimux
@@ -258,7 +258,7 @@ call vundle#end()
 " --------------------------
 "  required by vim-textobj
 " --------------------------
-:runtime macros/matchit.vim 
+:runtime macros/matchit.vim
 
 " ---------------------------
 " Enable syntax highlighting & validation
@@ -273,7 +273,7 @@ filetype indent on          " required by Vundle! & enable loading plugin indent
 set hidden
 
 "-----------------------------------"
-" COLOR SETTINGS 
+" COLOR SETTINGS
 "-----------------------------------"
 "Set to 256 colors before setting colorscheme
 set t_Co=256
@@ -282,12 +282,12 @@ set t_Co=256
 " The next few lines are setting for the solarized colorscheme.
 " See more at: https://github.com/altercation/vim-colors-solarized
 "syntax enable
-" 
+"
 " for dark background using solarized:
 set background=dark
 " or, for the light background mode of Solarized:
 "set background=light
-" 
+"
 " Uncomment this next line if you are forcing terminal color mode to 256 colors
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=0
@@ -333,7 +333,7 @@ colorscheme kolor           "1 - YES"
 
 
 "-----------------------------------"
-" INDENT SETTINGS 
+" INDENT SETTINGS
 "-----------------------------------"
 set autoindent
 set smartindent
@@ -343,7 +343,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
                     " Display tabs and trailing spaces visually:
-set list listchars=tab:\ \ ,trail:· 
+set list listchars=tab:\ \ ,trail:·
 
 
 "-----------------------------------"
@@ -354,11 +354,11 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set autowrite                   " Write the old file out when switching between files.
 set ruler                       " Display current cursor position in lower right corner.
 let mapleader = ","             " Want a different map leader than \
-let maplocalleader = "\\"      " Map a local filetype leader to '\' 
+let maplocalleader = "\\"      " Map a local filetype leader to '\'
 set timeoutlen=400              " Ever notice a slight lag after typing the leader key + command? This lowers
                                 " the timeout.
 set hidden                      " Switch between buffers without saving
-    
+
 set backupdir=~/.vim/tmp/backup//   " Set Backups directory
 set directory=~/.vim/tmp/swap//     " Set Swap files directory
 set backup                          " Enable backups
@@ -533,6 +533,7 @@ let g:syntastic_warning_symbol = '!'"
 " If not, then run 'npm install -g jsonlint'
 " Tell Syntastic to use jsonlint to check json files"
 let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_javascript_checkers=['eslint']
 
 " Ensure json files set to the right type automatically"
 au BufRead,BufNewFile *.json set filetype=json
@@ -608,12 +609,12 @@ nnoremap <silent> <leader>im :InstantMarkdownPreview<CR>
 " Vim-pandoc non-standard mappings
 "------------------------"
 ""By default, vim-pandoc provides some handy executors:
-  ""PandocPdf (<localleader>pdf), which runs pandoc, passing the value of g:pandoc_bibfile 
+  ""PandocPdf (<localleader>pdf), which runs pandoc, passing the value of g:pandoc_bibfile
     ""as the argument of --bibliography.
   ""PandocPdfOpen (pdf+), same as above, but opens the pdf using your default pdf viewer.
   ""PandocHtml (<localleader>html), which creates a standalone html.
   ""PandocHtmlOpen (html+), same as above, but opens the html file in your default browser.
-  ""PandocOdt (<localleader>odt), which creates an ODT file, passing the value of 
+  ""PandocOdt (<localleader>odt), which creates an ODT file, passing the value of
     "g:pandoc_bibfile as the argument of --bibliography.
   ""PandocOdtOpen (<localleader>odt+), same as above, but opens the ODT in your default ODT viewer.
 
@@ -646,7 +647,7 @@ nnoremap <silent> <leader>im :InstantMarkdownPreview<CR>
 "   autocmd FileType cucumber map <Leader>f :RunFocusedCuke<CR>
 "   autocmd FileType cucumber map <Leader>t :RunAllCukes<CR>
 " endif
-"        
+"
 " *** This assumes that your Vim configuration recognizes Cucumber features
 "     with the cucumber file type.
 

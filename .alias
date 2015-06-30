@@ -23,9 +23,9 @@ alias shred3='shred -n 3 -u -v'
 alias todo_help='printf "\t all \n\t projects \n\t inbox \n\t phone \n\t asap \n\t finance\n"'
 alias todo_all='cat $DBOXPATH/todo/todo.txt'
 alias todo_projects='awk -f list_projects.awk $DBOXPATH/todo/todo.txt | sort'
-alias todo_inbox='grep "\+[iI]nbox" $DBOXPATH/todo/todo.txt' 
-alias todo_phone='grep "@[pP]hone" $DBOXPATH/todo/todo.txt' 
-alias todo_asap='grep "+ASAP" $DBOXPATH/todo/todo.txt' 
+alias todo_inbox='grep "\+[iI]nbox" $DBOXPATH/todo/todo.txt'
+alias todo_phone='grep "@[pP]hone" $DBOXPATH/todo/todo.txt'
+alias todo_asap='grep "+ASAP" $DBOXPATH/todo/todo.txt'
 alias todo_finance='egrep "\+[m]*[y]*[fF]inanc[ie][as][l]*" $DBOXPATH/todo/todo.txt'
 alias viewvids='$DBOXPATH/myProjs/dashboard/view_cs106a.sh'
 alias githelp='$DBOXPATH/myProjs/dashboard/view_githelp.sh'
@@ -70,3 +70,6 @@ alias dictionary="cat /usr/share/dict/words"
 alias dict="cat /usr/share/dict/words"
 alias words="cat /usr/share/dict/words"
 alias pyserver="python -m SimpleHTTPServer"
+alias newhtml="cp -R $PRJ/boilerplates/html5-bp_v5.2.0 "
+
+
