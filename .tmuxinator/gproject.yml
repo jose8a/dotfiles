@@ -1,7 +1,7 @@
-# ~/.tmuxinator/muxconfig.yml
+# ~/.tmuxinator/iknowsit.yml
 
-name: muxconfig
-root: /Users/jose8a/Dropbox/myProjs/dotfiles/.tmuxinator
+name: gproject
+root: /Users/jose8a/Dropbox/myProjs/jservices/clients/shareg/
 
 # Optional tmux socket
 # socket_name: foo
@@ -20,6 +20,9 @@ root: /Users/jose8a/Dropbox/myProjs/dotfiles/.tmuxinator
 
 windows:
   - editor:
-      layout: main-muxconfig
+      pre: cd app/controllers
+      layout: main-vertical
       panes:
-        - vim muxconfig.yml
+        - vim index.js
+  - server: node index.js
+  - rconsole: cd ./public

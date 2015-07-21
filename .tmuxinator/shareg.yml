@@ -1,7 +1,7 @@
-# ~/.tmuxinator/muxconfig.yml
+# ~/.tmuxinator/shareg.yml
 
-name: muxconfig
-root: /Users/jose8a/Dropbox/myProjs/dotfiles/.tmuxinator
+name: shareG
+root: /Users/jose8a/Dropbox/myProjs/clients/shareG/notes
 
 # Optional tmux socket
 # socket_name: foo
@@ -19,7 +19,15 @@ root: /Users/jose8a/Dropbox/myProjs/dotfiles/.tmuxinator
 # tmux_command: byobu
 
 windows:
-  - editor:
-      layout: main-muxconfig
+  - scratch:
+      layout: even-horizontal
       panes:
-        - vim muxconfig.yml
+        - vim scratchpad.txt
+  - todos:
+      layout: even-horizontal
+      panes:
+        - vim todos.txt
+  - reference:
+      layout: even-horizontal
+      panes:
+        - vim reference.txt

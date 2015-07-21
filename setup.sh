@@ -15,3 +15,10 @@ find . -maxdepth 1 -name ".*" | while read fname; do
   fi
 done
 
+# create dynamic file to store the latest location of dotfiles folder
+# needs to be recreated every time the DOTFILES/setup.h is run in
+# case location of dotfiles local repo changes
+echo 'export DOTFILES='`pwd` >> $HOME/.dotfiles_temp
+
+# RE-source bashrc and can now check if new setup is proper
+source ~/.bashrc

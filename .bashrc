@@ -20,6 +20,11 @@ if [ -f ~/.colors ]; then
     source ~/.colors
 fi
 
+# Dynamic dotfiles location stored here
+if [ -f ~/.dotfiles_temp ]; then
+    source ~/.dotfiles_temp
+fi
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -42,14 +47,14 @@ fi
 ########################################################
 # VI/VIM/Tmux Settings
 ########################################################
-######## 
+########
 set -o vi
 
 ######## ##Exuberant CTAGS
 # Add to path for Exuberant-ctags to be called on Mac OSX rather than default ctags
 PATH=/usr/local/bin:$PATH
 
-# Tmuxinator helper to set up 
+# Tmuxinator helper to set up
 source ~/bin/tmuxinator.bash
 
 ########################################################
@@ -63,13 +68,13 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ########## Node PATH addition
 # Add to path for Node to automatically pick npm-installed binaries
-#!! This next PATH line might be a Linux-only path since the '/npm/bin' doesn't 
+#!! This next PATH line might be a Linux-only path since the '/npm/bin' doesn't
 # show up on my Mac filepath.
 PATH=$PATH:/usr/local/share/npm/bin
 #!! This NODE_PATH is added via Mac Homebrew install.  Might not work for Linux!!
 export NODE_PATH="/usr/local/lib/node_modules"
 
-#### 
+####
 export PATH="$PATH:/Applications/DevDesktop/drush"
 
 ########################################################
@@ -100,7 +105,7 @@ fi
 echo "Dev Projects should be Up and Running!"
 
 ########################################################
-# RBENV 
+# RBENV
 ########################################################
 eval "$(rbenv init -)"
 

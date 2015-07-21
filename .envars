@@ -20,7 +20,8 @@ export SWB=$DBX/ref_SW/SWbooks
 export SWS=$DBX/ref_SW/SWSchool
 export EMB=$DBX/myProjs/embedded
 export UDA=$DBX/ref_SW/SWSchool/UCTY
-export DOTPATH=$PRJ/dotfiles
+export CLIENTS=$PRJ/clients
+export DOTPATH=$PRJ/temp/dotfiles
 export MUXPATH=$DOTPATH/.tmuxinator
 export EDITOR='vim'
 
@@ -34,4 +35,3 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=1000
 export HISTFILESIZE=2000
-

@@ -19,15 +19,21 @@ root: /Users/jose8a/Dropbox/myProjs/jservices/temp/tempnotes
 # tmux_command: byobu
 
 windows:
+  - working:
+      layout: even-horizontal
+      panes:
+        - vim working_on.txt
   - scratch:
       layout: even-horizontal
       panes:
         - vim scratchpad.txt
-  - todos: 
+  - bizzles:
       layout: even-horizontal
       panes:
-        - vim todos1.txt
-  - apptodos: 
+        - vim bizzles.txt
+        - vim bizzles_other.txt
+  - apptodos:
       layout: even-horizontal
       panes:
-        - vim AppTodos.txt
+        - vim dailylist.txt
+        - vim laterdos.txt
