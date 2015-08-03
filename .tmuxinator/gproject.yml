@@ -1,7 +1,7 @@
 # ~/.tmuxinator/iknowsit.yml
 
 name: gproject
-root: /Users/jose8a/Dropbox/myProjs/jservices/clients/shareg/
+root: /Users/jose8a/Dropbox/myProjs/clients/shareg/
 
 # Optional tmux socket
 # socket_name: foo
@@ -20,9 +20,15 @@ root: /Users/jose8a/Dropbox/myProjs/jservices/clients/shareg/
 
 windows:
   - editor:
-      pre: cd app/controllers
+      pre: cd projects/shareG
       layout: main-vertical
       panes:
         - vim index.js
-  - server: node index.js
-  - rconsole: cd ./public
+  - server:
+      pre: cd projects/shareG
+      panes:
+        - node index.js
+  - console:
+      pre: cd projects/shareG
+      panes:
+        - cd ./public

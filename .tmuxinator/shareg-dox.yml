@@ -1,7 +1,7 @@
-# ~/.tmuxinator/shareg.yml
+# ~/.tmuxinator/shareg-dox.yml
 
 name: shareG
-root: /Users/jose8a/Dropbox/myProjs/clients/shareG/notes
+root: /Users/jose8a/Dropbox/myProjs/clients/shareg
 
 # Optional tmux socket
 # socket_name: foo
@@ -20,14 +20,22 @@ root: /Users/jose8a/Dropbox/myProjs/clients/shareG/notes
 
 windows:
   - scratch:
+      pre: cd ./docs
       layout: even-horizontal
       panes:
-        - vim scratchpad.txt
-  - todos:
+        - vim dashboards.md
+        - vim endpoints.md
+  - sharedGD:
+      pre: cd $GDRIVE/juan-shareG
       layout: even-horizontal
       panes:
-        - vim todos.txt
-  - reference:
+        - vim stories.md
+        - vim schemas.json
+  - repos:
       layout: even-horizontal
       panes:
-        - vim reference.txt
+        - ll ./notes
+        - ll ./docs
+
+
+

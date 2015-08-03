@@ -484,8 +484,8 @@ nmap <leader>fn :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 
 "autopen NERDTree and focus cursor in new document
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+""autocmd VimEnter * NERDTree
+""autocmd VimEnter * wincmd p
 
 "------------------------"
 "TAGBAR PLUGIN SETTINGS
@@ -526,17 +526,57 @@ let g:syntastic_check_on_open=1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'"
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"" --- Make sure jsonlint is installed ==> 'which jsonlint'
+"" --- If not, then run 'npm install -g jsonlint'
+"" --- Tell Syntastic to use jsonlint to check javascript files"
+let g:syntastic_json_checkers=['jsonlint']
+
+"" --- Make sure jscs is installed ==> 'which jscs'
+"" --- If not, then run 'npm install -g jscs'
+"" --- Tell Syntastic to use standard to check javascript files"
+let g:syntastic_javascript_checkers = ['jscs']
+"" --- Automatic 'jscs' formatting of javascript on 'save':
+"autocmd bufwritepost *.js silent !jscs % --format
+"set autoread
+
+"" --- Make sure standard is installed ==> 'which standard'
+"" --- If not, then run 'npm install -g standard'
+"" --- Tell Syntastic to use standard to check javascript files"
+"let g:syntastic_javascript_checkers = ['standard']
+"" --- Automatic 'standard' formatting of javascript on 'save':
+"autocmd bufwritepost *.js silent !standard % --format
+"set autoread
+"
+"" Other possible javascript lint checkers
 " Use jshint (uses ~/.jshintrc)
 ""let g:syntastic_javascript_checkers = ['jshint']
-
-" Make sure jsonlint is installed ==> 'which jsonlint'
-" If not, then run 'npm install -g jsonlint'
-" Tell Syntastic to use jsonlint to check json files"
-let g:syntastic_json_checkers=['jsonlint']
-let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_javascript_checkers=['eslint']
 
 " Ensure json files set to the right type automatically"
 au BufRead,BufNewFile *.json set filetype=json
+
+function! JscsFix()
+      "Save current cursor position"
+      let l:winview = winsaveview()
+      "Pipe the current buffer (%) through the jscs -x command"
+      % ! jscs -x
+      "Restore cursor position - this is needed as piping the file"
+      "through jscs jumps the cursor to the top"
+      call winrestview(l:winview)
+endfunction
+command JscsFix :call JscsFix()
+
+"Run the JscsFix command just before the buffer is written for *.js files"
+"autocmd BufWritePre *.js JscsFix
 
 "------------------------"
 " vim-javascript_libraries_syntax mappings

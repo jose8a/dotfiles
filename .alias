@@ -71,5 +71,5 @@ alias dict="cat /usr/share/dict/words"
 alias words="cat /usr/share/dict/words"
 alias pyserver="python -m SimpleHTTPServer"
 alias newhtml="cp -R $PRJ/boilerplates/html5-bp_v5.2.0 "
-
+alias gdrive="cd $HOME/GoogleDrive"
 

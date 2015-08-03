@@ -21,6 +21,7 @@ export SWS=$DBX/ref_SW/SWSchool
 export EMB=$DBX/myProjs/embedded
 export UDA=$DBX/ref_SW/SWSchool/UCTY
 export CLIENTS=$PRJ/clients
+export GDRIVE=~/GoogleDrive
 export DOTPATH=$PRJ/temp/dotfiles
 export MUXPATH=$DOTPATH/.tmuxinator
 export EDITOR='vim'
