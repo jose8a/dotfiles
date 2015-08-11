@@ -1,6 +1,6 @@
-# ~/.tmuxinator/shareg-api.yml
+# ~/.tmuxinator/shareg-svc.yml
 
-name: shareg-api
+name: shareg-svc
 root: /Users/jose8a/Dropbox/myProjs/clients/shareg
 
 # Optional tmux socket
@@ -24,16 +24,25 @@ windows:
       layout: even-horizontal
       panes:
         - vim scratchpad.txt
-        - vim todos.txt
+        - vim todos.md
   - reference:
       pre: cd ./notes
       layout: even-horizontal
       panes:
         - vim reference.txt
   - repos:
-      pre: cd ./projects/serviceG
+      pre: cd ./projects/serviceG/app-server
       layout: even-horizontal
       panes:
-        - vim app.js
-
+        - vim ./app/app.js
+  - server:
+      pre: cd ./projects/serviceG/app-server
+      layout: even-horizontal
+      panes:
+        - npm start
+  - mongo:
+      pre: cd ./projects/serviceG/app-server
+      layout: even-horizontal
+      panes:
+        - mongod --dbpath ~/mongo-data
 
