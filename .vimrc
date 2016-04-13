@@ -47,8 +47,8 @@ set nocompatible
     " In your .vimrc.bundles.local file"
     " list only the plugin groups you will use
     if !exists('g:spf13_bundle_groups')
-        "let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'vimcolors', 'php', 'ruby', 'python', 'javascript', 'html', 'vimux', 'misc', 'scala']
-        let g:spf13_bundle_groups=['general', 'programming', 'vimcolors', 'snipmate', 'ruby', 'python', 'javascript', 'html', 'vimux', 'misc']
+        "let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'vimcolors', 'php', 'ruby', 'python', 'javascript', 'html', 'golang', 'vimux', 'misc', 'scala']
+        let g:spf13_bundle_groups=['general', 'programming', 'vimcolors', 'snipmate', 'ruby', 'python', 'javascript', 'html', 'golang', 'vimux', 'misc']
     endif
 
     " To override all the included bundles, put
@@ -212,6 +212,11 @@ set nocompatible
         if count(g:spf13_bundle_groups, 'scala')
             Plugin 'derekwyatt/vim-scala'
             Plugin 'derekwyatt/vim-sbt'
+        endif
+
+    " GoLang
+        if count(g:spf13_bundle_groups, 'golang')
+            Plugin 'fatih/vim-go'
         endif
 
     " HTML
@@ -706,5 +711,3 @@ nnoremap <silent> <leader>im :InstantMarkdownPreview<CR>
 "
 " *** This assumes that your Vim configuration recognizes Cucumber features
 "     with the cucumber file type.
-
-

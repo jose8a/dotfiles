@@ -20,7 +20,7 @@ just rerun the setup.sh script and all will be good.
 
 These configurations scripts assume the main project development tools include TMUX, VIM, and TMUXINATOR and the BASH shell.  Also, Rbenv is currently preferred to achieve per-project ruby versioning.
 
-Homebrew is also the preferred package manager for these dotfiles on a MacOSX environment. 
+Homebrew is also the preferred package manager for these dotfiles on a MacOSX environment.
 
 * [Homebrew](http://brew.sh/)
 
@@ -58,3 +58,9 @@ The last one needed is Tmuxinator, but this is actually a ruby gem:
 gem install tmuxinator
 ```
 
+### Node Requirement
+Install Node via Homebrew
+brew install Node
+
+Install nvm to manage node versions
+npm install -g nvm
