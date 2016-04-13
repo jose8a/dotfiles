@@ -1,7 +1,7 @@
-# ~/.tmuxinator/tempnotes.yml
+# ~/.tmuxinator/templates.yml
 
-name: tempnotes
-root: /Users/jose8a/Dropbox/myProjs/jservices/temp/tempnotes/dodos
+name: templates
+root: /Users/jose8a/Dropbox/myProjs/boilerplates
 
 # Optional tmux socket
 # socket_name: foo
@@ -17,19 +17,28 @@ root: /Users/jose8a/Dropbox/myProjs/jservices/temp/tempnotes/dodos
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
+#
+#
+####### Open the following Windows:
+#
 
 windows:
-  - bizzles:
+  - gruntplate:
+      pre: cd grunt-boiler
       layout: even-horizontal
       panes:
-        - vim bizzles.txt
-        - vim bizzles_other.txt
-  - daily:
+        - vim fed_toolchain_setup.md
+        - vim Gruntfile.js
+  - nodeapi:
+      pre: cd nodeapi
       layout: even-horizontal
       panes:
-        - vim dailylist.txt
-        - vim laterdos.txt
-  - scratch:
+        - vim app.js
+        - ll .
+  - node_old:
+      pre: cd node_old
       layout: even-horizontal
       panes:
-        - vim tempscratch.md
+        - ll .
+        - ll test/
+

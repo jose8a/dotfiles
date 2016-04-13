@@ -1,0 +1,13 @@
+today () {
+  date +%Y-%m-%d
+}
+
+diary () {
+  local path=~/Documents/diaries/
+  local file=$path$(today)
+  vim +1000000 $file
+  local d=$(date)
+  git --git-dir="$path".git/ --work-tree=$path add $file
+  git --git-dir="$path".git/ --work-tree=$path commit -m "updated at $d"
+  #git --git-dir=$path.git/ --work-tree=$path push origin master
+}

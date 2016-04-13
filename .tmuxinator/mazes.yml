@@ -1,7 +1,7 @@
-# ~/.tmuxinator/shareg-dox.yml
+# ~/.tmuxinator/mazes.yml
 
-name: shareg-dox
-root: /Users/jose8a/Dropbox/myProjs/clients/shareg
+name: mazes
+root: /Users/jose8a/Dropbox/myProjs/jservices/mazes
 
 # Optional tmux socket
 # socket_name: foo
@@ -17,25 +17,16 @@ root: /Users/jose8a/Dropbox/myProjs/clients/shareg
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
+#
+#
+####### Open the following Windows:
+#
 
 windows:
-  - services:
-      pre: cd ./docs
+  - app:
       layout: even-horizontal
       panes:
-        - vim dashboards.md
-        - vim endpoints.md
-  - reqmts:
-      pre: cd $GDRIVE/juan-shareG
-      layout: even-horizontal
-      panes:
-        - vim stories.md
-        - vim schemas.json
-  - shells:
-      layout: even-horizontal
-      panes:
-        - ll ./notes
-        - ll ./docs
-
-
+        - vim index.html
+        - vim app.js
+  - misc: ll .
 

@@ -1,13 +1,14 @@
 # ~/.tmuxinator/trelloX.yml
 
 name: trelloX
-root: /Users/jose8a/Dropbox/myProjs/jservices/temp/trelloX
+root: /Users/jose8a/Dropbox/myProjs/jservices/chromeX/trelloX
 
 # Optional tmux socket
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
+pre: cd .
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -23,4 +24,4 @@ windows:
       layout: main-vertical
       panes:
         - vim popup.html
-        - cd js && vim popup.js
+        - vim js/popup.js

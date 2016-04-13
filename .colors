@@ -1,6 +1,6 @@
 
 ########################################################
-# This file should hold all shell color settings for 
+# This file should hold all shell color settings for
 #   the prompt.  It is launched from ~/.bashrc
 ########################################################
 
@@ -43,7 +43,5 @@ txtrst='\e[0m'    # Text Reset
 #PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #PS1='\e[0;36m[\u@\h: \w]\e[m\n\$ '
 #PS1="\[$bldylw\][\u@\h: \w]\e[m\n\$ "
-PS1="\[$txtblu\][\u@\h: \w]\e[m\n\$ "
-
-
+PS1="\[$txtgrn\][\u@\h: \w]\e[m\n\$ "
 

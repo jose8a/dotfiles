@@ -386,6 +386,7 @@ set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 
 let g:enable_numbers = 0        " Numbers.vim turn off automatic number switching
 
+set pastetoggle=<leader>pt      " Prevents nasty side-effects when pasting large chunks of text/code
 
 "-----------------------------------"
 " Folding
@@ -431,23 +432,39 @@ nmap wj <C-W>j
 nmap wk <C-W>k
 nmap wl <C-W>l
 
+        " close the current pane
+nmap pc <C-W>q
+
         " easier screen-up/screen-down movement
 nmap ff <C-f>
 nmap bb <C-b>
 "nmap bb 75k
         " remap 1/2-screen-down movement
-nmap ww <C-D>
+nmap fh <C-D>
         " remap 1/2-screen-up movement
-nmap uu <C-U>
+nmap bh <C-U>
 
 set splitbelow              " MORE NATURAL SPLIT OPENING -- Open new split panes to
 set splitright              " the right and bottom, which feels more natural than Vim’s default:
 
 " Shortcut to opening a virtual split to right of current pane
 " Makes more sense than opening to the left
-nmap <leader>bv :bel vsp
+""nmap <leader>bv :bel vsp
+
 " Opens a vertical split and switches over (\v)
-nnoremap <leader>v <C-w>v<C-w>l
+""nnoremap <leader>v <C-w>v<C-w>l
+
+" Easier split resizing
+command Widen :vertical resize
+command Grow  :resize
+
+"------------------------"
+"Copy/Paste SETTINGS
+"------------------------"
+""" copy to clipboard
+nmap cc "+
+"" paste from clipboard
+nmap cp "+p
 
 "------------------------"
 "FileType SETTINGS
@@ -512,15 +529,14 @@ nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 "------------------------"
 " syntastic mappings
 "------------------------"
+"" Toggle Enable/Disable mode for Syntastic
+nnoremap <leader>st :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+nnoremap <leader>sc :SyntasticCheck<CR>
+
 " On by default, turn it off for html
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
   \ 'passive_filetypes': ['html'] }
-
-" This does what it says on the tin. It will check your file on open too, not
-" just on save.
-" " You might not want this, so just leave it out if you don't.
-let g:syntastic_check_on_open=1
 
 " Better :sign interface symbols
 let g:syntastic_error_symbol = '✗'
@@ -543,7 +559,7 @@ let g:syntastic_json_checkers=['jsonlint']
 "" --- Make sure jscs is installed ==> 'which jscs'
 "" --- If not, then run 'npm install -g jscs'
 "" --- Tell Syntastic to use standard to check javascript files"
-let g:syntastic_javascript_checkers = ['jscs']
+""let g:syntastic_javascript_checkers = ['jscs']
 "" --- Automatic 'jscs' formatting of javascript on 'save':
 "autocmd bufwritepost *.js silent !jscs % --format
 "set autoread
@@ -559,7 +575,7 @@ let g:syntastic_javascript_checkers = ['jscs']
 "" Other possible javascript lint checkers
 " Use jshint (uses ~/.jshintrc)
 ""let g:syntastic_javascript_checkers = ['jshint']
-"let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_checkers=['eslint']
 
 " Ensure json files set to the right type automatically"
 au BufRead,BufNewFile *.json set filetype=json

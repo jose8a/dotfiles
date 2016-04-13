@@ -1,7 +1,7 @@
-# ~/.tmuxinator/shareg-svc.yml
+# ~/.tmuxinator/mazes.yml
 
-name: shareg-svc
-root: /Users/jose8a/Dropbox/myProjs/clients/shareg
+name: practice
+root: /Users/jose8a/Dropbox/myProjs/exercises/practice
 
 # Optional tmux socket
 # socket_name: foo
@@ -17,32 +17,34 @@ root: /Users/jose8a/Dropbox/myProjs/clients/shareg
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
+#
+#
+####### Open the following Windows:
+#
 
 windows:
-  - scratch:
-      pre: cd ./notes
+  - mazes:
+      pre: cd mazes
       layout: even-horizontal
       panes:
-        - vim scratchpad.txt
-        - vim todos.md
-  - reference:
-      pre: cd ./notes
+        - vim index.html
+        - vim app.js
+  - algos:
+      pre: cd explore_algos
       layout: even-horizontal
       panes:
-        - vim reference.txt
-  - repos:
-      pre: cd ./projects/serviceG/app-server
+        - vim app/index.html
+        - ll app/scripts
+  - fizzbuzz:
+      pre: cd explore_fizzbuzz/app
       layout: even-horizontal
       panes:
-        - vim ./app/app.js
-  - server:
-      pre: cd ./projects/serviceG/app-server
+        - vim index.html
+        - ll scripts/
+  - aapractice:
+      pre: cd aapractice
       layout: even-horizontal
       panes:
-        - npm start
-  - mongo:
-      pre: cd ./projects/serviceG/app-server
-      layout: even-horizontal
-      panes:
-        - mongod --dbpath ~/mongo-data
+        - cat 1to8.txt
+        - ll .
 

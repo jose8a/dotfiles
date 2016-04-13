@@ -8,6 +8,7 @@ root: /Users/jose8a/Dropbox/myProjs/jservices/yojobs
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
+pre: cd app/controllers
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -19,10 +20,6 @@ root: /Users/jose8a/Dropbox/myProjs/jservices/yojobs
 # tmux_command: byobu
 
 windows:
-  - editor:
-      pre: cd app/controllers
-      layout: main-vertical
-      panes:
-        - vim posts_controller.rb
+  - editor: vim posts_controller.rb
   - server: rails s -p 5055
   - rconsole: rails console

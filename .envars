@@ -7,24 +7,68 @@
 if [ $USER = jose8a ]; then
 	#echo "I am jose8a"
 	DBX="/Users/jose8a/Dropbox"
+	dbx="/Users/jose8a/Dropbox"
+	DBOX="/Users/jose8a/Dropbox"
+	dbox="/Users/jose8a/Dropbox"
 fi
 
 if [ $USER = elchavo ]; then
 	#echo "I am elchavo"
 	DBX="/media/dbox/Dropbox/"
+	dbx="/media/dbox/Dropbox/"
+	DBOX="/media/dbox/Dropbox/"
+	dbox="/media/dbox/Dropbox/"
 fi
 
 # chavo's custom path shortcuts
 export PRJ=$DBX/myProjs
-export SWB=$DBX/ref_SW/SWbooks
-export SWS=$DBX/ref_SW/SWSchool
-export EMB=$DBX/myProjs/embedded
-export UDA=$DBX/ref_SW/SWSchool/UCTY
+export prj=$DBX/myProjs
+export SERVS=$PRJ/jservices
+export servs=$PRJ/jservices
+export BOOKS=$DBX/ref_SW/SWbooks
+export books=$DBX/ref_SW/SWbooks
+export SCHOOL=$DBX/ref_SW/SWSchool
+export school=$DBX/ref_SW/SWSchool
+export EMBEDDED=$DBX/myProjs/embedded
+export embedded=$DBX/myProjs/embedded
+export EMBED=$DBX/myProjs/embedded
+export embed=$DBX/myProjs/embedded
+export MYSW=$DBX/ref_SW
+export mysw=$DBX/ref_SW
+export MYHW=$DBX/ref_HW
+export myhw=$DBX/ref_HW
+export MYWEB=$DBX/myWeb
+export myweb=$DBX/myWeb
+export MYREF=$DBX/myRef
+export myref=$DBX/myRef
+export UDACITY=$DBX/ref_SW/SWSchool/UCTY
+export udacity=$DBX/ref_SW/SWSchool/UCTY
 export CLIENTS=$PRJ/clients
+export clients=$PRJ/clients
 export GDRIVE=~/GoogleDrive
+export gdrive=~/GoogleDrive
 export DOTPATH=$PRJ/temp/dotfiles
+export dotpath=$PRJ/temp/dotfiles
+export DOTFILES=$PRJ/temp/dotfiles
+export dotfiles=$PRJ/temp/dotfiles
 export MUXPATH=$DOTPATH/.tmuxinator
+export muxpath=$DOTPATH/.tmuxinator
 export EDITOR='vim'
+export editor='vim'
+export EXERCISES=$PRJ/exercises
+export exercises=$PRJ/exercises
+export EXERS=$EXERCISES
+export exers=$EXERCISES
+export OSS=$PRJ/oss
+export oss=$PRJ/oss
+export AA=$PRJ/appcademy
+export aa=$PRJ/appcademy
+export SG=$CLIENTS/shareg
+export sg=$CLIENTS/shareg
+export CHEATS=$PRJ/cheatsheets
+export cheats=$PRJ/cheatsheets
+export IDEAS=$PRJ/ideas
+export ideas=$PRJ/ideas
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace

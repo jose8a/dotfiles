@@ -11,66 +11,91 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias lln='ls -alonF'
+alias lo='ls -aloF'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# chavo's aliases
-alias gnome-terminal='gnome-terminal --geometry=110x32'
+# alias cd direct-to-[???]
+alias cd..="cd .."
+alias cdgdrive="cd $HOME/GoogleDrive"
+alias cdproj="cd $PRJ"
+alias cdclients="cd $CLIENTS"
+alias cdaa="cd $AA"
+alias cdsg="cd $SG"
+alias cdex="cd $EXERCISES"
+alias cdservs="cd $SERVS"
+alias cdref='cd $MYREF'
+alias cdschool='cd $SCHOOL'
+alias cdbooks='cd $BOOKS'
+alias cdweb='cd $MYWEB'
+alias cddots='cd $DOTFILES'
+
+#alias cheatsheets
+alias cheatgit='cat $CHEATS/git.md'
+alias cheatmux='cat $CHEATS/tmux.md'
+
+# alias shred
 alias shred1='shred -n 1 -u -v'
 alias shred2='shred -n 2 -u -v'
 alias shred3='shred -n 3 -u -v'
-alias todo_help='printf "\t all \n\t projects \n\t inbox \n\t phone \n\t asap \n\t finance\n"'
-alias todo_all='cat $DBOXPATH/todo/todo.txt'
-alias todo_projects='awk -f list_projects.awk $DBOXPATH/todo/todo.txt | sort'
-alias todo_inbox='grep "\+[iI]nbox" $DBOXPATH/todo/todo.txt'
-alias todo_phone='grep "@[pP]hone" $DBOXPATH/todo/todo.txt'
-alias todo_asap='grep "+ASAP" $DBOXPATH/todo/todo.txt'
-alias todo_finance='egrep "\+[m]*[y]*[fF]inanc[ie][as][l]*" $DBOXPATH/todo/todo.txt'
-alias viewvids='$DBOXPATH/myProjs/dashboard/view_cs106a.sh'
-alias githelp='$DBOXPATH/myProjs/dashboard/view_githelp.sh'
-alias helpgit='$DBOXPATH/myProjs/dashboard/view_githelp.sh'
+
+# alias touchpad
 alias touchpad_disable='xinput set-prop 15 "Device Enabled" 0'
 alias touchpad_enable='xinput set-prop 15 "Device Enabled" 1'
-alias myfi='easytether connect'
-alias arduino='/home/elchavo/arduino-0022/arduino'
-alias teensy='/home/elchavo/arduino-0022/teensy.64bit'
-alias ucx_sys_open='$DBOXPATH/edu/ucx/ucx_sysprog/open.sh'
-#alias list_examples='find . -maxdepth 1 -type d \( -exec echo $file {} \; -false -o -exec ls {} \; -false -o -exec echo \; \)'
-alias list_examples='find . -maxdepth 1 -type d \( -exec echo $file {} \; -false -o -exec ls {} \;  \)'
+
+# alias google-app-engine
 alias gae_launcher='python /opt/google-appengine-wx-launcher-read-only/GoogleAppEngineLauncher.py'
 alias gae_upload='/opt/google_appengine/appcfg.py update'
 alias gae_startserver='/opt/google_appengine/dev_appserver.py'
-alias mate='~/bin/mate'
-alias ctags="`brew --prefix`/bin/ctags"
-alias eclipse="~/bin/eclipse"
-alias sequelize="./node_modules/sequelize/bin/sequelize"
-alias redmine="/Applications/redmine-2.4.3-0/manager-osx.app/Contents/MacOS/osx-intel"
-alias acquia="/Applications/DevDesktop/Acquia\ Dev\ Desktop.app/Contents/MacOS/Acquia\ Dev\ Desktop"
-alias rvmhelp='cat $DBX/myPCconfig/rvm_ruby_project.gist'
-alias md2html='find . -name "*.md" | while read i; do pandoc -f markdown -t html "$i" -o "${i%.*}.html"; done'
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-alias railsdb_reset='rake db:drop; rake db:create; rake db:migrate; rake db:seed'
+
+# alias git
 alias gita='git add'
 alias gitb='git branch'
 alias gitch='git checkout'
 alias gitd='git diff'
 alias gits='git status'
 alias gitu='git reset --soft HEAD^'
+
+# alias tmux
 alias tmux='tmux -2'
 alias txn='tmux new-session -s'
 alias txl='tmux list-sessions'
 alias txa='tmux a -t'
 alias txd='tmux detach'
 alias tx_reload='tmux source-file ~/.tmux.conf'
-alias vtmux-'vim ~/.tmux.conf'
+alias temp_tmux='$HOME/tmp/temp_tmux'
+
+# alias vim
+alias vtmux='vim ~/.tmux.conf'
 alias vbash='vim ~/.bashrc'
 alias vvim='vim ~/.vimrc'
-alias temp_tmux='$HOME/tmp/temp_tmux'
+
+# alias system dictionary
 alias dictionary="cat /usr/share/dict/words"
 alias dict="cat /usr/share/dict/words"
 alias words="cat /usr/share/dict/words"
+
+#alias services
+alias boilerhtml="cp -R $PRJ/boilerplates/html5-bp_v5.2.0 "
 alias pyserver="python -m SimpleHTTPServer"
-alias newhtml="cp -R $PRJ/boilerplates/html5-bp_v5.2.0 "
-alias gdrive="cd $HOME/GoogleDrive"
+alias redmine="/Applications/redmine-2.4.3-0/manager-osx.app/Contents/MacOS/osx-intel"
+alias acquia="/Applications/DevDesktop/Acquia\ Dev\ Desktop.app/Contents/MacOS/Acquia\ Dev\ Desktop"
+
+# rails
+alias railsdb_reset='rake db:drop; rake db:create; rake db:migrate; rake db:seed'
+
+# misc
+alias myfi='easytether connect'
+alias arduino='/home/elchavo/arduino-0022/arduino'
+alias teensy='/home/elchavo/arduino-0022/teensy.64bit'
+alias ucx_sys_open='$DBX/edu/ucx/ucx_sysprog/open.sh'
+#alias list_examples='find . -maxdepth 1 -type d \( -exec echo $file {} \; -false -o -exec ls {} \; -false -o -exec echo \; \)'
+alias list_examples='find . -maxdepth 1 -type d \( -exec echo $file {} \; -false -o -exec ls {} \;  \)'
+alias md2html='find . -name "*.md" | while read i; do pandoc -f markdown -t html "$i" -o "${i%.*}.html"; done'
+alias ctags="`brew --prefix`/bin/ctags"
+alias rvmhelp='cat $DBX/myPCconfig/rvm_ruby_project.gist'
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+alias showexports='grep export ~/.bashrc'
 

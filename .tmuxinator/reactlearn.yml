@@ -1,7 +1,7 @@
-# ~/.tmuxinator/iknowsit.yml
+# ~/.tmuxinator/reactlearn.yml
 
-name: atipica_mvp
-root: /Users/jose8a/Dropbox/myProjs/clients/atipica/mvp
+name: reactlearn
+root: /Users/jose8a/Dropbox/myProjs/exercises/react-exercises
 
 # Optional tmux socket
 # socket_name: foo
@@ -11,19 +11,22 @@ root: /Users/jose8a/Dropbox/myProjs/clients/atipica/mvp
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
-pre_window: rbenv shell 2.1.4p265
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
+#
+#
+####### Open the following Windows:
+#
 
 windows:
-  - editor:
-      pre: cd app/controllers
-      layout: main-vertical
+  - app:
+      layout: even-horizontal
       panes:
-        - vim 
-  - server: rails s -p 5757
-  - rconsole: rails console
+        - vim a-first-component/first-component.html
+        - vim b-five-examples/five-examples.html
+  - misc: ll .
+

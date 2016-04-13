@@ -25,6 +25,13 @@ if [ -f ~/.dotfiles_temp ]; then
     source ~/.dotfiles_temp
 fi
 
+# function definitions
+if [ -d ~/.functions ]; then
+    #source ~/.functions/tat
+    source ~/.functions/mcd
+    source ~/.functions/day
+fi
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -33,16 +40,16 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+#if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+#    debian_chroot=$(cat /etc/debian_chroot)
+#fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#    . /etc/bash_completion
+#fi
 
 ########################################################
 # VI/VIM/Tmux Settings
@@ -81,7 +88,7 @@ export PATH="$PATH:/Applications/DevDesktop/drush"
 # Set the path for Pandoc to allow CLI pandoc executable
 # and also the vim-pandoc plugin to work properly
 ########################################################
-if [ -d "$HOME/.cabal/bin" ] ; then
+if [ -d "$HOME/.cabal/bin" ]; then
     PATH="$HOME/.cabal/bin:$PATH"
 fi
 
@@ -110,3 +117,6 @@ echo "Dev Projects should be Up and Running!"
 eval "$(rbenv init -)"
 
 
+
+export NVM_DIR="/Users/jose8a/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

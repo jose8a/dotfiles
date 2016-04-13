@@ -1,7 +1,7 @@
-# ~/.tmuxinator/iknowsit.yml
+# ~/.tmuxinator/inodeit.yml
 
-name: gproject
-root: /Users/jose8a/Dropbox/myProjs/clients/shareg/
+name: inodeit
+root: /Users/jose8a/Dropbox/myProjs/jservices/inodeit
 
 # Optional tmux socket
 # socket_name: foo
@@ -20,15 +20,9 @@ root: /Users/jose8a/Dropbox/myProjs/clients/shareg/
 
 windows:
   - editor:
-      pre: cd projects/shareG
+      pre: cd app/controllers
       layout: main-vertical
       panes:
-        - vim index.js
-  - server:
-      pre: cd projects/shareG
-      panes:
-        - node index.js
-  - console:
-      pre: cd projects/shareG
-      panes:
-        - cd ./public
+        - vim lists_controller.rb
+  - server: rails s -p 8808
+  - rconsole: rails console
