@@ -23,8 +23,8 @@ windows:
   - resources:
       layout: even-horizontal
       panes:
-        - cd algo-structs && clog
-        - cd algo-structs && clog
+        - cd .algo-structs && clog
+        - cd .algo-structs && clog
   - mux:
       layout: even-horizontal
       panes:
