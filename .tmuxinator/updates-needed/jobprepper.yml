@@ -1,0 +1,23 @@
+# !/bin/bash
+# ~/.tmuxinator/jobprepper.yml
+
+name: jobprepper
+root: /Users/jose8a/Dropbox/myProjs/inprogress/jobprepper
+#pre_window: cd src
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim server.js
+        - nodemon server.js
+  - generic:
+      layout: even-horizontal
+      panes:
+        - cd helpers
+        - cd config
+  - anothername:
+      layout: even-horizontal
+      panes:
+        - vim README.md
+        - vim .todos

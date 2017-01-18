@@ -1,0 +1,16 @@
+# ~/.tmuxinator/dodos-refs.yml
+
+name: dodos-refs
+root: /Users/jose8a/jdocs/myDocs/dodos/refs/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim ref-laterlists.md
+        - vim ref-cuentas.md
+  - recur:
+      layout: even-horizontal
+      panes:
+        - ls ref-*
+        - ls ref-*

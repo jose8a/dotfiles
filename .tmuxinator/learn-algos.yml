@@ -1,0 +1,32 @@
+# !/bin/bash
+# ~/.tmuxinator/learn-algos.yml
+
+name: learn-algos
+root: /Users/jose8a/jdev/l2/learn-algos/
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - npm run dev
+        - clog
+  - components:
+      layout: even-horizontal
+      panes:
+        - cd src && clog
+        - cd src/components && clog
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos
+        - vim .notes
+  - resources:
+      layout: even-horizontal
+      panes:
+        - cd algo-structs && clog
+        - cd algo-structs && clog
+  - mux:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

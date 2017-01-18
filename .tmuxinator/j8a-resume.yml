@@ -1,0 +1,27 @@
+#!/bin/bash
+# ~/.tmuxinator/j8a-resume.yml
+
+name: j8a-resume
+root: /Users/jose8a/jdev/l0/j8a-resume
+
+windows:
+  - main:
+      layout: main-vertical
+      panes:
+        - vim index.html
+        - vim ./assets/css/main.css
+  - info:
+      layout: main-vertical
+      panes:
+        - cd .info && clog
+        - cd .info && clog
+  - notes:
+      layout: main-vertical
+      panes:
+        - vim .todos
+        - vim .notes
+  - resources:
+      layout: main-vertical
+      panes:
+        - chrome .resources.md && vim .resources.md
+        - txd

@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/phrase-it.yml
+
+name: phrase-it
+root: /Users/jose8a/jdev/l0/js-games/phrase-it
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - open index.html && vim index.html
+        - vim static/main.css
+  - generic1:
+      layout: even-horizontal
+      panes:
+        - vim .todos
+        - vim .notes
+  - generic2:
+      layout: even-horizontal
+      panes:
+        - clog
+        - clog
+  - resources:
+      layout: even-horizontal
+      panes:
+        - chrome .resources.md && vim .resources.md
+        - txd

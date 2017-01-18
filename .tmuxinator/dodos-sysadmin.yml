@@ -1,0 +1,21 @@
+# ~/.tmuxinator/dodos-sysadmin.yml
+
+name: dodos-sysadmin
+root: /Users/jose8a/jdocs/myDocs/dodos/sysadmin/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim dodos-sysadmin.md
+        - vim ~/jdev/lx_todos.md
+  - repos:
+      layout: even-horizontal
+      panes:
+        - vim sysadmin-projects.md
+        - vim sys-uninstall-app-howto.md
+  - misc:
+      layout: even-horizontal
+      panes:
+        - vim usr-sys-mem-20170114.tmp
+        - txd

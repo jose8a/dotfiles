@@ -1,7 +1,7 @@
 " ===================== .vimrc File =====================
 ""set term=ansi
 "Don't care about compatibility with Vi.
-set nocompatible
+"set nocompatible
 
 " Environment {
     " Basics {
@@ -20,7 +20,7 @@ set nocompatible
 
 " Plugins {
     " Deps
-        Plugin 'gmarik/Vundle.vim'
+        Plugin 'VundleVim/Vundle.vim'
         Plugin 'MarcWeber/vim-addon-mw-utils'
         Plugin 'tomtom/tlib_vim'
         if executable('ack-grep')
@@ -196,11 +196,13 @@ set nocompatible
             ""Plugin 'kchmck/vim-coffee-script'
             Plugin 'jelera/vim-javascript-syntax'
             Plugin 'vim-scripts/JavaScript-Indent'
-            Plugin 'othree/javascript-libraries-syntax.vim'
+            ""Plugin 'othree/javascript-libraries-syntax.vim'
             Plugin 'mklabs/vim-backbone'
+            ""Plugin 'posva/vim-vue'
+            Plugin 'digitaltoad/vim-pug'
+            ""Plugin 'tao12345666333/vim-vue'
             ""Plugin 'wookiehangover/jshint.vim'
             ""Plugin '29decibel/vim-stringify'
-            ""Plugin 'digitaltoad/vim-jade'
             ""Plugin 'myhere/vim-nodejs-complete'
             ""Plugin 'sidorares/node-vim-debugger'
             ""Plugin 'moll/vim-node'
@@ -230,6 +232,7 @@ set nocompatible
             Plugin 'groenewege/vim-less'
                     " haml/sass/scss plugin
             Plugin 'tpope/vim-haml'
+            Plugin 'othree/html5.vim'
         endif
 
     " Vimux
@@ -367,6 +370,8 @@ set hidden                      " Switch between buffers without saving
 set backupdir=~/.vim/tmp/backup//   " Set Backups directory
 set directory=~/.vim/tmp/swap//     " Set Swap files directory
 set backup                          " Enable backups
+"set nobackup                       " Disable backups
+"set noswapfile                     " Disable swapfiles
 
 set hlsearch                    " highlight on search
 set showmatch                   " Show matching brackets
@@ -460,8 +465,8 @@ set splitright              " the right and bottom, which feels more natural tha
 ""nnoremap <leader>v <C-w>v<C-w>l
 
 " Easier split resizing
-command Widen :vertical resize
-command Grow  :resize
+:command Widen :vertical resize
+:command Grow  :resize
 
 "------------------------"
 "Copy/Paste SETTINGS
@@ -493,6 +498,9 @@ nmap cp "+p
 ""autocmd FileType jade set ts=2
 ""autocmd FileType jade set sts=2
 
+" Vue syntax highligting
+""autocmd BufNewFile,BufRead *.vue set ft=html
+au BufNewFile,BufReadPost *.vue set syntax=html
 
 "------------------------"
 "NERDTREE PLUGIN SETTINGS
@@ -578,31 +586,15 @@ let g:syntastic_json_checkers=['jsonlint']
 "set autoread
 "
 "" Other possible javascript lint checkers
-" Use jshint (uses ~/.jshintrc)
-""let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_checkers=['eslint']
 
 " Ensure json files set to the right type automatically"
 au BufRead,BufNewFile *.json set filetype=json
 
-function! JscsFix()
-      "Save current cursor position"
-      let l:winview = winsaveview()
-      "Pipe the current buffer (%) through the jscs -x command"
-      % ! jscs -x
-      "Restore cursor position - this is needed as piping the file"
-      "through jscs jumps the cursor to the top"
-      call winrestview(l:winview)
-endfunction
-command JscsFix :call JscsFix()
-
-"Run the JscsFix command just before the buffer is written for *.js files"
-"autocmd BufWritePre *.js JscsFix
-
 "------------------------"
 " vim-javascript_libraries_syntax mappings
 "------------------------"
-let g:used_javascript_libs = 'jquery,lo-dash,underscore,backbone,requirejs'
+"let g:used_javascript_libs = 'jquery,lo-dash,underscore,backbone,requirejs'
 
 "------------------------"
 " Gundo mappings

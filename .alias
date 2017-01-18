@@ -10,12 +10,82 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+### START:ALIAS functions ###############################
+project_open() {
+  PROJECTNAME=$1
+  isRUNNING=$(tmux list-sessions | grep $PROJECTNAME | cut -d : -f 1)
+  isMUXPROJECT=$(tmuxinator list | xargs -n 1 | grep $PROJECTNAME)
+
+  echo $isRUNNING
+  echo $isMUXPROJECT
+
+# attach to an already open-project launched via tmuxinator,
+# or if that fails, then launch a project with tmuxinator
+# and if that also fails, show a list of available projects via tmuxinator
+    if [ "$isRUNNING" == $PROJECTNAME ]
+    then
+      tmux a -t $PROJECTNAME
+    elif [ "$isMUXPROJECT" == $PROJECTNAME ]
+    then
+      tmuxinator $PROJECTNAME
+      tmux a -t $PROJECTNAME
+    else
+      echo "Attach to these already-open projects:"
+      tmux list-sessions
+      echo; echo;
+
+      echo "... OR, newly-launch any of these projects:"
+      tmuxinator list
+    fi
+    return 0
+}
+
+mpv_tubelist() {
+### play a youtube-url playlist with MPV
+  TUBE_URLFILE=$1
+  MPVEXEC="/Users/jose8a/Downloads/mps/mpv.app/Contents/MacOS/mpv"
+  MPVOPTS="--no-video --force-window=no --shuffle --input-app-events --input-conf=~/.config/mpv/input.conf"
+
+# other options:
+# [ ] --loop=yes
+# [X] --input-app-events=yes
+# [ ] --input-media-keys=yes
+# [X] --input-terminal
+# [X] --input-conf=~/.config/mpv/input.conf
+
+  cat $TUBE_URLFILE | xargs -n 1 $MPVEXEC $MPVOPTS
+
+  return 0
+}
+
+mpv_playlist() {
+### play a youtube-url playlist with MPV
+  TUBE_URLFILE=$1
+  MPVEXEC="/Users/jose8a/Downloads/mps/mpv.app/Contents/MacOS/mpv"
+  MPVOPTS1="--no-video --shuffle"
+
+# other options:
+# [ ] --loop=yes
+# [X] --input-app-events=yes
+# [ ] --input-media-keys=yes
+# [X] --input-terminal
+# [X] --input-conf=~/.config/mpv/input.conf
+
+  mpv --playlist=$TUBE_URLFILE $MPVOPTS1
+
+  return 0
+}
+
+### END:ALIAS functions ###############################
+
 # some more ls aliases
 alias lln='ls -alonF'
 alias lo='ls -aloF'
 alias ll='ls -alF'
+alias lg='ls -og'
 alias la='ls -A'
 alias l='ls -CF'
+alias clog='clear && ls -og'
 
 # alias cd direct-to-[???]
 alias cd..="cd .."
@@ -96,6 +166,24 @@ alias list_examples='find . -maxdepth 1 -type d \( -exec echo $file {} \; -false
 alias md2html='find . -name "*.md" | while read i; do pandoc -f markdown -t html "$i" -o "${i%.*}.html"; done'
 alias ctags="`brew --prefix`/bin/ctags"
 alias rvmhelp='cat $DBX/myPCconfig/rvm_ruby_project.gist'
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 alias showexports='grep export ~/.bashrc'
+alias byeTunes="kill `ps aux | grep '\/MacOS/iTunes$' | tr -s ' ' | cut -d ' ' -f 2`"
 
+# memory
+alias size1="du -hc -d 1"
+
+# alias vlc commandline
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+alias vlcd="/Applications/VLC.app/Contents/MacOS/VLC --intf dummy -Z"
+alias vlcrc="/Applications/VLC.app/Contents/MacOS/VLC --intf rc -Z"
+alias vlcnc="/Applications/VLC.app/Contents/MacOS/VLC --intf ncurses -Z"
+
+# google chrome
+alias chrome="open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# project launchers
+alias po="project_open"
+
+# mpv player
+alias mpv="/Applications/mpv.app/Contents/MacOS/mpv"

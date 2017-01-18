@@ -1,0 +1,26 @@
+# ~/.tmuxinator/dodos-main.yml
+
+name: dodos-main
+root: /Users/jose8a/jdocs/myDocs/dodos/main/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - chrome dodos-daily.md && vim dodos-daily.md
+        - vim dodos-backlog.md
+  - recur:
+      layout: even-horizontal
+      panes:
+        - vim dodos-ebuckets.md
+        - vim dodos-recurring.md
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - vim dodos-coding.md
+        - vim dodos-scratch.md
+  - scratch2:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

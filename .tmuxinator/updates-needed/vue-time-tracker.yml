@@ -1,7 +1,8 @@
-# ~/.tmuxinator/reactlearn.yml
+# !/bin/bash
+# ~/.tmuxinator/vue-time-tracker.yml
 
-name: reactlearn
-root: /Users/jose8a/Dropbox/myProjs/exercises/react-exercises
+name: vue-time-tracker
+root: /Users/jose8a/Dropbox/myProjs/inprogress/timetracker/vue-time-tracker
 
 # Optional tmux socket
 # socket_name: foo
@@ -22,11 +23,20 @@ root: /Users/jose8a/Dropbox/myProjs/exercises/react-exercises
 ####### Open the following Windows:
 #
 
+pre_window: cd src
 windows:
-  - app:
+  - editors:
       layout: even-horizontal
       panes:
-        - vim a-first-component/first-component.html
-        - vim b-five-examples/five-examples.html
-  - misc: ll .
-
+        - vim main.js
+        - vim App.vue
+  - generic:
+      layout: even-horizontal
+      panes:
+        - vim components/Home.vue
+        - vim components/TimeEntries.vue
+  - anothername:
+      layout: even-horizontal
+      panes:
+        - vim ../README.md
+        - ls

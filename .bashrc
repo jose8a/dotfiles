@@ -120,3 +120,4 @@ eval "$(rbenv init -)"
 
 export NVM_DIR="/Users/jose8a/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NODE_PATH=/usr/local/lib/node_modules:/Users/jose8a/.nvm/versions/node/v4.4.3/lib/node_modules

@@ -1,7 +1,21 @@
 # ~/.tmuxinator/templates.yml
 
-name: templates
-root: /Users/jose8a/Dropbox/myProjs/boilerplates
+name: template-name
+root: /path/to/template-name
+
+# ===================================================
+# NOTE:  the "name" parameter, the filename fragment (minus '.yml'), and
+#     the foldername must all be identical in order for
+#     all windows and panes to open properly.
+#     For example, if the project's foldername is 'projectbean', then
+#     the name parameter and the yaml file must be the following:
+#       - mux yaml filename: projectbean.yml
+#       - name: projectbean
+#
+#     Following these naming conventions should prevent a configuration
+#     issue and will prevent "Windows not found" errors when executing
+#     the mux command on a project.
+# ===================================================
 
 # Optional tmux socket
 # socket_name: foo

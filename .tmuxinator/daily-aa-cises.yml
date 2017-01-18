@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/daily-aa-cises.yml
+
+name: daily-aa-cises
+root: /Users/jose8a/jdev/l2/daily-aa-cises
+
+windows:
+  - editors1:
+      layout: even-horizontal
+      panes:
+        - cat 1to8.txt
+        - cd solutions && vim 1to8.js
+  - editors2:
+      layout: even-horizontal
+      panes:
+        - cat 9to16.txt
+        - cd solutions && vim 9to16.js
+  - generic:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

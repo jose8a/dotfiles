@@ -1,0 +1,18 @@
+# ~/.tmuxinator/udacity-p6.yml
+
+name: udacity-p6
+root: /Users/jose8a/jdev/l2/udacity/fed_nano/projects/p6-testing/feedreader
+
+# pre: cd
+
+windows:
+  - tests:
+      pre: cd jasmine/spec/
+      layout: main-vertical
+      panes:
+        - vim feedreader.js
+  - main:
+      layout: main-vertical
+      panes:
+        - vim index.html
+        - vim README.md

@@ -1,0 +1,23 @@
+# ~/.tmuxinator/udacity-p5.yml
+
+name: udacity-p5
+root: /Users/jose8a/jdev/l2/udacity/fed_nano/projects/p5-neighborhood
+
+# pre: cd
+
+windows:
+  - main:
+      pre: cd js
+      layout: main-vertical
+      panes:
+        - vim app.js
+        - vim models/map.js
+  - main:
+      layout: main-vertical
+      panes:
+        - vim index.html
+        - vim README.md
+  - todo:
+      layout: main-vertical
+      panes:
+        - vim .todo
