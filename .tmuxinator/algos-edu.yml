@@ -1,8 +1,8 @@
 # !/bin/bash
-# ~/.tmuxinator/learn-algos.yml
+# ~/.tmuxinator/algos-edu.yml
 
-name: learn-algos
-root: /Users/jose8a/jdev/l2/learn-algos/
+name: algos-edu
+root: /Users/jose8a/jdev/l2/algos-edu/
 
 windows:
   - editors:
@@ -13,7 +13,7 @@ windows:
   - components:
       layout: even-horizontal
       panes:
-        - cd src && clog
+        - cd src/lib && clog
         - cd src/components && clog
   - dodos:
       layout: even-horizontal
