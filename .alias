@@ -40,42 +40,6 @@ project_open() {
     return 0
 }
 
-mpv_tubelist() {
-### play a youtube-url playlist with MPV
-  TUBE_URLFILE=$1
-  MPVEXEC="/Users/jose8a/Downloads/mps/mpv.app/Contents/MacOS/mpv"
-  MPVOPTS="--no-video --force-window=no --shuffle --input-app-events --input-conf=~/.config/mpv/input.conf"
-
-# other options:
-# [ ] --loop=yes
-# [X] --input-app-events=yes
-# [ ] --input-media-keys=yes
-# [X] --input-terminal
-# [X] --input-conf=~/.config/mpv/input.conf
-
-  cat $TUBE_URLFILE | xargs -n 1 $MPVEXEC $MPVOPTS
-
-  return 0
-}
-
-mpv_playlist() {
-### play a youtube-url playlist with MPV
-  TUBE_URLFILE=$1
-  MPVEXEC="/Users/jose8a/Downloads/mps/mpv.app/Contents/MacOS/mpv"
-  MPVOPTS1="--no-video --shuffle"
-
-# other options:
-# [ ] --loop=yes
-# [X] --input-app-events=yes
-# [ ] --input-media-keys=yes
-# [X] --input-terminal
-# [X] --input-conf=~/.config/mpv/input.conf
-
-  mpv --playlist=$TUBE_URLFILE $MPVOPTS1
-
-  return 0
-}
-
 ### END:ALIAS functions ###############################
 
 # some more ls aliases
@@ -85,10 +49,12 @@ alias ll='ls -alF'
 alias lg='ls -og'
 alias la='ls -A'
 alias l='ls -CF'
+alias cl='clear'
 alias clog='clear && ls -og'
 
 # alias cd direct-to-[???]
 alias cd..="cd .."
+alias cd...="cd ../.."
 alias cdgdrive="cd $HOME/GoogleDrive"
 alias cdproj="cd $PRJ"
 alias cdclients="cd $CLIENTS"
@@ -183,7 +149,18 @@ alias chrome="open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Ch
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # project launchers
-alias po="project_open"
+alias po="/Users/jose8a/jdev/l0/po/po"
 
 # mpv player
 alias mpv="/Applications/mpv.app/Contents/MacOS/mpv"
+alias mpl="/Users/jose8a/jdev/l0/mpl/mpl"
+
+# image utilities
+alias imgls="~/bin/imgls"
+alias imgcat="~/bin/imgcat"
+
+# filter utilities for my markdownfiles
+alias filterH0="grep -ne '# [^=]'"
+alias filterH1="grep -ne '^# [^=]'"
+alias filterH3="grep -ne '^### [^=]'"
+alias filterH5="grep -ne '^##### [^=]'"

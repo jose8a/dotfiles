@@ -48,7 +48,7 @@
     " list only the plugin groups you will use
     if !exists('g:spf13_bundle_groups')
         "let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'vimcolors', 'php', 'ruby', 'python', 'javascript', 'html', 'golang', 'vimux', 'misc', 'scala']
-        let g:spf13_bundle_groups=['general', 'programming', 'vimcolors', 'snipmate', 'ruby', 'python', 'javascript', 'html', 'golang', 'vimux', 'misc']
+        let g:spf13_bundle_groups=['general', 'programming', 'vimcolors', 'snipmate', 'ruby', 'python', 'javascript', 'html', 'vimux', 'misc']
     endif
 
     " To override all the included bundles, put
@@ -97,8 +97,9 @@
     " General Programming
         if count(g:spf13_bundle_groups, 'programming')
             " Pick one of the checksyntax, jslint, or syntastic
-            Plugin 'scrooloose/syntastic'
+            " --- Plugin 'scrooloose/syntastic'
             " checksyntax-B appears to be same as checksyntax_vim, use only one
+            Plugin 'w0rp/ale'
             "Plugin 'vim-scripts/checksyntax-B'
             "Plugin 'tomtom/checksyntax_vim'
             Plugin 'tpope/vim-fugitive'
@@ -118,16 +119,16 @@
 
     " Misc
         if count(g:spf13_bundle_groups, 'misc')
-            ""Plugin 'sheerun/vim-polyglot'
-            ""Plugin 'joonty/vdebug'
-            Plugin 'thoughtbot/vim-rspec'
+            "" --- Plugin 'sheerun/vim-polyglot'
+            "" --- Plugin 'joonty/vdebug'
+            "" --- Plugin 'tpope/vim-markdown'
+            "" --- Plugin 'nelstrom/vim-markdown-folding'
+            "" --- Plugin 'mzlogin/vim-markdown-toc'
+            Plugin 'plasticboy/vim-markdown'
             Plugin 'suan/vim-instant-markdown'
-            ""Plugin 'tpope/vim-markdown'
             Plugin 'vim-pandoc/vim-pandoc'
             Plugin 'vim-voom/VOoM'
             Plugin 'spf13/vim-preview'
-            Plugin 'tpope/vim-cucumber'
-            Plugin 'quentindecock/vim-cucumber-align-pipes'
             Plugin 'Puppet-Syntax-Highlighting'
         endif
 
@@ -168,7 +169,7 @@
             Plugin 'klen/python-mode'
             Plugin 'python.vim'
             Plugin 'python_match.vim'
-            Plugin 'pythoncomplete'
+            " Plugin 'pythoncomplete'
         endif
 
     " Ruby
@@ -178,6 +179,10 @@
             Plugin 'vim-scripts/simplefold'
             Plugin 'vim-ruby/vim-ruby'
             Plugin 'tpope/vim-endwise'
+            Plugin 'thoughtbot/vim-rspec'
+            Plugin 'tpope/vim-cucumber'
+            Plugin 'quentindecock/vim-cucumber-align-pipes'
+
             " the following lines are needed for ruby code completion, and also
             " make sure that the 'supertab' plugin is installed, otherwise tab-completion won't work
             autocmd FileType ruby set omnifunc=rubycomplete#Complete
@@ -373,6 +378,9 @@ set backup                          " Enable backups
 "set nobackup                       " Disable backups
 "set noswapfile                     " Disable swapfiles
 
+" 2017.0209 after a MacOSX crash, all files open in RO only mode.  Need to disble RO mode until find cause.
+set noro                        " globally set no-readonly mode on all files
+
 set hlsearch                    " highlight on search
 set showmatch                   " Show matching brackets
 ""set foldenable                  " Enable code folding
@@ -540,53 +548,31 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 "------------------------"
-" syntastic mappings
+" ALE Linter configs
 "------------------------"
-"" Toggle Enable/Disable mode for Syntastic
-nnoremap <leader>st :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-nnoremap <leader>sc :SyntasticCheck<CR>
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
-" On by default, turn it off for html
-let g:syntastic_mode_map = { 'mode': 'active',
-  \ 'active_filetypes': [],
-  \ 'passive_filetypes': ['html'] }
+" keep the sign gutter open at all times
+let g:ale_sign_column_always = 1
 
-" Better :sign interface symbols
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '!'"
+" Use these options to specify what text should be used for ALE signs:
+let g:ale_sign_error = 'xx'
+let g:ale_sign_warning = '--'
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"------------------------"
+" TODO: these two pymode commands were originally grouped
+"   with Syntastic configs. Find out if they are tied to
+"   Syntastic, or if they are with a separate python plugin
+"------------------------"
+let g:pymode_lint = 1
+let g:pymode_lint_on_write = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"" --- Make sure jsonlint is installed ==> 'which jsonlint'
-"" --- If not, then run 'npm install -g jsonlint'
-"" --- Tell Syntastic to use jsonlint to check javascript files"
-let g:syntastic_json_checkers=['jsonlint']
-
-"" --- Make sure jscs is installed ==> 'which jscs'
-"" --- If not, then run 'npm install -g jscs'
-"" --- Tell Syntastic to use standard to check javascript files"
-""let g:syntastic_javascript_checkers = ['jscs']
-"" --- Automatic 'jscs' formatting of javascript on 'save':
-"autocmd bufwritepost *.js silent !jscs % --format
-"set autoread
-
-"" --- Make sure standard is installed ==> 'which standard'
-"" --- If not, then run 'npm install -g standard'
-"" --- Tell Syntastic to use standard to check javascript files"
-"let g:syntastic_javascript_checkers = ['standard']
-"" --- Automatic 'standard' formatting of javascript on 'save':
-"autocmd bufwritepost *.js silent !standard % --format
-"set autoread
-"
-"" Other possible javascript lint checkers
-let g:syntastic_javascript_checkers=['eslint']
+"------------------------"
+"" Modify the default leader-key for Emmet
+"------------------------"
+let g:user_emmet_leader_key='<C-E>'
 
 " Ensure json files set to the right type automatically"
 au BufRead,BufNewFile *.json set filetype=json
@@ -655,8 +641,12 @@ nnoremap <silent> <leader>im :InstantMarkdownPreview<CR>
 "   NOT NEEDED IF TPOPE's vim-markdown plugin is installed.  All recent Vim
 "   versions now include this plugin
 "------------------------"
-"au BufNewFile,BufReadPost *.md set filetype=markdown
-"let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
+""au BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufRead *.md  setf markdown
+let g:vim_markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_level = 4
 
 "------------------------"
 " Vim-pandoc non-standard mappings
