@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/twitwiz.yml
+
+name: twitwiz
+root: /Users/jose8a/jdev/l0/twitwiz
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim server.js
+        - nodemon server.js
+  - generic:
+      layout: even-horizontal
+      panes:
+        - ll app
+        - ll dodos
+  - notes:
+      layout: even-horizontal
+      panes:
+        - vim .todos
+        - vim .notes

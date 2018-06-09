@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/po.yml
+
+name: po
+root: /Users/jose8a/jdev/l0/po/
+
+windows:
+  - scripts:
+      layout: even-horizontal
+      panes:
+        - vim install.sh
+        - vim po
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos
+        - vim .notes
+  - misc:
+      layout: even-horizontal
+      panes:
+        - vim README.md
+        - txd

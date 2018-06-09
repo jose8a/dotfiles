@@ -1,0 +1,32 @@
+# !/bin/bash
+# ~/.tmuxinator/newsdash.yml
+
+name: newsdash
+root: /Users/jose8a/jdev/l0/newsdash
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - index:
+      layout: even-horizontal
+      panes:
+        - vim index.html
+        - cd src && ls -al
+  - vuemain:
+      layout: even-horizontal
+      panes:
+        - cd src && vim main.js
+        - cd src/router && ls -al
+  - components:
+      layout: even-horizontal
+      panes:
+        - cd src/components
+        - cd src/components && ls -al
+  - store:
+      layout: even-horizontal
+      panes:
+        - cd src/store && ls -al
+        - cd src/store && ls -al

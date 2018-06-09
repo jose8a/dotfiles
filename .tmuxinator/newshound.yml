@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/newshound.yml
+
+name: newshound
+root: /Users/jose8a/jdev/l0/newshound
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim server.js
+        - nodemon server.js
+  - generic:
+      layout: even-horizontal
+      panes:
+        - cd client
+        - cd db
+  - generic:
+      layout: even-horizontal
+      panes:
+        - vim .todos
+        - vim .notes
+  - anothername:
+      layout: even-horizontal
+      panes:
+        - vim .resources.md
+        - txd

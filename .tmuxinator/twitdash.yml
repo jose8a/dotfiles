@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/twitdash.yml
+
+name: twitdash
+root: /Users/jose8a/jdev/l0/twitdash
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim index.html
+        - cd src
+  - generic:
+      layout: even-horizontal
+      panes:
+        - cd src/components
+        - cd src/router
+  - anothername:
+      layout: even-horizontal
+      panes:
+        - vim .todos
+        - vim .notes

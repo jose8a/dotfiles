@@ -1,23 +1,27 @@
 # ~/.tmuxinator/dotfiles.yml
 
 name: dotfiles
-root: /Users/jose8a/Dropbox/myProjs/dotfiles
-
-# Optional tmux socket
-# socket_name: foo
-
-# Runs before everything. Use it to start daemons etc.
-# pre: sudo /etc/rc.d/mysqld start
-
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
-
-# Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# tmux_options: -f ~/.tmux.mac.conf
-
-# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
-# tmux_command: byobu
+root: /Users/jose8a/jdev/l0/dotfiles
 
 windows:
-  - bashrc: vim .bashrc
-  - vimrc: vim .vimrc
+  - bash:
+      layout: even-horizontal
+      panes:
+        - vim .bashrc
+        - ls -al .functions/
+  - vim:
+      layout: even-horizontal
+      panes:
+        - vim .vimrc
+        - cd ~/jdev/l0/howto/zz-ref && vim tool-vimux.md
+  - tmux:
+      layout: even-horizontal
+      panes:
+        - vim .tmux.conf
+        - cd .tmuxinator/
+  - misc:
+      layout: even-horizontal
+      panes:
+        - ls -al
+        - ls -al
+

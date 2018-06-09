@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/jobhound.yml
+
+name: jobhound
+root: /Users/jose8a/jdev/l0/jobhound
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim server.js
+        - nodemon server.js
+  - generic:
+      layout: even-horizontal
+      panes:
+        - cd app/helpers; vim parser.js
+        - cd config
+  - anothername:
+      layout: even-horizontal
+      panes:
+        - cd controllers
+        - cd models
+  - window4:
+      layout: even-horizontal
+      panes:
+        - chrome .resources.md && clog
+        - txd

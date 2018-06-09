@@ -1,0 +1,17 @@
+#!/bin/bash
+# ~/.tmuxinator/folio.yml
+
+name: folio
+root: /Users/jose8a/jdev/l0/folio
+
+windows:
+  - main:
+      layout: main-vertical
+      panes:
+        - vim .todos
+        - vim .notes
+  - notes:
+      layout: main-vertical
+      panes:
+        - clog
+        - txd
