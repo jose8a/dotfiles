@@ -67,6 +67,9 @@
             Plug 'tpope/vim-sensible'
             Plug 'Shougo/denite.nvim'
             Plug 'justinmk/vim-sneak'
+            Plug 'tpope/vim-eunuch'
+            Plug 'tpope/vim-repeat'
+            Plug 'mbbill/undotree'
 
             Plug 'myusuf3/numbers.vim'
             Plug 'vim-scripts/TaskList.vim'
@@ -77,6 +80,9 @@
             Plug 'spf13/vim-autoclose'
               "available colorschemes below
             Plug 'zeis/vim-kolor'
+            Plug 'tomtom/ttags_vim'
+            Plug 'ludovicchabant/vim-gutentags'
+            Plug 'romainl/vim-qf'
         endif
 
     " General Programming
@@ -103,9 +109,10 @@
             " Ultisnips is the best snippet solution as of today (2018)
             " Track the engine (ultisnips).
             Plug 'SirVer/ultisnips'
+            Plug 'ajh17/VimCompletesMe'
 
             " Snippets are separated from the engine. Add this if you want them:
-            Plug 'honza/vim-snippets'
+            Plug 'andreyorst/SimpleSnippets.vim'
         endif
 
     " Python
@@ -120,6 +127,9 @@
             " Use vim-polyglot instead - unless it turns out to be inferior
             "Plug 'jelera/vim-javascript-syntax'
             "Plug 'vim-scripts/JavaScript-Indent'
+            Plug 'moll/vim-node'
+            Plug 'mmalecki/vim-node.js'
+            Plug 'othree/javascript-libraries-syntax.vim'
         endif
 
     " HTML/CSS
