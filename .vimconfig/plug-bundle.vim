@@ -75,8 +75,6 @@
             Plug 'michaeljsmith/vim-indent-object'
             Plug 'tpope/vim-surround'
             Plug 'spf13/vim-autoclose'
-            Plug 'nathanaelkane/vim-indent-guides'
-            Plug 'vim-scripts/restore_view.vim'
               "available colorschemes below
             Plug 'zeis/vim-kolor'
         endif
