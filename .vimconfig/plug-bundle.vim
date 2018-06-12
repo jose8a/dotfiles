@@ -112,7 +112,6 @@
             Plug 'suan/vim-instant-markdown'
             Plug 'vim-pandoc/vim-pandoc'
             Plug 'vim-voom/VOoM'
-            Plug 'vim-scripts/Puppet-Syntax-Highlighting'
         endif
 
     " Vim Colors
