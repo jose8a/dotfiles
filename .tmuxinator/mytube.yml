@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/mytube.yml
+
+name: mytube
+root: /Users/jose8a/jdev/zz-temp/mytube
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - client:
+      layout: even-horizontal
+      panes:
+        - cd client && vim index.html
+        - cd client/static && vim player.js
+  - styles:
+      layout: even-horizontal
+      panes:
+        - vim gulpfile.js
+        - cd src && ls -al
+  - server:
+      layout: even-horizontal
+      panes:
+        - vim server.js
+        - cd app && ls -al

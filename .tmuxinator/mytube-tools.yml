@@ -1,0 +1,32 @@
+# !/bin/bash
+# ~/.tmuxinator/mytube.yml
+
+name: mytube
+root: /Users/jose8a/jdev/zz-temp/mytube-tools
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim createPlaylists.js
+        - vim getChartSongs.js
+  - utils:
+      layout: even-horizontal
+      panes:
+        - cd utils && ls -al
+        - cd utils && ls -al
+  - google:
+      layout: even-horizontal
+      panes:
+        - vim getSelfYoutubePlaylists.js
+        - cd google && ls -al
+  - scrapers:
+      layout: even-horizontal
+      panes:
+        - cd scrapers && ls -al
+        - cd output && ls -al

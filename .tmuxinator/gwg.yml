@@ -1,0 +1,37 @@
+# !/bin/bash
+# ~/.tmuxinator/gwg.yml
+
+name: gwg
+root: /Users/jose8a/jdev/lug/gwg-notes
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - index:
+      layout: even-horizontal
+      panes:
+        - vim index.md
+        - ls -al
+  - notes:
+      layout: even-horizontal
+      panes:
+        - cd notes && vim index.md
+        - cd notes && ls -al
+  - projects:
+      layout: even-horizontal
+      panes:
+        - cd ../gwg-projects && ls -al
+        - cd ../gwg-projects && ls -al
+  - tools:
+      layout: even-horizontal
+      panes:
+        - cd ../gwg-tools && ls -al
+        - cd ../gwg-tools && ls -al
+  - ghpages:
+      layout: even-horizontal
+      panes:
+        - cd ../jose8a.github.io/ && ls -al
+        - cd ../jose8a.github.io/ && ls -al

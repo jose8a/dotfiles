@@ -1,0 +1,48 @@
+# !/bin/bash
+# ~/.tmuxinator/start-engines.yml
+
+name: start-engines
+root: /Users/jose8a/jdev/l0
+
+# ADDITIONAL files to EDIT:
+#   - when adding new servers to autostart in this configuration:
+#     + hosts file: /private/etc/hosts
+#     + nginx.conf: /usr/local/etc/nginx/nginx.conf
+
+windows:
+  - engines:
+      layout: even-horizontal
+      panes:
+        - cd ../../.tmuxinator; cat start-engines.yml
+        - cd ../../.tmuxinator; ls -al
+  - sysfolio:
+      layout: even-horizontal
+      panes:
+        - cd folio; grep -A7 'scripts' package.json; http-server -p 5000
+        - cd ../../jdocs/myDocs/dodos; ls; python3 -m http.server 4200
+  - jobser1:
+      layout: even-horizontal
+      panes:
+        - cd ../ldos/traba/jobsearch/proxyHound; cl; nodemon server.js
+        - cd ../ldos/traba/jobsearch/jobshound; npm run dev
+  - jobser2:
+      layout: even-horizontal
+      panes:
+        - cd ../ldos/traba/jobsearch/jobshound/dist; http-server -p 8700
+        - cd ../ldos/traba/jobsearch/jobshound/dist; ls -la
+  - mytubes:
+      layout: even-horizontal
+      panes:
+        - cd ../zz-temp/mytube; npm run start
+        - cd ../zz-temp/mytube-tools; grep -A7 'scripts' package.json
+  - newsers:
+      layout: even-horizontal
+      panes:
+        - cd newsdash; grep -A7 'scripts' package.json; npm run dev
+        - cd newshound; grep -A7 'scripts' package.json; nodemon server.js
+  - creative:
+      layout: even-horizontal
+      panes:
+        - cd ../zz-temp/creative-web/ui-play; grep -A7 'scripts' package.json; npm run dev
+        - cd ../zz-temp/creative-web/css-animations; ls -al
+
