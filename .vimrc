@@ -23,11 +23,6 @@ filetype indent on
 set hidden
 
 "-----------------------------------"
-" COLOR SETTINGS
-"-----------------------------------"
-source ~/.vimconfig/colorschemes.vim
-
-"-----------------------------------"
 " General SETTINGS
 "-----------------------------------"
 source ~/.vimconfig/settings-general.vim

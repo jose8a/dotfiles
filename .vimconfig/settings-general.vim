@@ -59,6 +59,12 @@ let g:enable_numbers = 0        " Numbers.vim turn off automatic number switchin
 
 set pastetoggle=<leader>pt      " Prevents nasty side-effects when pasting large chunks of text/code
 
+
+"-----------------------------------"
+" Simple StatusLine
+"-----------------------------------"
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+
 "-----------------------------------"
 " Folding
 "-----------------------------------"
@@ -68,4 +74,12 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=7         "this is just what i use"
 
+"-----------------------------------"
+" COLOR SETTINGS
+"-----------------------------------"
+"Set to 256 colors before setting colorscheme
+" TODO??: this setting may no longer be needed in modern VIM
+set t_Co=256
+
+colorscheme kolor
 
