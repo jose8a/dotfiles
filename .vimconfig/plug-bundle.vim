@@ -142,11 +142,11 @@
 
     " Vimux
         if count(g:spf13_bundle_groups, 'vimux')
-            Plug 'jpalardy/vim-slime'
             Plug 'christoomey/vim-tmux-navigator'
             Plug 'benmills/vimux'
             Plug 'tpope/vim-tbone'
-            let g:slime_target = "tmux"
+            "Plug 'jpalardy/vim-slime'
+            "let g:slime_target = "tmux"
         endif
 
       "-----------------------------------"
