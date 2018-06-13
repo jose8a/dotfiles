@@ -13,8 +13,8 @@ windows:
   - dodos:
       layout: even-horizontal
       panes:
-        - vim .todos
-        - vim .notes
+        - vim .todos.md
+        - vim .notes.md
   - misc:
       layout: even-horizontal
       panes:
