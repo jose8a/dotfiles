@@ -99,7 +99,6 @@
     " Markdown
         if count(g:spf13_bundle_groups, 'misc')
             Plug 'plasticboy/vim-markdown'
-            Plug 'suan/vim-instant-markdown'
             Plug 'vim-pandoc/vim-pandoc'
             Plug 'vim-voom/VOoM'
         endif
