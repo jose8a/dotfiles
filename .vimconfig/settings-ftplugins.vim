@@ -1,25 +1,6 @@
 "------------------------"
 "FileType SETTINGS
 "------------------------"
-""au FileType javascript call JavaScriptFold()
-" CSS (tabs = 2, lines = 79)
-""autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-""autocmd FileType css set sw=2
-""autocmd FileType css set ts=2
-""autocmd FileType css set sts=2
-""" " JavaScript (tabs = 4, lines = 79)
-""autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-""autocmd FileType javascript set sw=4
-""autocmd FileType javascript set ts=4
-""autocmd FileType javascript set sts=4
-"""autocmd FileType javascript set tw=79
-""
-""" Jade (tabs = 2)
-""autocmd FileType jade set omnifunc=jadecomplete#CompleteJade
-""autocmd FileType jade set sw=2
-""autocmd FileType jade set ts=2
-""autocmd FileType jade set sts=2
-
 " Vue syntax highligting
 ""autocmd BufNewFile,BufRead *.vue set ft=html
 au BufNewFile,BufReadPost *.vue set syntax=html
@@ -44,11 +25,8 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'xx'
 let g:ale_sign_warning = '--'
 
-"------------------------"
-" TODO: these two pymode commands were originally grouped
-"   with Syntastic configs. Find out if they are tied to
-"   Syntastic, or if they are with a separate python plugin
-"------------------------"
+" Turn on python code-linting, and
+" check code on every save - if modified
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 
@@ -56,19 +34,6 @@ let g:pymode_lint_on_write = 1
 " vim-css-color mappings
 "------------------------"
 let g:cssColorVimDoNotMessMyUpdatetime = 1
-
-"------------------------"
-" vim-less mappings
-"------------------------"
-nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
-
-"------------------------"
-" Vim-instant-markdown mappings
-"------------------------"
-set shell=bash\ -i                      "set interactive bash as default vim shell
-let g:instant_markdown_slow = 1         "only refresh on specific events
-let g:instant_markdown_autostart = 0    "Autostart off to manually control launch of preview window
-nnoremap <silent> <leader>im :InstantMarkdownPreview<CR>
 
 "------------------------"
 " 'Fenced' markdown syntax highlighting
