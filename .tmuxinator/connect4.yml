@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/connect4.yml
+
+name: connect4
+root: /Users/jose8a/jdev/lgam/connect4
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim index.html
+        - vim src/App.vue
+  - generic1:
+      layout: even-horizontal
+      panes:
+        - cd src && clog
+        - cd src && clog
+  - generic2:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - resources:
+      layout: even-horizontal
+      panes:
+        - vim .resources.md
+        - txd

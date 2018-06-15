@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/algos-play.yml
+
+name: algos-play
+root: /Users/jose8a/jdev/l1/algos-play/
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - npm run dev
+        - clog
+  - components:
+      layout: even-horizontal
+      panes:
+        - cd src/lib && clog
+        - cd src/components && clog
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - mux:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/tic-tac-toe.yml
+
+name: tic-tac-toe
+root: /Users/jose8a/jdev/lgam/tic-tac-toe
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim index.html
+        - vim src/App.vue
+  - generic1:
+      layout: even-horizontal
+      panes:
+        - clog
+        - clog
+  - generic2:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - resources:
+      layout: even-horizontal
+      panes:
+        - vim .resources.md
+        - txd

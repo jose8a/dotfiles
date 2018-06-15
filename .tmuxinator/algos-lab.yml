@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/algos-lab.yml
+
+name: algos-lab
+root: /Users/jose8a/jdev/l1/algos-lab/
+
+windows:
+  - components:
+      layout: even-horizontal
+      panes:
+        - cd src/adts/ && clog
+        - cd src/structs/ && clog
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - resources:
+      layout: even-horizontal
+      panes:
+        - cd src/misc/ && clog
+        - cd src/misc2/ && clog
+  - mux:
+      layout: even-horizontal
+      panes:
+        - cd algo-notes/
+        - txd

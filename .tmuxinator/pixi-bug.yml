@@ -1,0 +1,27 @@
+# !/bin/bash
+# ~/.tmuxinator/pixi-bug.yml
+
+name: pixi-bug
+root: /Users/jose8a/jdev/lgam/pixi-bug
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim index.html
+        - vim src/App.vue
+  - generic2:
+      layout: even-horizontal
+      panes:
+        - cd src && vim store.js
+        - cd src && clog
+  - generic1:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - resources:
+      layout: even-horizontal
+      panes:
+        - vim .resources.md
+        - txd

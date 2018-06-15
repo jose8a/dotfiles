@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/concentration.yml
+
+name: concentration
+root: /Users/jose8a/jdev/lgam/concentration
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - editors:
+      layout: even-horizontal
+      panes:
+        - vim index.html
+        - vim concentration.css
+  - resources:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd
