@@ -3,7 +3,8 @@
 *.*~
 _*
 
-.vim
-.todos.md
-.notes.md
-
+**/**/.vim
+**/**/.todos.md
+**/**/.notes.md
+**/**/.notes
+**/**/.notes/
