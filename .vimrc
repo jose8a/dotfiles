@@ -33,6 +33,11 @@ source ~/.vimconfig/settings-general.vim
 source ~/.vimconfig/mappings-general.vim
 
 "------------------------"
+"FileType SETTINGS
+"------------------------"
+source ~/.vimconfig/settings-filetypes.vim
+
+"------------------------"
 "FileType Plugins SETTINGS
 "------------------------"
 source ~/.vimconfig/settings-ftplugins.vim
@@ -48,3 +53,11 @@ source ~/.vimconfig/settings-plugins.vim
 " DO NOT IMPORT THESE SETTINGS IF POSSIBLE
 ""source ~/.vimconfig/outdated-configs.vim
 
+
+"------------------------"
+" Acknowledgements
+"------------------------"
+" SPF13 Vim Distro: https://vim.spf13.com/
+" Steve Losh's VIMRC: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
+" Thoughtbot's dotfiles
+"

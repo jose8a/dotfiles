@@ -79,10 +79,21 @@
             Plug 'tpope/vim-surround'
             Plug 'spf13/vim-autoclose'
               "available colorschemes below
-            Plug 'zeis/vim-kolor'
+            Plug 'zeis/vim-kolor'                         " this is my default for all but markdown
+            Plug 'morhetz/gruvbox'
+            Plug 'dracula/vim'
+            Plug 'jacoborus/tender.vim'
+            Plug 'altercation/vim-colors-solarized'
+            Plug 'NLKNguyen/papercolor-theme'
+            Plug 'cocopon/iceberg.vim'
+              ""
+            Plug 'itchyny/lightline.vim'
+            Plug 'godlygeek/csapprox'             " make GUI colors work seamlessly in TERM
+              ""
             Plug 'tomtom/ttags_vim'
-            Plug 'ludovicchabant/vim-gutentags'
+            "Plug 'ludovicchabant/vim-gutentags'
             Plug 'romainl/vim-qf'
+            Plug 'Konfekt/FastFold'
         endif
 
     " General Programming
@@ -101,6 +112,7 @@
             Plug 'plasticboy/vim-markdown'
             Plug 'vim-pandoc/vim-pandoc'
             Plug 'vim-voom/VOoM'
+            Plug 'nelstrom/vim-markdown-folding'
         endif
 
     " Snippets & AutoComplete

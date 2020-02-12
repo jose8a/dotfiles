@@ -1,22 +1,41 @@
-"------------------------"
-"FileType SETTINGS
-"------------------------"
-" Vue syntax highligting
-""autocmd BufNewFile,BufRead *.vue set ft=html
-au BufNewFile,BufReadPost *.vue set syntax=html
+"-----------------------------------"
+" Ack mappings
+"-----------------------------------"
+nnoremap <leader>ak :Ack!<space>
 
-"------------------------"
-" map json files correctly
-"------------------------"
-" Ensure json files set to the right type automatically"
-au BufRead,BufNewFile *.json set filetype=json
+"-----------------------------------"
+" Fugitive mappings
+"-----------------------------------"
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>ga :Gadd<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gco :Gcheckout<cr>
+nnoremap <leader>gci :Gcommit<cr>
+nnoremap <leader>gm :Gmove<cr>
+nnoremap <leader>gr :Gremove<cr>
+nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
 
-"------------------------"
+augroup ft_fugitive
+    au!
+
+    au BufNewFile,BufRead .git/index setlocal nolist
+augroup END
+
+"gitHub
+nnoremap <leader>H :Gbrowse<cr>
+vnoremap <leader>H :Gbrowse<cr>
+
+
+"-----------------------------------"
 " ALE Linter configs
-"------------------------"
+"-----------------------------------"
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
+
+let g:ale_completion_enabled = 1
 
 " keep the sign gutter open at all times
 let g:ale_sign_column_always = 1
@@ -30,28 +49,23 @@ let g:ale_sign_warning = '--'
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 
-"------------------------"
+
+"-----------------------------------"
 " vim-css-color mappings
-"------------------------"
+"-----------------------------------"
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
-"------------------------"
+
+"-----------------------------------"
 " 'Fenced' markdown syntax highlighting
 "   }--> ensure syntax highlighting for 'fenced' code in Markdown files
 "
 "   NOT NEEDED IF TPOPE's vim-markdown plugin is installed.  All recent Vim
 "   versions now include this plugin
-"------------------------"
-""au BufNewFile,BufReadPost *.md set filetype=markdown
-au BufNewFile,BufRead *.md  setf markdown
+"-----------------------------------"
 let g:vim_markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_folding_level = 4
-
-"------------------------"
-" vim-javascript_libraries_syntax mappings
-"------------------------"
-"let g:used_javascript_libs = 'jquery,lo-dash,underscore,backbone,requirejs'
 
 
