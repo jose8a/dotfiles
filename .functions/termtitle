@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# Give a title to the current iTerm2 tab
+
+# .....
+# My preferred/easier solution is 'iterm2-tab-ste'
+#
+# 'termtitle' is a backup for use in case the Node utility
+# iterm2-tab-set stops working or is having problems:
+#   * npm install -g iterm2-tab-set
+#
+# .....
+
+function termtitle() {
+  TITLE=$*;
+  export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
+}
+
