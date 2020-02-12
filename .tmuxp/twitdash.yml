@@ -1,0 +1,18 @@
+session_name: twitdash
+start_directory: /Users/jose8a/jdev/l0/twitdash
+windows:
+- layout: even-horizontal
+  panes:
+  - vim index.html
+  - cd src
+  window_name: editors
+- layout: even-horizontal
+  panes:
+  - cd src/components
+  - cd src/router
+  window_name: generic
+- layout: even-horizontal
+  panes:
+  - vim .todos
+  - vim .notes
+  window_name: anothername

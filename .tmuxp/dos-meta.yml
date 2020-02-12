@@ -1,0 +1,8 @@
+session_name: dos-meta
+start_directory: /Users/jose8a/jdocs/myDocs/dodos/meta/
+windows:
+- layout: even-horizontal
+  panes:
+  - vim all-index.md
+  - vim .todos.md
+  window_name: main

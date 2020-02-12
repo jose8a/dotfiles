@@ -1,0 +1,27 @@
+#!/bin/bash
+# ~/.tmuxinator/traba-search.yml
+
+name: traba-search
+root: /Users/jose8a/jdev/ljob/search/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim index.md
+        - vim README.md
+  - companies:
+      layout: even-horizontal
+      panes:
+        - cd companies && clog
+        - cd companies && clog
+  - listings:
+      layout: even-horizontal
+      panes:
+        - cd joblistings && clog
+        - cd joblistings && clog
+  - misc:
+      layout: even-horizontal
+      panes:
+        - cd applying && clog
+        - txd

@@ -1,0 +1,31 @@
+# ~/.tmuxinator/dotfiles.yml
+
+name: dotfiles
+root: /Users/jose8a/jdev/l0/dotfiles
+
+windows:
+  - bash:
+      layout: even-horizontal
+      panes:
+        - vim .bashrc
+        - ls -al .functions/
+  - vim:
+      layout: even-horizontal
+      panes:
+        - vim .vimrc
+        - cd ~/jdev/l0/howto/zz-ref/webdev-tools/ && vim tool-vimux.md
+  - tmux:
+      layout: even-horizontal
+      panes:
+        - vim .tmux.conf
+        - cd .tmuxinator/
+  - scripts:
+      layout: even-horizontal
+      panes:
+        - cd scripts && clog
+        - cd scripts && clog
+  - misc:
+      layout: even-horizontal
+      panes:
+        - ls -al
+        - ls -al

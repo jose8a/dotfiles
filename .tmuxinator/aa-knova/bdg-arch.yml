@@ -1,0 +1,17 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-arch.yml
+
+name: bdg-arch
+root: /Users/jose8a/jbdg/notes/arch/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim arch-overview.md
+        - clog
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - vim dev-services-arch.md
+        - txd

@@ -1,0 +1,32 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-swagger.yml
+
+name: bdg-swagger
+root: /Users/jose8a/jbdg/dev/open-api/swagger-editor
+
+windows:
+  - swagger-editor:
+      layout: even-horizontal
+      panes:
+        - clog
+        - yarn start
+  - my-swagger-client:
+      layout: even-horizontal
+      panes:
+        - cd ../my-swagger-client && clog
+        - cd ../my-swagger-client && vim index.js
+  - my-swagger-api:
+      layout: even-horizontal
+      panes:
+        - cd ../my-swagger-api && vim server.js
+        - cd ../my-swagger-api/static && yarn start
+  - swagger-etc:
+      layout: even-horizontal
+      panes:
+        - cd ../my-swagger-api && clog
+        - cd ../my-swagger-api/static && clog
+  - clog:
+      layout: even-horizontal
+      panes:
+        - cd .. && clog
+        - cd .. && clog

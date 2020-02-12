@@ -1,0 +1,13 @@
+session_name: folio
+start_directory: /Users/jose8a/jdev/l0/folio
+windows:
+- layout: main-vertical
+  panes:
+  - vim .todos
+  - vim .notes
+  window_name: main
+- layout: main-vertical
+  panes:
+  - clog
+  - txd
+  window_name: notes

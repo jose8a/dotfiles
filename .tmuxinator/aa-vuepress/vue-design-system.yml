@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/vue-design-system.yml
+
+name: vue-design-system
+root: /Users/jose8a/jdev/l1/nuxt-theme-experiments/vue-design-system
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - touch .todos.md && vim .todos.md
+        - touch .notes.md && vim .notes.md
+  - dev:
+      layout: even-horizontal
+      panes:
+        - clog
+        - yarn start
+  - clog:
+      layout: even-horizontal
+      panes:
+        - cd docs/; ls -al
+        - cd src/; ls -al

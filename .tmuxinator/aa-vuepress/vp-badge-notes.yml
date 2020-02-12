@@ -1,0 +1,37 @@
+# !/bin/bash
+# ~/.tmuxinator/vp-badge-notes.yml
+
+name: vp-badge-notes
+root: /Users/jose8a/jdev/l1/nuxt-theme-experiments/vp-badge-notes
+
+windows:
+  - dev:
+      layout: even-horizontal
+      panes:
+        - cd docs/.vuepress; vim config.js
+        - yarn docs:dev
+  - notes:
+      layout: even-horizontal
+      panes:
+        - clog
+        - clog
+  - clog:
+      layout: even-horizontal
+      panes:
+        - clog
+        - cd docs && ls -al
+  - notes-dodos:
+      layout: even-horizontal
+      panes:
+        - cd ~/jbdg/notes/dodos/ && clog
+        - cd ~/jbdg/notes/ && clog
+  - notes-mtgs:
+      layout: even-horizontal
+      panes:
+        - cd ~/jbdg/notes/meetings/ && clog
+        - cd ~/jbdg/notes/ && clog
+  - linkrefs:
+      layout: even-horizontal
+      panes:
+        - cd ~/jbdg/notes/linkrefs/ && clog
+        - cd ~/jbdg/notes/linkrefs/ && clog

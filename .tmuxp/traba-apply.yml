@@ -1,0 +1,33 @@
+session_name: traba-apply
+start_directory: /Users/jose8a/jdev/ljob/self/
+windows:
+- layout: even-horizontal
+  panes:
+  - cd myprofile && clog
+  - cd myprofile && clog
+  window_name: main
+- layout: even-horizontal
+  panes:
+  - cd myprofile && vim elevator-tips-examples.md
+  - cd myprofile && ls -al
+  window_name: elevator
+- layout: even-horizontal
+  panes:
+  - cd myprofile && vim question-prep-varsity-tutor.md
+  - cd myprofile && vim answers-varsity-tutors.md
+  window_name: tutors
+- layout: even-horizontal
+  panes:
+  - cd myprofile && vim answers-zipR-all.md
+  - cd myprofile && vim answers-zipR-unique.md
+  window_name: zipr
+- layout: even-horizontal
+  panes:
+  - cd myprofile && vim questions-prep-unzipR.md
+  - cd myprofile && vim answers-unzipR.md
+  window_name: prep
+- layout: even-horizontal
+  panes:
+  - clog
+  - txd
+  window_name: misc

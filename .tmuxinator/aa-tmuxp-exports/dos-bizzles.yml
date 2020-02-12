@@ -1,0 +1,22 @@
+#!/bin/bash
+# ~/.tmuxinator/dos-bizzles.yml
+
+name: dos-bizzles
+root: /Users/jose8a/jdocs/myDocs/dodos/bizzles/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim index.md
+        - vim 2018-monthly.md
+  - info:
+      layout: even-horizontal
+      panes:
+        - vim procs.md
+        - vim notes.md
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

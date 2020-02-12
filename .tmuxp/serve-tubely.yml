@@ -1,0 +1,8 @@
+session_name: serve-tubely
+start_directory: /Users/jose8a/jdev/l0
+windows:
+- layout: even-horizontal
+  panes:
+  - cd ../zz-temp/mytube; npm run start
+  - cd ../zz-temp/mytube-tools; grep -A7 'scripts' package.json
+  window_name: tubely

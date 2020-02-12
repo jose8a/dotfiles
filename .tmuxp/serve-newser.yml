@@ -1,0 +1,8 @@
+session_name: serve-newser
+start_directory: /Users/jose8a/jdev/l0
+windows:
+- layout: even-horizontal
+  panes:
+  - cd newsdash; grep -A7 'scripts' package.json; npm run dev
+  - cd newshound; grep -A7 'scripts' package.json; yarn start
+  window_name: newsers

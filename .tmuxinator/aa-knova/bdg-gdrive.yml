@@ -1,0 +1,17 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-gdrive.yml
+
+name: bdg-gdrive
+root: /Users/jose8a/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - cd "/Volumes/GoogleDrive/My Drive/" && clog
+        - clog
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - cd "/Volumes/GoogleDrive/My Drive/Engineering" && clog
+        - txd

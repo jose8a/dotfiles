@@ -1,0 +1,18 @@
+session_name: po
+start_directory: /Users/jose8a/jdev/l0/po/
+windows:
+- layout: even-horizontal
+  panes:
+  - vim install.sh
+  - vim po
+  window_name: scripts
+- layout: even-horizontal
+  panes:
+  - vim .todos.md
+  - vim .notes.md
+  window_name: dodos
+- layout: even-horizontal
+  panes:
+  - vim README.md
+  - txd
+  window_name: misc

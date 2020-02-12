@@ -1,0 +1,18 @@
+session_name: howto
+start_directory: /Users/jose8a/jdev/l0/howto
+windows:
+- layout: main-vertical
+  panes:
+  - vim .todos.md
+  - vim .notes.md
+  window_name: notes
+- layout: main-vertical
+  panes:
+  - clog
+  - clog
+  window_name: inbox
+- layout: main-vertical
+  panes:
+  - clog
+  - txd
+  window_name: misc

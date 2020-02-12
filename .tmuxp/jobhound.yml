@@ -1,0 +1,23 @@
+session_name: jobhound
+start_directory: /Users/jose8a/jdev/l0/jobhound
+windows:
+- layout: even-horizontal
+  panes:
+  - vim server.js
+  - nodemon server.js
+  window_name: editors
+- layout: even-horizontal
+  panes:
+  - cd app/helpers; vim parser.js
+  - cd config
+  window_name: generic
+- layout: even-horizontal
+  panes:
+  - cd controllers
+  - cd models
+  window_name: anothername
+- layout: even-horizontal
+  panes:
+  - chrome .resources.md && clog
+  - txd
+  window_name: window4

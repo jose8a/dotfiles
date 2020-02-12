@@ -1,0 +1,28 @@
+session_name: newsdash
+start_directory: /Users/jose8a/jdev/l0/newsdash
+windows:
+- layout: even-horizontal
+  panes:
+  - vim .todos.md
+  - vim .notes.md
+  window_name: dodos
+- layout: even-horizontal
+  panes:
+  - vim index.html
+  - cd src && ls -al
+  window_name: index
+- layout: even-horizontal
+  panes:
+  - cd src && vim main.js
+  - cd src/router && ls -al
+  window_name: vuemain
+- layout: even-horizontal
+  panes:
+  - cd src/components
+  - cd src/components && ls -al
+  window_name: components
+- layout: even-horizontal
+  panes:
+  - cd src/store && ls -al
+  - cd src/store && ls -al
+  window_name: store

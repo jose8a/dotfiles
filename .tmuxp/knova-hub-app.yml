@@ -1,0 +1,34 @@
+session_name: knova-hub-app
+start_directory: /Users/jose8a/jbdg/lsp/polymer/apps/knova-hub/
+windows:
+- layout: even-horizontal
+  panes:
+  - vim README.md
+  - gits
+  window_name: meta
+- layout: even-horizontal
+  panes:
+  - vim index.html
+  - yarn start
+  window_name: server
+- layout: even-horizontal
+  panes:
+  - vim webpack.config.js
+  - gits
+  window_name: gits
+- layout: even-horizontal
+  panes:
+  - cd packages && ls -ogh
+  - cd packages/hub-app / && clog
+  window_name: hub-app
+- layout: even-horizontal
+  panes:
+  - cd packages/hub-views / && clog
+  - cd packages/hub-views / && clog
+  window_name: views
+- layout: even-horizontal
+  panes:
+  - cd static
+  - txd
+  window_name: static
+

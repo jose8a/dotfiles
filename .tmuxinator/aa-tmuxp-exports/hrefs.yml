@@ -1,0 +1,32 @@
+#!/bin/bash
+# ~/.tmuxinator/hrefs.yml
+
+name: hrefs
+root: /Users/jose8a/jdev/l0/hrefs
+
+windows:
+  - notes:
+      layout: main-vertical
+      panes:
+        - vim .todos.md
+        - clog
+  - dailyreads:
+      layout: main-vertical
+      panes:
+        - cd aa-daily-reads && clog
+        - cd aa-daily-reads && clog
+  - wintabs:
+      layout: main-vertical
+      panes:
+        - cd aa-window-tabsets && clog
+        - cd aa-window-tabsets && clog
+  - learntabs:
+      layout: main-vertical
+      panes:
+        - cd aa-learning-tabsets && clog
+        - cd aa-learning-tabsets && clog
+  - misc:
+      layout: main-vertical
+      panes:
+        - clog
+        - txd

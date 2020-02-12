@@ -1,0 +1,27 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-lsp.yml
+
+name: bdg-lsp
+root: /Users/jose8a/jbdg/lsp/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - cd ../notes/lsp && clog
+        - cd ../notes/lsp && clog
+  - polymer:
+      layout: even-horizontal
+      panes:
+        - cd polymer && clog
+        - clog
+  - scripts:
+      layout: even-horizontal
+      panes:
+        - cd ../scripts && clog
+        - cd ../scripts && clog
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - clog ..
+        - txd

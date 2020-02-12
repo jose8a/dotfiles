@@ -1,0 +1,18 @@
+session_name: dos-bizzles
+start_directory: /Users/jose8a/jdocs/myDocs/dodos/bizzles/
+windows:
+- layout: even-horizontal
+  panes:
+  - vim index.md
+  - vim 2018-monthly.md
+  window_name: main
+- layout: even-horizontal
+  panes:
+  - vim procs.md
+  - vim notes.md
+  window_name: info
+- layout: even-horizontal
+  panes:
+  - clog
+  - txd
+  window_name: scratch

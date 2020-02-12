@@ -1,0 +1,37 @@
+# !/bin/bash
+# ~/.tmuxinator/vp-linkrefs.yml
+
+name: vp-linkrefs
+root: /Users/jose8a/jdev/l1/nuxt-theme-experiments/vp-linkrefs
+
+windows:
+  - dev:
+      layout: even-horizontal
+      panes:
+        - cd docs/.vuepress; vim config.js
+        - yarn docs:dev
+  - clog:
+      layout: even-horizontal
+      panes:
+        - clog
+        - cd docs && ls -al
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - clog
+        - clog
+  - zz-ref:
+      layout: even-horizontal
+      panes:
+        - cd ~/jdev/l0/howto/zz-ref && clog
+        - cd ~/jdev/l0/howto/zz-ref && clog
+  - daily-reads:
+      layout: even-horizontal
+      panes:
+        - cd ~/jdev/l0/howto/zz-ref/daily-reads && clog
+        - cd ~/jdev/l0/howto/zz-ref/daily-reads && clog
+  - sys-admin:
+      layout: even-horizontal
+      panes:
+        - cd ~/jdev/l0/howto/zz-ref/sys-admin && clog
+        - cd ~/jdev/l0/howto/zz-ref/sys-admin && clog

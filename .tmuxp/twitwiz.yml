@@ -1,0 +1,18 @@
+session_name: twitwiz
+start_directory: /Users/jose8a/jdev/l0/twitwiz
+windows:
+- layout: even-horizontal
+  panes:
+  - vim server.js
+  - nodemon server.js
+  window_name: editors
+- layout: even-horizontal
+  panes:
+  - ll app
+  - ll dodos
+  window_name: generic
+- layout: even-horizontal
+  panes:
+  - vim .todos
+  - vim .notes
+  window_name: notes

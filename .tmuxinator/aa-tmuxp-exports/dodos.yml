@@ -1,0 +1,32 @@
+# ~/.tmuxinator/dodos.yml
+
+name: dodos
+root: /Users/jose8a/jdocs/myDocs/dodos/dodos/
+
+windows:
+  - finc:
+      layout: even-horizontal
+      panes:
+        - cd finc && vim ./finc-dodos-lists.md
+        - cd finc && vim ./monthly-expense-worksheets.md
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim do-01-asap-next.md
+        - vim do-02-backlog.md
+  - expenselog:
+      layout: even-horizontal
+      panes:
+        - cd finc && vim latest-expenses-log.md`
+        - cd finc clog
+  - prays:
+      layout: even-horizontal
+      panes:
+        - vim ./prayers.md
+        - vim ./mantras.md
+  - scratch2:
+      layout: even-horizontal
+      panes:
+        - cd dailydos && cat daily-list.md
+        - txd
+

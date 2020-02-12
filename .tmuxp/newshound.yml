@@ -1,0 +1,23 @@
+session_name: newshound
+start_directory: /Users/jose8a/jdev/l0/newshound
+windows:
+- layout: even-horizontal
+  panes:
+  - vim server.js
+  - nodemon server.js
+  window_name: editors
+- layout: even-horizontal
+  panes:
+  - cd client
+  - cd db
+  window_name: generic
+- layout: even-horizontal
+  panes:
+  - vim .todos
+  - vim .notes
+  window_name: generic
+- layout: even-horizontal
+  panes:
+  - vim .resources.md
+  - txd
+  window_name: anothername

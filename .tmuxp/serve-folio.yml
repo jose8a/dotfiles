@@ -1,0 +1,8 @@
+session_name: serve-folio
+start_directory: /Users/jose8a/jdev/l0
+windows:
+- layout: even-horizontal
+  panes:
+  - cd folio; grep -A7 'scripts' package.json; http-server -p 5555
+  - cd ../../jdocs/myDocs/dodos; ls; python3 -m http.server 4200
+  window_name: sysfolio

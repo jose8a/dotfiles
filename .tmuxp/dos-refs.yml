@@ -1,0 +1,13 @@
+session_name: dos-refs
+start_directory: /Users/jose8a/jdocs/myDocs/dodos/refs/
+windows:
+- layout: even-horizontal
+  panes:
+  - vim ref-laterlists.md
+  - vim ref-cuentas.md
+  window_name: main
+- layout: even-horizontal
+  panes:
+  - ls ref-*
+  - ls ref-*
+  window_name: recur

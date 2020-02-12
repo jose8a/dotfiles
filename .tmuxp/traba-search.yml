@@ -1,0 +1,23 @@
+session_name: traba-search
+start_directory: /Users/jose8a/jdev/ljob/search/
+windows:
+- layout: even-horizontal
+  panes:
+  - vim index.md
+  - vim README.md
+  window_name: main
+- layout: even-horizontal
+  panes:
+  - cd companies && clog
+  - cd companies && clog
+  window_name: companies
+- layout: even-horizontal
+  panes:
+  - cd joblistings && clog
+  - cd joblistings && clog
+  window_name: listings
+- layout: even-horizontal
+  panes:
+  - cd applying && clog
+  - txd
+  window_name: misc

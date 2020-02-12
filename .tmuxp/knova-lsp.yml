@@ -1,0 +1,19 @@
+session_name: knova-lsp
+start_directory: /Users/jose8a/jbdg/lsp/
+windows:
+- layout: even-horizontal
+  panes:
+  - clog
+  - gits
+  window_name: gits
+- layout: even-horizontal
+  panes:
+  - clog
+  - gits
+  window_name: explore
+- layout: even-horizontal
+  panes:
+  - cd static
+  - txd
+  window_name: misc
+

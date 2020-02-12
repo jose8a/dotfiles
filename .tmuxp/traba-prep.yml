@@ -1,0 +1,23 @@
+session_name: traba-prep
+start_directory: /Users/jose8a/jdev/ljob/prep
+windows:
+- layout: even-horizontal
+  panes:
+  - vim prep-guide-fed.md
+  - vim interview-prep-fed-tech.md
+  window_name: main
+- layout: even-horizontal
+  panes:
+  - vim apply-prep.md
+  - vim interview-prep.md
+  window_name: intview1
+- layout: even-horizontal
+  panes:
+  - vim prep-behaviour.md
+  - vim prep-questions-fed.md
+  window_name: intview2
+- layout: even-horizontal
+  panes:
+  - vim interviews/resources.md
+  - txd
+  window_name: resources

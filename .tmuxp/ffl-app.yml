@@ -1,0 +1,23 @@
+session_name: ffl-app
+start_directory: /Users/jose8a/jdev/zz-temp/ffl-app/
+windows:
+- layout: even-horizontal
+  panes:
+  - vim README.md
+  - vim .references.md
+  window_name: meta
+- layout: even-horizontal
+  panes:
+  - vim server.js
+  - cd app && ls -ogh
+  window_name: server
+- layout: even-horizontal
+  panes:
+  - cd app && ls -ogh
+  - cd app && ls -ogh
+  window_name: parsers
+- layout: even-horizontal
+  panes:
+  - cd app
+  - txd
+  window_name: misc

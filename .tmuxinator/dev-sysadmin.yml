@@ -1,0 +1,31 @@
+# ~/.tmuxinator/dev-sysadmin.yml
+
+name: dev-sysadmin
+root: /Users/jose8a/jdev/ldos/sysadmin/
+
+windows:
+  - zzref:
+      layout: even-horizontal
+      panes:
+        - cd ../../l0/howto/zz-ref/sys-admin && clog
+        - cd ../../l0/howto/zz-ref/sys-admin && clog
+  - main:
+      layout: even-horizontal
+      panes:
+        - cat usr-sys-mem-20170114.tmp
+        - cat dodos-cleanup-2018-1114.md
+  - buckets:
+      layout: even-horizontal
+      panes:
+        - cat a0-index-sysadmin.md
+        - cat a1-todos-sysadmin.md
+  - sources:
+      layout: even-horizontal
+      panes:
+        - cat a2-sources-sysadmin.md
+        - vim sys-uninstall-app-howto.md
+  - repos:
+      layout: even-horizontal
+      panes:
+        - vim projects-sysadmin.md
+        - txd

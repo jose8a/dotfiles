@@ -1,0 +1,28 @@
+#!/bin/bash
+# ~/.tmuxinator/traba-prep.yml
+
+name: traba-prep
+root: /Users/jose8a/jdev/ljob/prep
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim prep-guide-fed.md
+        - vim interview-prep-fed-tech.md
+  - intview1:
+      layout: even-horizontal
+      panes:
+        - vim apply-prep.md
+        - vim interview-prep.md
+  - intview2:
+      layout: even-horizontal
+      panes:
+        - vim prep-behaviour.md
+        - vim prep-questions-fed.md
+  - resources:
+      layout: even-horizontal
+      panes:
+        - vim interviews/resources.md
+        - txd
+

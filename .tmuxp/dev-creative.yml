@@ -1,0 +1,18 @@
+session_name: dev-creative
+start_directory: /Users/jose8a/jdev/lcr8/
+windows:
+- layout: even-horizontal
+  panes:
+  - cd svg-blobs; ls -ogh
+  - cd .; ls -ogh
+  window_name: svg
+- layout: even-horizontal
+  panes:
+  - cd css-singledivs; ls -ogh
+  - cd .; ls -ogh
+  window_name: css
+- layout: even-horizontal
+  panes:
+  - cd ui-100-days; ls -ogh
+  - cd .; ls -ogh
+  window_name: ui

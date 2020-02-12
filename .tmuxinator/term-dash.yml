@@ -1,0 +1,17 @@
+#!/bin/bash
+# ~/.tmuxinator/terminal-dash.yml
+
+name: terminal-dash
+root: /Users/jose8a/jdev/zz-temp/terminal-dash
+
+windows:
+  - notes:
+      layout: main-vertical
+      panes:
+        - clog
+        - clog
+  - inbox:
+      layout: main-vertical
+      panes:
+        - clog
+        - clog

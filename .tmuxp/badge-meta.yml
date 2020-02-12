@@ -1,0 +1,34 @@
+session_name: badge-meta
+start_directory: /Users/jose8a/jbdg/
+windows:
+- layout: even-horizontal
+  panes:
+  - cd notes-gtd/dodos/99-time-archives/ && ls -ogh
+  - cd notes-gtd/dodos/99-time-archives/ && ls -ogh
+  window_name: time
+- layout: even-horizontal
+  panes:
+  - cd notes-dev/dev-snippets/ && vim contributing.md
+  - cd notes-dev/dev-snippets/ && vim gh-contrib-cycle.md
+  window_name: gh-contrib
+- layout: even-horizontal
+  panes:
+  - cd notes-dev/dev-snippets/ && vim hub-snippets.md
+  - cd notes-dev/dev-snippets && ls -ogh
+  window_name: hub-notes
+- layout: even-horizontal
+  panes:
+  - cd notes-gtd/dodos && vim 00-aa-active-dodos.md
+  - cd notes-gtd/dodos && vim 00-active-lsp-tickets-dodos.md
+  window_name: lsp-dodos
+- layout: even-horizontal
+  panes:
+  - cd notes-gtd/dodos/zz-knova-meta/ && ls -ogh
+  - cd notes-gtd/dodos/zz-knova-meta/ && ls -ogh
+  window_name: knova-dos
+- layout: even-horizontal
+  panes:
+  - clog
+  - txd
+  window_name: misc
+

@@ -1,0 +1,27 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-dodos.yml
+
+name: bdg-dodos
+root: /Users/jose8a/jbdg/notes/dodos/
+
+windows:
+  - time:
+      layout: even-horizontal
+      panes:
+        - vim .time.md
+        - vim daily-standup.md
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim inbox-dodos.md
+        - vim backlog.md
+  - info:
+      layout: even-horizontal
+      panes:
+        - vim daily.md
+        - vim done.md
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

@@ -1,0 +1,22 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-notes.yml
+
+name: bdg-notes
+root: /Users/jose8a/jbdg/notes/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - clog
+        - vim index.md
+  - info:
+      layout: even-horizontal
+      panes:
+        - vim .notes-debug.md
+        - cd meetings && clog
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - cd dev-notes && clog
+        - txd

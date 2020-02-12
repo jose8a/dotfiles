@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/vp-js-linkrefs.yml
+
+name: vp-js-linkrefs
+root: /Users/jose8a/jdev/l1/nuxt-theme-experiments/vp-js-linkrefs
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - dev:
+      layout: even-horizontal
+      panes:
+        - cd docs/.vuepress; vim config.js
+        - yarn docs:dev
+  - clog:
+      layout: even-horizontal
+      panes:
+        - clog
+        - cd docs && ls -al

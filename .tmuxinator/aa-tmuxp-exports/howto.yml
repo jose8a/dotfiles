@@ -1,0 +1,22 @@
+#!/bin/bash
+# ~/.tmuxinator/howto.yml
+
+name: howto
+root: /Users/jose8a/jdev/l0/howto
+
+windows:
+  - notes:
+      layout: main-vertical
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - inbox:
+      layout: main-vertical
+      panes:
+        - clog
+        - clog
+  - misc:
+      layout: main-vertical
+      panes:
+        - clog
+        - txd

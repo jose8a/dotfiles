@@ -1,0 +1,37 @@
+#!/bin/bash
+# ~/.tmuxinator/traba-apply.yml
+
+name: traba-apply
+root: /Users/jose8a/jdev/ljob/self/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - cd myprofile && clog
+        - cd myprofile && clog
+  - elevator:
+      layout: even-horizontal
+      panes:
+        - cd myprofile && vim elevator-tips-examples.md
+        - cd myprofile && ls -al
+  - tutors:
+      layout: even-horizontal
+      panes:
+        - cd myprofile && vim question-prep-varsity-tutor.md
+        - cd myprofile && vim answers-varsity-tutors.md
+  - zipr:
+      layout: even-horizontal
+      panes:
+        - cd myprofile && vim answers-zipR-all.md
+        - cd myprofile && vim answers-zipR-unique.md
+  - prep:
+      layout: even-horizontal
+      panes:
+        - cd myprofile && vim questions-prep-unzipR.md
+        - cd myprofile && vim answers-unzipR.md
+  - misc:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

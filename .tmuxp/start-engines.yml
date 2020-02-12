@@ -1,0 +1,25 @@
+
+# ADDITIONAL files to EDIT:
+#   - when adding new servers to autostart in this configuration:
+#     + hosts file: /private/etc/hosts
+#     + nginx.conf: /usr/local/etc/nginx/nginx.conf
+
+
+session_name: start-engines
+start_directory: /Users/jose8a/jdev/l0
+windows:
+- layout: even-horizontal
+  panes:
+  - cd ../../.tmuxinator; cat start-engines.yml
+  - cd ../../.tmuxinator; ls -al
+  window_name: engines
+- layout: even-horizontal
+  panes:
+  - cd ~/jdev/zz-temp/restartables/ && vim restart-aa-2019-1112.md
+  - cd ~/jdev/zz-temp/restartables/ && vim restart-hiprio-2019-1112.md
+  window_name: restarts-hi
+- layout: even-horizontal
+  panes:
+  - cd ~/jdev/zz-temp/restartables/ && vim restart-loprio-2019-1112.md
+  - cd ~/jdev/zz-temp/restartables/ && vim restart-icebox-2019-1112.md
+  window_name: restarts-lo

@@ -1,0 +1,47 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-dev.yml
+
+name: bdg-dev
+root: /Users/jose8a/jbdg/badgelist/frontend/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - clog
+        - cd app && clog
+  - info:
+      layout: even-horizontal
+      panes:
+        - cd website && clog
+        - cd bl-service-worker && clog
+  - scripts:
+      layout: even-horizontal
+      panes:
+        - cd ../scripts && clog
+        - cd ../scripts && clog
+  - build-poly:
+      layout: even-horizontal
+      panes:
+        - cd ../scripts && cat build-polymer.rb
+        - clog
+  - lsp:
+      layout: even-horizontal
+      panes:
+        - cd ../../lsp && clog
+        - cd ../../lsp/polymer && clog
+  - backend:
+      layout: even-horizontal
+      panes:
+        - cd ../backend/app/controllers && clog
+        - cd ../backend/app/controllers && ack -i template --context=4
+  - backend:
+      layout: even-horizontal
+      panes:
+        - cd ../backend/app && ack -i '# get /'
+        - cd ../backend/app && cat ../config/routes.rb
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - clog ..
+        - txd

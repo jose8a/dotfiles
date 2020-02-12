@@ -1,0 +1,12 @@
+# !/bin/bash
+# ~/.tmuxinator/pylearn.yml
+
+name: pylearn
+root: /Users/jose8a/jdev/udacity_temp/2017/intro-python-ud036/
+
+windows:
+  - scripts:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

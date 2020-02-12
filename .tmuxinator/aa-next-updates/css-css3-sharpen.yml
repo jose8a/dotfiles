@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/css3-play.yml
+
+name: css3-play
+root: /Users/jose8a/jdev/l1/css3-play
+
+windows:
+  - editors:
+      layout: even-horizontal
+      panes:
+        - chrome index.html && vim index.html
+        - vim ./assets/css/main.css
+  - generic:
+      layout: even-horizontal
+      panes:
+        - cat .todo
+        - cat .notes
+  - anothername:
+      layout: even-horizontal
+      panes:
+        - chrome .resources.md && vim .resources.md
+        - txd

@@ -1,0 +1,23 @@
+session_name: connect4
+start_directory: /Users/jose8a/jdev/lgam/connect4
+windows:
+- layout: even-horizontal
+  panes:
+  - vim index.html
+  - vim src/App.vue
+  window_name: editors
+- layout: even-horizontal
+  panes:
+  - cd src && clog
+  - cd src && clog
+  window_name: generic1
+- layout: even-horizontal
+  panes:
+  - vim .todos.md
+  - vim .notes.md
+  window_name: generic2
+- layout: even-horizontal
+  panes:
+  - vim .resources.md
+  - txd
+  window_name: resources

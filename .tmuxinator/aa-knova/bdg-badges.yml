@@ -1,0 +1,17 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-badges.yml
+
+name: bdg-badges
+root: /Users/jose8a/jbdg/notes/badges/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - vim index.md
+        - clog
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

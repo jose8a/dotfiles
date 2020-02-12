@@ -1,0 +1,23 @@
+session_name: mytube
+start_directory: /Users/jose8a/jdev/zz-temp/mytube
+windows:
+- layout: even-horizontal
+  panes:
+  - vim .todos.md
+  - vim .notes.md
+  window_name: dodos
+- layout: even-horizontal
+  panes:
+  - cd client && vim index.html
+  - cd client/static && vim player.js
+  window_name: client
+- layout: even-horizontal
+  panes:
+  - vim gulpfile.js
+  - cd src && ls -al
+  window_name: styles
+- layout: even-horizontal
+  panes:
+  - vim server.js
+  - cd app && ls -al
+  window_name: server

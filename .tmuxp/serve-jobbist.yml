@@ -1,0 +1,13 @@
+session_name: serve-jobbist
+start_directory: /Users/jose8a/jdev/l0
+windows:
+- layout: even-horizontal
+  panes:
+  - cd ../ldos/traba/jobsearch/proxyHound; cl; nodemon server.js
+  - cd ../ldos/traba/jobsearch/jobshound; npm run dev
+  window_name: jobbist1
+- layout: even-horizontal
+  panes:
+  - cd ../ldos/traba/jobsearch/jobshound/dist; http-server -p 8700
+  - cd ../ldos/traba/jobsearch/jobshound/dist; ls -la
+  window_name: jobbist2

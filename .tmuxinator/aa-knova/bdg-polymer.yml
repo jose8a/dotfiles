@@ -1,0 +1,17 @@
+#!/bin/bash
+# ~/.tmuxinator/bdg-polymer.yml
+
+name: bdg-polymer
+root: /Users/jose8a/jbdg/notes/polymer-learn/
+
+windows:
+  - main:
+      layout: even-horizontal
+      panes:
+        - clog
+        - clog
+  - scratch:
+      layout: even-horizontal
+      panes:
+        - clog
+        - txd

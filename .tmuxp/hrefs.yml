@@ -1,0 +1,28 @@
+session_name: hrefs
+start_directory: /Users/jose8a/jdev/l0/hrefs
+windows:
+- layout: main-vertical
+  panes:
+  - vim .todos.md
+  - clog
+  window_name: notes
+- layout: main-vertical
+  panes:
+  - cd aa-daily-reads && clog
+  - cd aa-daily-reads && clog
+  window_name: dailyreads
+- layout: main-vertical
+  panes:
+  - cd aa-window-tabsets && clog
+  - cd aa-window-tabsets && clog
+  window_name: wintabs
+- layout: main-vertical
+  panes:
+  - cd aa-learning-tabsets && clog
+  - cd aa-learning-tabsets && clog
+  window_name: learntabs
+- layout: main-vertical
+  panes:
+  - clog
+  - txd
+  window_name: misc

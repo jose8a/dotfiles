@@ -1,0 +1,23 @@
+session_name: phrase-it
+start_directory: /Users/jose8a/jdev/l0/js-games/phrase-it
+windows:
+- layout: even-horizontal
+  panes:
+  - open index.html && vim index.html
+  - vim static/main.css
+  window_name: editors
+- layout: even-horizontal
+  panes:
+  - vim .todos
+  - vim .notes
+  window_name: generic1
+- layout: even-horizontal
+  panes:
+  - clog
+  - clog
+  window_name: generic2
+- layout: even-horizontal
+  panes:
+  - chrome .resources.md && vim .resources.md
+  - txd
+  window_name: resources

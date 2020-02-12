@@ -1,0 +1,37 @@
+# !/bin/bash
+# ~/.tmuxinator/jobdasher.yml
+
+name: jobdasher
+root: /Users/jose8a/jdev/ldos/traba/jobsearch/jobdasher
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - vim .todos.md
+        - vim .notes.md
+  - index:
+      layout: even-horizontal
+      panes:
+        - vim index.html
+        - cd src && ls -al
+  - vuemain:
+      layout: even-horizontal
+      panes:
+        - cd src && vim main.js
+        - cd src/router && vim index.js
+  - components:
+      layout: even-horizontal
+      panes:
+        - cd src/components
+        - cd src/components && ls -al
+  - vuestore:
+      layout: even-horizontal
+      panes:
+        - cd src/store && vim state.js
+        - cd src/store && ls -al
+  - proxy:
+      layout: even-horizontal
+      panes:
+        - cd ../proxyHound && vim server.js
+        - cd ../proxyHound && ls -al

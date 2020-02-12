@@ -1,0 +1,17 @@
+#!/bin/bash
+# ~/.tmuxinator/po-gui.yml
+
+name: po-gui
+root: /Users/jose8a/jdev/zz-temp/po-gui
+
+windows:
+  - notes:
+      layout: main-vertical
+      panes:
+        - clog
+        - clog
+  - inbox:
+      layout: main-vertical
+      panes:
+        - clog
+        - clog

@@ -1,0 +1,32 @@
+# !/bin/bash
+# ~/.tmuxinator/vp-dodos.yml
+
+name: vp-dodos
+root: /Users/jose8a/jdev/l1/nuxt-theme-experiments/vp-dodos
+
+windows:
+  - dev:
+      layout: even-horizontal
+      panes:
+        - cd docs/.vuepress; vim config.js
+        - yarn docs:dev
+  - docs:
+      layout: even-horizontal
+      panes:
+        - clog
+        - cd docs && ls -al
+  - notes:
+      layout: even-horizontal
+      panes:
+        - clog
+        - clog
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - cd ~/jdocs/myDocs/dodos/dodos/ && vim daily.md
+        - cd ~/jdocs/myDocs/dodos/dodos/ && vim backlog.md
+  - finc:
+      layout: even-horizontal
+      panes:
+        - cd ~/jdocs/myDocs/dodos/dodos/dailydos && vim finc.md
+        - cd ~/jdocs/myDocs/dodos/dodos/dailydos && vim temp.md

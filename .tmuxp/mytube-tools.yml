@@ -1,0 +1,28 @@
+session_name: mytube-tools
+start_directory: /Users/jose8a/jdev/zz-temp/mytube-tools
+windows:
+- layout: even-horizontal
+  panes:
+  - vim .todos.md
+  - vim .notes.md
+  window_name: dodos
+- layout: even-horizontal
+  panes:
+  - vim createPlaylists.js
+  - vim getChartSongs.js
+  window_name: main
+- layout: even-horizontal
+  panes:
+  - cd utils && ls -al
+  - cd utils && ls -al
+  window_name: utils
+- layout: even-horizontal
+  panes:
+  - vim getSelfYoutubePlaylists.js
+  - cd google && ls -al
+  window_name: google
+- layout: even-horizontal
+  panes:
+  - cd scrapers && ls -al
+  - cd output && ls -al
+  window_name: scrapers

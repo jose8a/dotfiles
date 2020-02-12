@@ -1,0 +1,22 @@
+# !/bin/bash
+# ~/.tmuxinator/vp-howto.yml
+
+name: vp-howto
+root: /Users/jose8a/jdev/l1/nuxt-theme-experiments/vp-howto
+
+windows:
+  - dodos:
+      layout: even-horizontal
+      panes:
+        - clog
+        - clog
+  - index:
+      layout: even-horizontal
+      panes:
+        - cd docs/.vuepress; vim config.js
+        - yarn docs:dev
+  - vuemain:
+      layout: even-horizontal
+      panes:
+        - clog
+        - cd docs && ls -al
