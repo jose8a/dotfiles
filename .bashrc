@@ -59,10 +59,11 @@ set -o vi
 
 ######## ##Exuberant CTAGS
 # Add to path for Exuberant-ctags to be called on Mac OSX rather than default ctags
-PATH=/usr/local/bin:$PATH
+PATH="/usr/local/bin:$PATH"
 
 # Tmuxinator helper to set up
 source ~/bin/tmuxinator.bash
+
 
 ########################################################
 # WebDev Tool settings
@@ -77,7 +78,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Add to path for Node to automatically pick npm-installed binaries
 #!! This next PATH line might be a Linux-only path since the '/npm/bin' doesn't
 # show up on my Mac filepath.
-PATH=$PATH:/usr/local/share/npm/bin
+PATH="$PATH:/usr/local/share/npm/bin"
 #!! This NODE_PATH is added via Mac Homebrew install.  Might not work for Linux!!
 export NODE_PATH="/usr/local/lib/node_modules"
 
@@ -98,7 +99,7 @@ export PATH="$PATH:$PRJ/scripts/aa_learnutils"
 ########################################################
 # Launch projects at PC startup
 ########################################################
-if [ -n ${APPSUP}]
+if [ -n ${APPSUP} ]
 then
   #do nothing if this is not already startup
   export APPSUP=2
@@ -114,10 +115,24 @@ echo "Dev Projects should be Up and Running!"
 ########################################################
 # RBENV
 ########################################################
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 
+########################################################
+# NVM
+########################################################
+# export NVM_DIR="/Users/jose8a/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NODE_PATH=/usr/local/lib/node_modules:/Users/jose8a/.nvm/versions/node/v4.4.3/lib/node_modules
 
-export NVM_DIR="/Users/jose8a/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export NODE_PATH=/usr/local/lib/node_modules:/Users/jose8a/.nvm/versions/node/v4.4.3/lib/node_modules
+
+########################################################
+######## ##Tmuxp completion
+eval "$(_TMUXP_COMPLETE=source tmuxp)"
+
+
+########################################################
+# YARN GLOBAL PATH
+########################################################
+export PATH="$PATH:$(yarn global bin)"
+

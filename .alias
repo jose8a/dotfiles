@@ -42,6 +42,14 @@ project_open() {
 
 ### END:ALIAS functions ###############################
 
+
+### START:ALIAS file-shortcuts ###############################
+export SCRIPTHOME="$HOME/jdev/l0/dotfiles/scripts"
+export MAGICKSCRIPTS="$SCRIPTHOME/imagemagick/im-scripts"
+
+### END:ALIAS file-shortcuts ###############################
+
+
 # some more ls aliases
 alias lln='ls -alonF'
 alias lo='ls -aloF'
@@ -52,21 +60,24 @@ alias l='ls -CF'
 alias cl='clear'
 alias clog='clear && ls -og'
 
-# alias cd direct-to-[???]
+# quickie-moves
 alias cd..="cd .."
 alias cd...="cd ../.."
-alias cdgdrive="cd $HOME/GoogleDrive"
-alias cdproj="cd $PRJ"
+alias cddots='cd ~/jdev/l0/dotfiles'
+alias cddev="cd ~/jdev"
+alias cddos="cd ~/jdocs/myDocs/dodos"
+alias cdbad="cd ~/jbdg/"
+alias cdlsp="cd ~/jbdg/lsp"
+
+# quickie-moves
 alias cdclients="cd $CLIENTS"
-alias cdaa="cd $AA"
-alias cdsg="cd $SG"
 alias cdex="cd $EXERCISES"
 alias cdservs="cd $SERVS"
 alias cdref='cd $MYREF'
 alias cdschool='cd $SCHOOL'
 alias cdbooks='cd $BOOKS'
 alias cdweb='cd $MYWEB'
-alias cddots='cd $DOTFILES'
+alias cdgdrive="cd $HOME/GoogleDrive"
 
 #alias cheatsheets
 alias cheatgit='cat $CHEATS/git.md'
@@ -94,19 +105,38 @@ alias gitd='git diff'
 alias gits='git status'
 alias gitu='git reset --soft HEAD^'
 
+# tabset rename
+alias ts='tabset --title'
+
 # alias tmux
 alias tmux='tmux -2'
+alias txp='tmuxp load'
+alias txpls='ls -ogh ~/.tmuxp'
 alias txn='tmux new-session -s'
 alias txl='tmux list-sessions'
 alias txa='tmux a -t'
 alias txd='tmux detach'
 alias tx_reload='tmux source-file ~/.tmux.conf'
 alias temp_tmux='$HOME/tmp/temp_tmux'
+alias txrw='tmux rename-window'
+
+# alias tmuxp
+alias xpld='tmuxp load'
+alias xpls='ls -ogh ~/.tmuxp'
 
 # alias vim
 alias vtmux='vim ~/.tmux.conf'
 alias vbash='vim ~/.bashrc'
 alias vvim='vim ~/.vimrc'
+
+# open localhost TCP apps
+alias show_local_apps='lsof -P -i tcp | grep node'
+
+# alias eslint
+alias herelint='./node_modules/eslint/bin/eslint.js'
+
+# yarn tool
+alias yarn="yarn --silent"
 
 # alias system dictionary
 alias dictionary="cat /usr/share/dict/words"
@@ -148,19 +178,71 @@ alias vlcnc="/Applications/VLC.app/Contents/MacOS/VLC --intf ncurses -Z"
 alias chrome="open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
+# opera browser
+alias opera="open -a /Applications/Opera.app/Contents/MacOS/Opera"
+
+# vivaldi browser
+alias vivaldi="open -a /Applications/Vivaldi.app/Contents/MacOS/Vivaldi"
+
+# firefox browser
+alias fox="open -a /Applications/Firefox.app/Contents/MacOS/firefox"
+alias firefox="open -a /Applications/Firefox.app/Contents/MacOS/firefox"
+
+# tabset/browser-window launchers
+alias ww="cd /Users/jose8a/jdev/l0/ww && ./ww.js"
+
 # project launchers
 alias po="/Users/jose8a/jdev/l0/po/po"
+alias pojs="/Users/jose8a/jdev/l0/po/src/po"
 
 # mpv player
 alias mpv="/Applications/mpv.app/Contents/MacOS/mpv"
 alias mpl="/Users/jose8a/jdev/l0/mpl/mpl"
-
-# image utilities
-alias imgls="~/bin/imgls"
-alias imgcat="~/bin/imgcat"
 
 # filter utilities for my markdownfiles
 alias filterH0="grep -ne '# [^=]'"
 alias filterH1="grep -ne '^# [^=]'"
 alias filterH3="grep -ne '^### [^=]'"
 alias filterH5="grep -ne '^##### [^=]'"
+
+# commandline-timer utility
+alias badgelist_timer='$HOME/jdev/l0/dotfiles/scripts/timer.sh'
+alias blt='badgelist_timer'
+
+alias bsm='~/.bsm/bsm.sh'
+alias jtimer='$SCRIPTHOME/timer.sh'
+
+alias llscripts='ll $SCRIPTHOME'
+alias lsgroup='$SCRIPTHOME/ls-url-group.sh'
+alias lstitles='$SCRIPTHOME/ls-md-titles.sh'
+alias launchtabset='$SCRIPTHOME/launch-url-group.sh'
+
+# image utilities
+alias imgls="~/bin/imgls"
+alias imgcat="~/bin/imgcat"
+
+# imagemagick scripts
+alias img_blur='$MAGICKSCRIPTS/im-blur.sh'
+alias img_charcoal1='$MAGICKSCRIPTS/im-charcoal1.sh'
+alias img_charcoal2='$MAGICKSCRIPTS/im-charcoal2.sh'
+alias img_greyscale='$MAGICKSCRIPTS/im-greyscale.sh'
+alias img_histcontrast1='$MAGICKSCRIPTS/im-histcontrast1.sh'
+alias img_histcontrast2='$MAGICKSCRIPTS/im-histcontrast2.sh'
+alias img_outline1='$MAGICKSCRIPTS/im-outline1.sh'
+alias img_outline2='$MAGICKSCRIPTS/im-outline2.sh'
+alias img_outline3='$MAGICKSCRIPTS/im-outline3.sh'
+alias img_pencil1='$MAGICKSCRIPTS/im-pencil1.sh'
+alias img_pencil2='$MAGICKSCRIPTS/im-pencil2.sh'
+alias img_sepia='$MAGICKSCRIPTS/im-sepia.sh'
+
+# lsp GH tickets
+alias hub_issues_open='hub issue -f "%sC%>(8)%i%Creset %t [%sC %as %Creset] %n" -l polymer'
+alias hub_issues_closed='hub issue -f "%sC%>(8)%i%Creset %t [%sC %as %Creset] %n" -s closed -l polymer'
+
+# show headings in a MD-type file
+alias catheads='grep -e "\`.*\`\|^##"'
+
+# knova-utils
+alias kservers='lsof -P -i tcp | grep -E "localhost|LISTEN"'
+alias kuptime='cd ~/jdocs/myDocs/dodos/dodos && sh lsp-uptime.sh'
+
