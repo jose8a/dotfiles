@@ -4,35 +4,22 @@
 #   variables.  It is launched from ~/.bashrc
 ########################################################
 
-# chavo's custom path shortcuts
-export SERVS=$PRJ/jservices
-export servs=$PRJ/jservices
-export CLIENTS=$PRJ/clients
-export clients=$PRJ/clients
+export PRJ=~/jdev
+
+# custom path shortcuts
 export GDRIVE=~/GoogleDrive
 export gdrive=~/GoogleDrive
-export DOTPATH=$PRJ/temp/dotfiles
-export dotpath=$PRJ/temp/dotfiles
-export DOTFILES=$PRJ/temp/dotfiles
-export dotfiles=$PRJ/temp/dotfiles
+export DOTPATH=$PRJ/l0/dotfiles
+export dotpath=$PRJ/l0/dotfiles
+export DOTFILES=$PRJ/l0/dotfiles
+export dotfiles=$PRJ/l0/dotfiles
 export MUXPATH=$DOTPATH/.tmuxinator
 export muxpath=$DOTPATH/.tmuxinator
 export EDITOR='vim'
 export editor='vim'
-export EXERCISES=$PRJ/exercises
-export exercises=$PRJ/exercises
-export EXERS=$EXERCISES
-export exers=$EXERCISES
-export OSS=$PRJ/oss
-export oss=$PRJ/oss
-export AA=$PRJ/appcademy
-export aa=$PRJ/appcademy
-export SG=$CLIENTS/shareg
-export sg=$CLIENTS/shareg
-export CHEATS=$PRJ/cheatsheets
-export cheats=$PRJ/cheatsheets
-export IDEAS=$PRJ/ideas
-export ideas=$PRJ/ideas
+
+
+
 
 
 ########################################################
