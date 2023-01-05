@@ -24,6 +24,7 @@ augroup other_folding
 augroup END
 
 
+
 "-----------------------------------"
 " Default/Basic folding for nginx:
 "-----------------------------------"
@@ -113,6 +114,10 @@ augroup js_folds
   au FileType javascript setlocal foldmethod=marker
   au FileType javascript setlocal foldmarker={,}
 
+
+  " use VSCode to open js files on this <leader>v command
+  au FileType javascript nmap <leader>v :!/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron --log 'off' % &>/dev/null &<CR>
+
   " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
   " positioned inside of them AND the following code doesn't get unfolded.
   "au Filetype javascript inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
@@ -120,13 +125,49 @@ augroup END
 
 
 "-----------------------------------"
+"ASTRO: FileType SETTINGS
+"-----------------------------------"
+augroup astro_ft
+  au!
+
+  " treat astro files as html
+  " TODO: check for an official ASTRO plugin in the future
+  au BufNewFile,BufRead *.astro setlocal filetype=astro
+  au FileType astro setlocal foldmethod=indent
+  au BufNewFile,BufRead *.astro   set syntax=markdown
+  ""au BufNewFile,BufRead *.astro   set omnifunc=htmlcomplete#CompleteTags
+
+  "au BufNewFile,BufRead *.astro setlocal filetype=html
+  ""au FileType html setlocal foldmethod=indent
+
+  ""au BufNewFile,BufRead *.astro   set syntax=html
+  ""au BufNewFile,BufRead *.astro   set omnifunc=htmlcomplete#CompleteTags
+augroup END
+
+"-----------------------------------"
 "Markdown: FileType SETTINGS
 "-----------------------------------"
 augroup ft_markdown
   au!
 
+  " set the appropriate filetype based on file extension"
+  au BufNewFile,BufRead *.md set filetype=markdown
+  au BufNewFile,BufRead *.m*down set filetype=markdown
+
+  " disable spellcheck for markdown files
+  au BufRead,BufNewFile *.md setlocal nospell
+
+  " open these files with Brave Browser
+  nmap <leader>o :!/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser %<CR>
+
   " allow conceal of links to only display as text
   set conceallevel=2
+
+  " hopefully fixes markdown setting indentation of 4-spaces
+  " beginning around 2021.1110 - for some reason the
+  " setting for thee in settings-general.vim stopped
+  " working this week.
+  set softtabstop=2 shiftwidth=2 expandtab
 
   " indent settings in case they are being overwritten elsewhere
   let g:vim_markdown_new_list_item_indent = 2
@@ -143,16 +184,13 @@ augroup ft_markdown
   " prevent vim-pandoc from setting *.md files as filetype 'pandoc'
   let g:pandoc#filetypes#pandoc_markdown=0
 
-  au BufNewFile,BufRead *.md set filetype="markdown"
-  au BufNewFile,BufRead *.m*down setlocal filetype="markdown"
-
   let g:gruvbox_contrast_dark="hard"
   let g:solarized_termcolors=256
-  au BufEnter *.md colorscheme gruvbox
+  "au BufEnter *.md colorscheme gruvbox
   "au BufEnter *.md colorscheme tender
   "au BufEnter *.md colorscheme dracula
   "au BufEnter *.md colorscheme solarized
-  "au BufEnter *.md colorscheme PaperColor
+  au BufEnter *.md colorscheme PaperColor
   "au BufEnter *.md colorscheme iceberg
 
   " Use <localleader>1/2/3 to add headings.
@@ -169,6 +207,7 @@ augroup ft_vim
   au!
 
   au BufRead,BufNewFile ~/.vimrc   setlocal filetype=vim
+  au BufRead,BufNewFile ~/.vimconfig/*   setlocal filetype=vim
 
   au FileType vim setlocal foldmethod=marker
   au FileType help setlocal textwidth=78

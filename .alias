@@ -44,96 +44,328 @@ project_open() {
 
 
 ### START:ALIAS file-shortcuts ###############################
-export SCRIPTHOME="$HOME/jdev/l0/dotfiles/scripts"
+export SCRIPTHOME="$HOME/jdev/lcli"
 export MAGICKSCRIPTS="$SCRIPTHOME/imagemagick/im-scripts"
 
 ### END:ALIAS file-shortcuts ###############################
 
 
+########################################################
+# dangerous shortcut -- uncomment when needed only
+########################################################
+# alias shred
+# --- alias shred1='shred -n 1 -u -v'
+# --- alias shred2='shred -n 2 -u -v'
+# --- alias shred3='shred -n 3 -u -v'
+
+
+########################################################
+# reload terminal, tmux, vim, etc
+########################################################
+alias reload_term="source ~/.bash_profile"
+alias reload_tmux="tmux source-file ~/.tmux.conf"
+
+# this won't work within vim, but left here for
+# future reference
+alias reload_vim="source $MYVIMRC"
+
+########################################################
+# basic utility customization shortcuts
+########################################################
 # some more ls aliases
-alias lln='ls -alonF'
-alias lo='ls -aloF'
-alias ll='ls -alF'
-alias lg='ls -og'
-alias la='ls -A'
-alias l='ls -CF'
-alias cl='clear'
-alias clog='clear && ls -og'
+alias lln="ls -alonF"
+alias lo="ls -aloF"
+alias ll="ls -AlF"
+alias lg="ls -og"
+alias la="ls -A"
+alias l="ls -CF"
+alias cl="clear"
+alias clog="clear && ls -AghloF"
+
+# use lx for colored ls output
+# 'cloxut' is base command for the rest
+# sort-by 'type' in reverse order
+alias cloxut='clear && echo "" && lx -alF --color=never -r -s type'
+alias cloxu="cloxut --no-time"
+alias cloxt="cloxut --no-user"
+alias clox="cloxut --no-user --no-time"
+
+# absolute minimal lx with only size and names
+# - removed permissions columns from each 'clox*' above
+alias clx="clox --no-permissions"
+alias clxu="cloxu --no-permissions"
+alias clxt="cloxt --no-permissions"
+alias clxut="cloxut --no-permissions"
+
+# use lx for colorized tree output
+# 'cloxT' is base command for the rest
+alias cloxT='clear && echo "" && lx -aT -I "*node_modules*"'
+alias cloxT1="cloxT -L1"
+alias cloxT2="cloxT -L2"
+alias cloxT3="cloxT -L3"
+alias cloxT4="cloxT -L4"
+
+# alias for 'exa' - a modern 'ls' alternative
+alias lx="exa"
 
 # quickie-moves
 alias cd..="cd .."
-alias cd...="cd ../.."
-alias cddots='cd ~/jdev/l0/dotfiles'
-alias cddev="cd ~/jdev"
-alias cddos="cd ~/jdocs/myDocs/dodos"
-alias cdbad="cd ~/jbdg/"
-alias cdlsp="cd ~/jbdg/lsp"
+alias cd1="cd .."
+alias cd2="cd ../.."
+alias cd3="cd ../../.."
+alias cd4="cd ../../../.."
+alias cd5="cd ../../../../.."
+alias godev="cd $PRJ"
+alias godos="cd $dir_dodos"
+alias godots="cd $dir_dotpath"
 
 # quickie-moves
-alias cdclients="cd $CLIENTS"
-alias cdex="cd $EXERCISES"
-alias cdservs="cd $SERVS"
-alias cdref='cd $MYREF'
-alias cdschool='cd $SCHOOL'
-alias cdbooks='cd $BOOKS'
-alias cdweb='cd $MYWEB'
-alias cdgdrive="cd $HOME/GoogleDrive"
+alias godevs="cd $PRJ"
+alias gotabs="cd $dir_dashes"
+alias gowork="cd $dir_work"
+alias gopydev="cd $dir_py"
+alias gorefs="cd $dir_refsbase"
+alias gotrab="cd $dir_trab"
+alias gotuts="cd $dir_tuts"
+alias gohow="cd $dir_howto"
+alias goviz="cd $dir_viz"
+alias gosesh="cd $dir_sesh"
+alias gonim="cd $dir_nim"
+alias gofinc="cd $dir_finc"
+alias goresume="cd $dir_resume"
+alias gosessions="cd $dir_sessions"
 
-#alias cheatsheets
-alias cheatgit='cat $CHEATS/git.md'
-alias cheatmux='cat $CHEATS/tmux.md'
+# todo: maybe obsolete, these??
+alias goschool="cd $SCHOOL"
+alias gobooks="cd $BOOKS"
+alias goweb="cd $MYWEB"
+alias gogdrive="cd $HOME/GoogleDrive"
 
-# alias shred
-alias shred1='shred -n 1 -u -v'
-alias shred2='shred -n 2 -u -v'
-alias shred3='shred -n 3 -u -v'
+# my howto snippets and articles
+alias h2="cd $dir_howto"
+alias h2ls="h2; clx"
 
-# alias touchpad
-alias touchpad_disable='xinput set-prop 15 "Device Enabled" 0'
-alias touchpad_enable='xinput set-prop 15 "Device Enabled" 1'
+# memory
+alias du1="du -hc -d 1"
+alias sysmem1="du -hc -d 1"
+alias sysmem2="du -hc -d 2"
 
-# alias google-app-engine
-alias gae_launcher='python /opt/google-appengine-wx-launcher-read-only/GoogleAppEngineLauncher.py'
-alias gae_upload='/opt/google_appengine/appcfg.py update'
-alias gae_startserver='/opt/google_appengine/dev_appserver.py'
+# list project environment variables
+alias lsdirs="cddots && rg -i DIR_"
 
+
+########################################################
+# git-related shortcuts
+########################################################
 # alias git
-alias gita='git add'
-alias gitb='git branch'
-alias gitch='git checkout'
-alias gitd='git diff'
-alias gits='git status'
-alias gitu='git reset --soft HEAD^'
+alias gita="git add"
+alias gitb="git branch"
+alias gitch="git checkout"
+alias gitd="git diff"
+alias gits="git status"
+alias gitu="git reset --soft HEAD^"
 
-# tabset rename
-alias ts='tabset --title'
+# lsp GH tickets
+alias hub_issues_open='hub issue -f "%sC%>(8)%i%Creset %t [%sC %as %Creset] %n" -l polymer'
+alias hub_issues_closed='hub issue -f "%sC%>(8)%i%Creset %t [%sC %as %Creset] %n" -s closed -l polymer'
 
+
+########################################################
+# find/search shortcuts
+########################################################
+# make rip-grep search dotfiles (e.g. hidden files) by default
+alias rg="rg -i --hidden"
+
+# convenience rip-grep setups with pre-defined context setup
+alias rg3="rg -i --hidden --context=3"
+alias rg7="rg -i --hidden --context=5"
+alias rg11="rg -i --hidden --context=11"
+alias rg17="rg -i --hidden --context=17"
+alias rg19="rg -i --hidden --context=19"
+alias rg23="rg -i --hidden --context=23"
+alias rg29="rg -i --hidden --context=29"
+
+# find - to maxdepth N-levels
+alias find1='find . -maxdepth 1 \( -not -path "*node_*" \) -iname'
+alias find2='find . -maxdepth 2 \( -not -path "*node_*" \) -iname'
+alias find3='find . -maxdepth 3 \( -not -path "*node_*" \) -iname'
+alias find5='find . -maxdepth 5 \( -not -path "*node_*" \) -iname'
+alias find7='find . -maxdepth 7 \( -not -path "*node_*" \) -iname'
+alias find11='find . -maxdepth 11 \( -not -path "*node_*" \) -iname'
+alias find21='find . -maxdepth 21 \( -not -path "*node_*" \) -iname'
+
+
+########################################################
+# vim and tmux shortcuts
+########################################################
 # alias tmux
-alias tmux='tmux -2'
-alias txp='tmuxp load'
-alias txpls='ls -ogh ~/.tmuxp'
-alias txn='tmux new-session -s'
-alias txl='tmux list-sessions'
-alias txa='tmux a -t'
-alias txd='tmux detach'
-alias tx_reload='tmux source-file ~/.tmux.conf'
-alias temp_tmux='$HOME/tmp/temp_tmux'
-alias txrw='tmux rename-window'
+alias tmux="tmux -2"
+alias txp="tmuxp load"
+alias txpls="ls -ogh ~/.tmuxp"
+alias txn="tmux new-session -s"
+alias txl="tmux list-sessions"
+alias txa="tmux a -t"
+alias txd="tmux detach"
+alias temp_tmux="$HOME/tmp/temp_tmux"
+alias txrw="tmux rename-window"
 
 # alias tmuxp
-alias xpld='tmuxp load'
-alias xpls='ls -ogh ~/.tmuxp'
+alias xpld="tmuxp load"
+alias xpls="ls -ogh ~/.tmuxp/"
+
+# alias tmuxp "recently-active" sessions
+# .. these sessions are created and destroyed based
+# .. on most recent projects, etc I work on
+alias txplsh="clx $dir_sesh/session-configs"
+alias txpload="cd $dir_sesh/session-configs && tmuxp load"
+alias txpstop="tmux kill-session -t"
+alias txpedit="pushd . && cd $dir_sesh/session-configs && nim"
 
 # alias vim
-alias vtmux='vim ~/.tmux.conf'
-alias vbash='vim ~/.bashrc'
-alias vvim='vim ~/.vimrc'
+alias vtmux="vim ~/.tmux.conf"
+alias vbash="vim ~/.bashrc"
+alias vvim="vim ~/.vimrc"
+alias nim=nvim
 
-# open localhost TCP apps
-alias show_local_apps='lsof -P -i tcp | grep node'
+
+########################################################
+# music player shortcuts
+########################################################
+# alias vlc commandline
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+alias vlcd="/Applications/VLC.app/Contents/MacOS/VLC --intf dummy -Z"
+alias vlcrc="/Applications/VLC.app/Contents/MacOS/VLC --intf rc -Z"
+alias vlcnc="/Applications/VLC.app/Contents/MacOS/VLC --intf ncurses -Z"
+
+# mpv player
+alias mpv="/Applications/mpv.app/Contents/MacOS/mpv"
+alias mpl="/Users/jose8a/jdev/l0/mpl/mpl"
+
+
+########################################################
+# browser shortcuts
+########################################################
+# google chrome
+alias chrome="open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+
+# opera browser
+alias opera="open -a /Applications/Opera.app/Contents/MacOS/Opera"
+
+# vivaldi browser
+alias vivaldi="open -a /Applications/Vivaldi.app/Contents/MacOS/Vivaldi"
+
+# firefox browser
+alias brave="open -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser"
+alias fox="open -a /Applications/Firefox.app/Contents/MacOS/firefox"
+alias firefox="open -a /Applications/Firefox.app/Contents/MacOS/firefox"
+
+
+########################################################
+# bash-scripts
+########################################################
+# tabset/browser-window launchers
+alias ww="cd /Users/jose8a/jdev/l0/ww && ./ww.js"
+
+# project launchers
+alias op="/Users/jose8a/jdev/l0/op/op.js"
+alias po="/Users/jose8a/jdev/l0/po/po"
+alias pojs="/Users/jose8a/jdev/l0/po/src/po"
+alias pyo="cd /Users/jose8a/jdev/l0/po/py/ && python po2.py"
+alias pyo="python /Users/jose8a/jdev/l0/po/py/po2.py"
+
+# timer-scripts
+alias bsm="~/.bsm/bsm.sh"
+alias btimer="$SCRIPTHOME/sh-utils/timer.sh"
+alias blt=btimer
+alias ytimer="blt -a yt"
+
+# markdown bash scripts
+alias llscripts="ll $SCRIPTHOME"
+alias lsgroup="$SCRIPTHOME/mdown/ls-url-group.sh"
+alias lstitles="$SCRIPTHOME/mdown/ls-md-titles.sh"
+alias launchtabset="$SCRIPTHOME/mdown/launch-url-group.sh"
+
+# link-checking utility
+alias lkc="$SCRIPTHOME/link-checker/index.js"
+
+
+########################################################
+# image-related shortcuts
+########################################################
+# image utilities
+alias imgls="~/bin/imgls"
+alias imgcat="~/bin/imgcat"
+
+# imagemagick scripts
+alias img_blur="$MAGICKSCRIPTS/im-blur.sh"
+alias img_charcoal1="$MAGICKSCRIPTS/im-charcoal1.sh"
+alias img_charcoal2="$MAGICKSCRIPTS/im-charcoal2.sh"
+alias img_greyscale="$MAGICKSCRIPTS/im-greyscale.sh"
+alias img_histcontrast1="$MAGICKSCRIPTS/im-histcontrast1.sh"
+alias img_histcontrast2="$MAGICKSCRIPTS/im-histcontrast2.sh"
+alias img_outline1="$MAGICKSCRIPTS/im-outline1.sh"
+alias img_outline2="$MAGICKSCRIPTS/im-outline2.sh"
+alias img_outline3="$MAGICKSCRIPTS/im-outline3.sh"
+alias img_pencil1="$MAGICKSCRIPTS/im-pencil1.sh"
+alias img_pencil2="$MAGICKSCRIPTS/im-pencil2.sh"
+alias img_sepia="$MAGICKSCRIPTS/im-sepia.sh"
+
+
+########################################################
+# misc shortcuts - 1
+########################################################
+# filter utilities for my markdownfiles
+alias filterH0="grep -ne '# [^=]'"
+alias filterH1="grep -ne '^# [^=]'"
+alias filterH3="grep -ne '^### [^=]'"
+alias filterH5="grep -ne '^##### [^=]'"
+
+# html 'hq' tool/utility
+alias hq="htmlq"
+
+# json extract-utilities
+alias jdeps="jq '.dependencies' < package.json"
+alias jscripts="jq '.scripts' < package.json"
+
+# show headings in a MD-type file
+alias catheads='grep -e "\`.*\`\|^##"'
+
+# if 'bat' exists, use it instead of 'cat'
+#   - 'bat' is a syntax-highlighting version of the 'cat' utility
+if [ -x "$(command -v bat)" ]; then
+  alias cat='bat'
+fi
+
+
+# terminal output of a file, but syntax-highlight for code files
+alias pycat='pygmentize -g -O'
+alias pycate='pygmentize -g -O style=emacs'        # emacs-style color theme
+alias pycatn='pygmentize -g -O style=native'       # native vim color theme
+alias pycatf='pygmentize -g -O style=friendly'     # vim pyte color theme
+
+# diff'ing shortcuts
+alias diffc='diff -y --color=always'
+alias diffc_min='diff -y --color=always --suppress-common-lines'
+alias diffyc="diff -y --color='always' --suppress-common-lines"
+alias diffcc="diff --context=5 --color='always'"
+
+
+### ########################################################
+### # misc shortcuts - 2
+### ########################################################
+#alias cheatsheets
+alias cheatgit="cat $CHEATS/git.md"
+alias cheatmux="cat $CHEATS/tmux.md"
+
+# tabset rename
+# source: https://npm.taobao.org/package/iterm2-tab-set
+alias ts="tabset --title"
+
+# display running node localhost TCP servers
+alias show_local_apps="lsof -P -i tcp | grep node"
 
 # alias eslint
-alias herelint='./node_modules/eslint/bin/eslint.js'
+alias herelint="./node_modules/eslint/bin/eslint.js"
 
 # yarn tool
 alias yarn="yarn --silent"
@@ -143,106 +375,79 @@ alias dictionary="cat /usr/share/dict/words"
 alias dict="cat /usr/share/dict/words"
 alias words="cat /usr/share/dict/words"
 
-#alias services
-alias boilerhtml="cp -R $PRJ/boilerplates/html5-bp_v5.2.0 "
-alias pyserver="python -m SimpleHTTPServer"
-alias redmine="/Applications/redmine-2.4.3-0/manager-osx.app/Contents/MacOS/osx-intel"
-alias acquia="/Applications/DevDesktop/Acquia\ Dev\ Desktop.app/Contents/MacOS/Acquia\ Dev\ Desktop"
-
 # rails
 alias railsdb_reset='rake db:drop; rake db:create; rake db:migrate; rake db:seed'
 
-# misc
-alias myfi='easytether connect'
-alias arduino='/home/elchavo/arduino-0022/arduino'
-alias teensy='/home/elchavo/arduino-0022/teensy.64bit'
-alias ucx_sys_open='$DBX/edu/ucx/ucx_sysprog/open.sh'
-#alias list_examples='find . -maxdepth 1 -type d \( -exec echo $file {} \; -false -o -exec ls {} \; -false -o -exec echo \; \)'
-alias list_examples='find . -maxdepth 1 -type d \( -exec echo $file {} \; -false -o -exec ls {} \;  \)'
+
+##################################################
+###  FENCE
+##################################################
+
+
+# markdown-to-html conversion shortcut
 alias md2html='find . -name "*.md" | while read i; do pandoc -f markdown -t html "$i" -o "${i%.*}.html"; done'
+
+# job-screen-init
+export JBSCREEN_DIR='/Users/jose8a/jdev/ljob/astro-traba/traba/traba-opps/inbox-templates'
+alias jbscreen_init='cp $JBSCREEN_DIR/*'
+alias jbs_init='jbscreen_init'
+
+# misc
+alias list_examples='find . -maxdepth 1 -type d \( -exec echo $file {} \; -false -o -exec ls {} \;  \)'
 alias ctags="`brew --prefix`/bin/ctags"
-alias rvmhelp='cat $DBX/myPCconfig/rvm_ruby_project.gist'
-alias showexports='grep export ~/.bashrc'
 alias byeTunes="kill `ps aux | grep '\/MacOS/iTunes$' | tr -s ' ' | cut -d ' ' -f 2`"
 
-# memory
-alias size1="du -hc -d 1"
 
-# alias vlc commandline
-alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
-alias vlcd="/Applications/VLC.app/Contents/MacOS/VLC --intf dummy -Z"
-alias vlcrc="/Applications/VLC.app/Contents/MacOS/VLC --intf rc -Z"
-alias vlcnc="/Applications/VLC.app/Contents/MacOS/VLC --intf ncurses -Z"
+########################################################
+# vite shortcuts
+########################################################
+alias create_vite="yarn create @vitejs/app"
 
-# google chrome
-alias chrome="open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
-# opera browser
-alias opera="open -a /Applications/Opera.app/Contents/MacOS/Opera"
+########################################################
+# jupyter lab shortcut:
+#   - jupyter-lab stores temp files to auto-save notebooks while
+#     they are being worked on
+#   - this alias will allow us to automatically specify a
+#     folder of our choosing in which to store those auto-save
+#     folders/files rather than allowing the application to
+#     store them anywhere and litter our filesystem with
+#     those files if not controlled by us.
+########################################################
+export JP_LSP_VIRTUAL_DIR=/Users/jose8a/.jupyter/xx-virtual-lsp-docs
+export JLAB_TEMP_FILES=/Users/jose8a/.jupyter/xx-temp-saves
+alias jlab="jupyter lab --FileCheckpoints.checkpoint_dir=$JLAB_TEMP_FILES"
 
-# vivaldi browser
-alias vivaldi="open -a /Applications/Vivaldi.app/Contents/MacOS/Vivaldi"
 
-# firefox browser
-alias fox="open -a /Applications/Firefox.app/Contents/MacOS/firefox"
-alias firefox="open -a /Applications/Firefox.app/Contents/MacOS/firefox"
-
-# tabset/browser-window launchers
-alias ww="cd /Users/jose8a/jdev/l0/ww && ./ww.js"
-
-# project launchers
-alias po="/Users/jose8a/jdev/l0/po/po"
-alias pojs="/Users/jose8a/jdev/l0/po/src/po"
-
-# mpv player
-alias mpv="/Applications/mpv.app/Contents/MacOS/mpv"
-alias mpl="/Users/jose8a/jdev/l0/mpl/mpl"
-
-# filter utilities for my markdownfiles
-alias filterH0="grep -ne '# [^=]'"
-alias filterH1="grep -ne '^# [^=]'"
-alias filterH3="grep -ne '^### [^=]'"
-alias filterH5="grep -ne '^##### [^=]'"
-
-# commandline-timer utility
-alias badgelist_timer='$HOME/jdev/l0/dotfiles/scripts/timer.sh'
-alias blt='badgelist_timer'
-
-alias bsm='~/.bsm/bsm.sh'
-alias jtimer='$SCRIPTHOME/timer.sh'
-
-alias llscripts='ll $SCRIPTHOME'
-alias lsgroup='$SCRIPTHOME/ls-url-group.sh'
-alias lstitles='$SCRIPTHOME/ls-md-titles.sh'
-alias launchtabset='$SCRIPTHOME/launch-url-group.sh'
-
-# image utilities
-alias imgls="~/bin/imgls"
-alias imgcat="~/bin/imgcat"
-
-# imagemagick scripts
-alias img_blur='$MAGICKSCRIPTS/im-blur.sh'
-alias img_charcoal1='$MAGICKSCRIPTS/im-charcoal1.sh'
-alias img_charcoal2='$MAGICKSCRIPTS/im-charcoal2.sh'
-alias img_greyscale='$MAGICKSCRIPTS/im-greyscale.sh'
-alias img_histcontrast1='$MAGICKSCRIPTS/im-histcontrast1.sh'
-alias img_histcontrast2='$MAGICKSCRIPTS/im-histcontrast2.sh'
-alias img_outline1='$MAGICKSCRIPTS/im-outline1.sh'
-alias img_outline2='$MAGICKSCRIPTS/im-outline2.sh'
-alias img_outline3='$MAGICKSCRIPTS/im-outline3.sh'
-alias img_pencil1='$MAGICKSCRIPTS/im-pencil1.sh'
-alias img_pencil2='$MAGICKSCRIPTS/im-pencil2.sh'
-alias img_sepia='$MAGICKSCRIPTS/im-sepia.sh'
-
-# lsp GH tickets
-alias hub_issues_open='hub issue -f "%sC%>(8)%i%Creset %t [%sC %as %Creset] %n" -l polymer'
-alias hub_issues_closed='hub issue -f "%sC%>(8)%i%Creset %t [%sC %as %Creset] %n" -s closed -l polymer'
-
-# show headings in a MD-type file
-alias catheads='grep -e "\`.*\`\|^##"'
-
+########################################################
+# badgelist/knova shortcuts
+########################################################
 # knova-utils
+export KPATH=~/jbdg/scripts
 alias kservers='lsof -P -i tcp | grep -E "localhost|LISTEN"'
-alias kuptime='cd ~/jdocs/myDocs/dodos/dodos && sh lsp-uptime.sh'
+alias ks='kservers'
+#alias kuptime='cd ~/jdocs/myDocs/dodos/dodos && sh lsp-uptime.sh'
+#alias kup='cd ~/jbdg/scripts/lsp-uptime/kup && ./kup.js'
+alias kuptime='sh $KPATH/lsp-uptime/lsp-uptime.sh'
+alias kup='$KPATH/lsp-uptime/kup/kup.js'
+alias kv='$KPATH/ktab/kv.js'
+
+
+########################################################
+# possible-outdated aliases
+########################################################
+# alias google-app-engine
+alias gae_launcher='python /opt/google-appengine-wx-launcher-read-only/GoogleAppEngineLauncher.py'
+alias gae_upload='/opt/google_appengine/appcfg.py update'
+alias gae_startserver='/opt/google_appengine/dev_appserver.py'
+
+
+########################################################
+# remove aliases - 2
+########################################################
+# alias touchpad
+# TODO: remove the next two lines since these are not detected
+# .. on my current laptop
+# alias touchpad_disable="xinput set-prop 15 "Device Enabled" 0"
+# alias touchpad_enable="xinput set-prop 15 "Device Enabled" 1"
 

@@ -7,11 +7,9 @@ launch_projects () {
   for project in "${STARTAPPS[@]}"
   do
     project=${project}
-    osascript -e 'tell app "Terminal" to do script "mux '$project'" ' 
+    osascript -e 'tell app "Terminal" to do script "mux '$project'" '
   done
 }
 
 launch_projects
-
-
 

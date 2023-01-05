@@ -13,6 +13,18 @@ PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 export PATH="$PATH:/Applications/DevDesktop/drush"
 
 ########################################################
+# Display message when debugging startup scripts
+########################################################
+# set this variable to enable scripts to announce
+#   themselves at startup
+STARTUP_DEBUG=
+
+if [[ ! -z "${STARTUP_DEBUG}" ]]; then
+  echo "I am dot-bash_profile"
+fi
+
+
+########################################################
 # BASH STARTUP SEQUENCE CONFIG
 ########################################################
 source ~/.profile
@@ -20,6 +32,7 @@ source ~/.profile
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
+
 
 ########################################################
 # RBENV
@@ -35,7 +48,6 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # Ruby (e.g <2.4) that use OpenSSL <1.1.
 
 
-
 ########################################################
 # GIT - GITIGNORE
 ########################################################
@@ -49,7 +61,48 @@ parse_git_branch() {  ### Adding git branch to prompt
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="\u@\h \[\033[32m\]\w\n\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $> "
+
+########################################################
+# FANCY COLORIZED BASH/CLI PROMPT
+#
+# see references for format, color-codes, etc
+#   * https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+#   * https://wiki.bash-hackers.org/scripting/terminalcodes
+#   * https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html
+#
+########################################################
+fancy_prompt() {
+cursor="$> "
+
+# if 256 colors aren't available on the system, toggle the
+# commented line for 8-bit colors instead
+# PSUSER='\[\033[36m\][\u]\[\033[00m\] '  #8bit colors
+PSUSER='\[\033[38;5;140m\][\u]\[\033[00m\]'    #256-color version
+
+# PSBRANCH="\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\n "
+PSBRANCH="\[\033[38;5;172m\]\$(parse_git_branch)\[\033[00m\]\n "
+
+# PSPATH="\[\033[32m\]\w\[\033[00m\]\n"
+PSPATH="\[\033[38;5;41m\]\w\[\033[00m\]\n"
+
+# PSCURSOR=" \[\033[38;5;189m\]\$cursor\[\033[00m\]"
+PSCURSOR=" \[\033[36;1m\]\$cursor\[\033[00m\]"
+
+# add a blank line after the cli-cursor, but before any
+# command output is shown
+PS0="\n"
+
+PS1="\
+$PSUSER\
+$PSBRANCH\
+$PSPATH\
+$PSCURSOR"
+
+# PS2 does not work on mac osx for some reason
+# PS2="$PSCURSOR"
+}
+
+fancy_prompt
 
 
 ########################################################
@@ -80,17 +133,41 @@ unset __conda_setup
 
 
 ########################################################
+# TMUXP path
+########################################################
+# 2020.0212: `pip install --user tmuxp` output:
+# 'The script kaptan is installed in ~/.local/bin which is NOT on PATH'.
+#   \--> Consider adding it to PATH.
+# 'The script tmuxp is installed in ~/.local/bin which is NOT on PATH'
+#   \--> Consider adding it to PATH.
+export PATH="~/.local/bin:$PATH"
+eval "$(_TMUXP_COMPLETE=source tmuxp)"
+
+
+########################################################
 # FNM - Fast Node Manager
 ########################################################
 # fnm
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 
 ########################################################
 # GOOGLE CLOUD CONFIG
 ########################################################
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jose8a/jbdg-gcloud/google-cloud-sdk/path.bash.inc' ]; then . '/Users/jose8a/jbdg-gcloud/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/jose8a/google-cloud-sdk/path.bash.inc' ]; then . '/Users/jose8a/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/jose8a/jbdg-gcloud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/jose8a/jbdg-gcloud/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/Users/jose8a/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/jose8a/google-cloud-sdk/completion.bash.inc'; fi
+
+########################################################
+#
+# 2021.0726:
+# To Suppress the following terminal warning now appearing
+# at the creation of every new MacOS terminal shell:
+#
+# “The default interactive shell is now zsh”
+#
+########################################################
+export BASH_SILENCE_DEPRECATION_WARNING=1
+

@@ -43,9 +43,18 @@ set wildignore+=*.orig                           " Merge resolution files
 "-----------------------------------"
 set autowrite                       " Write the old file out when switching between files.
 set ruler                           " Display current cursor position in lower right corner.
-let mapleader = ","                 " Want a different map leader than \
-let maplocalleader = "\\"           " Map a local filetype leader to '\'
-set timeoutlen=400                  " Ever notice a slight lag after typing the leader key + command? This lowers
+
+" ...
+" leader affects all of vim, while localleader is meant for a specific buffer,
+" you generally use localleader based on a filetype.
+" Using a localleader you can use the same leader-mapping for (slightly) different actions.
+" or read more about it in the helpfiles:
+"   -- http://vimdoc.sourceforge.net/htmldoc/map.html#mapleader
+" ...
+let mapleader = ";"                 " Want a different map leader than \
+let maplocalleader = ","           " Map a local filetype leader to '\'
+
+set timeoutlen=200                  " Ever notice a slight lag after typing the leader key + command? This lowers
                                     " the timeout.
 set hidden                          " Switch between buffers without saving
 
@@ -88,7 +97,6 @@ set pastetoggle=<leader>pt          " Prevents nasty side-effects when pasting l
 "-----------------------------------"
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
-
 "-----------------------------------"
 " COLOR SETTINGS
 "-----------------------------------"
@@ -96,7 +104,8 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 " TODO??: this setting may no longer be needed in modern VIM
 set t_Co=256
 
-colorscheme kolor
+" TODO: uncomment after installing vim-kolor via neovim pkg manager
+colorscheme onedark
 
 " -----
 " Set the background color for the floating/Pmenu

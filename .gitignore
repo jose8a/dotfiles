@@ -8,3 +8,11 @@ _*
 **/**/.notes.md
 **/**/.notes
 **/**/.notes/
+
+
+node_modules/
+/node_modules
+**/node_modules
+node_modules/**
+**/**/node_modules/
+**/**/node_modules/**

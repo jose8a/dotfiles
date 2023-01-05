@@ -100,6 +100,8 @@
         if count(g:spf13_bundle_groups, 'programming')
             Plug 'sheerun/vim-polyglot'
             Plug 'w0rp/ale'
+            " Use release branch (recommend)
+            Plug 'neoclide/coc.nvim', {'branch': 'release'}
             Plug 'metakirby5/codi.vim'  " scratchpad/repl in vim buffer
             Plug 'tpope/vim-fugitive'
             Plug 'gregsexton/gitv'
@@ -119,11 +121,16 @@
         if count(g:spf13_bundle_groups, 'completion')
             " Ultisnips is the best snippet solution as of today (2018)
             " Track the engine (ultisnips).
-            Plug 'SirVer/ultisnips'
-            Plug 'ajh17/VimCompletesMe'
+            " --- Plug 'SirVer/ultisnips'
+            " --- Plug 'ajh17/VimCompletesMe'
 
             " Snippets are separated from the engine. Add this if you want them:
-            Plug 'andreyorst/SimpleSnippets.vim'
+            " --- Plug 'andreyorst/SimpleSnippets.vim'
+
+            "" Started using coc.nvim and the coc-snippets extension as of 2020.0708.
+            ""  - 'coc-snippets' becomes the snippet-engine, and
+            ""  - will now be using the 'honza/vim-snippets' bundle for the actual snippets.
+            Plug 'honza/vim-snippets'
         endif
 
     " Python

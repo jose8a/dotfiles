@@ -120,7 +120,7 @@ inoremap <leader>cd <C-x><C-k>
 "
 " save folds when closing file for continuing on next open of same file
 autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+autocmd BufWinEnter *.* silent! loadview
 
 
 "-----------------------------------"

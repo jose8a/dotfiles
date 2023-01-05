@@ -4,27 +4,76 @@
 #   variables.  It is launched from ~/.bashrc
 ########################################################
 
-export PRJ=~/jdev
-
-# custom path shortcuts
-export GDRIVE=~/GoogleDrive
-export gdrive=~/GoogleDrive
-export DOTPATH=$PRJ/l0/dotfiles
-export dotpath=$PRJ/l0/dotfiles
-export DOTFILES=$PRJ/l0/dotfiles
-export dotfiles=$PRJ/l0/dotfiles
-export MUXPATH=$DOTPATH/.tmuxinator
-export muxpath=$DOTPATH/.tmuxinator
+########################################################
+# editor vars
+########################################################
 export EDITOR='vim'
 export editor='vim'
 
 
+########################################################
+# custom path shortcuts
+########################################################
+export PRJ=~/jdev
+export DIR_CONFIG="/Users/jose8a/.config"
+export DIR_ALTICLOUD="/Users/jose8a/icloud-drive-archive"
+export dir_alticloud="/Users/jose8a/icloud-drive-archive"
 
+export DIR_GDRIVE=~/GoogleDrive
+export dir_gdrive=~/GoogleDrive
+export DIR_DOTPATH=$PRJ/l0/dotfiles
+export dir_dotpath=$PRJ/l0/dotfiles
+export DIR_DOTFILES=$PRJ/l0/dotfiles
+export dir_dotfiles=$PRJ/l0/dotfiles
+export DIR_MUX=$DOTPATH/.tmuxinator
+export dir_mux=$DOTPATH/.tmuxinator
+export DIR_NIM=$DIR_CONFIG/nvim
+export dir_nim=$DIR_CONFIG/nvim
 
 
 ########################################################
-#
+# active dashboards/tabsets/refs
 ########################################################
+export DIR_REFSBASE=$PRJ/lmd/hrefs
+export dir_refsbase=$PRJ/lmd/hrefs
+export DIR_REFS00=$PRJ/lmd/href/00-inbox-all
+export dir_refs00=$PRJ/lmd/href/00-inbox-all
+export DIR_TABS=$PRJ/lmd/active-tabs
+export dir_tabs=$PRJ/lmd/active-tabs
+export DIR_WORK=$PRJ/lmd/active-tabs/epics-00-working
+export dir_work=$PRJ/lmd/active-tabs/epics-00-working
+export DIR_SESH=$PRJ/tm-sessions
+export dir_sesh=$PRJ/tm-sessions
+export DIR_HOWTO=$PRJ/lhow
+export dir_howto=$PRJ/lhow
+export DIR_VIZ=$PRJ/lviz
+export dir_viz=$PRJ/lviz
+export DIR_TRAB=$PRJ/ljob
+export dir_trab=$PRJ/ljob
+export DIR_TUTS=$PRJ/ltut
+export dir_tuts=$PRJ/ltut
+
+export JDOCS=$HOME/icloud-drive-archive/desktop/hyper/jdocs
+export DIR_RESUME=$JDOCS/myDocs/traba/myResumes
+export dir_resume=$JDOCS/myDocs/traba/myResumes
+export DIR_SESSIONS=$PRJ/tm-sessions
+export dir_sessions=$PRJ/tm-sessions
+
+
+########################################################
+# active DODOS/etc tabsets
+########################################################
+export DIR_DODOS=$PRJ/lmd/active-tabs/epics-dodos-by-cats
+export dir_dodos=$PRJ/lmd/active-tabs/epics-dodos-by-cats
+export DIR_FINC=$DIR_ALTICLOUD/Desktop/hyper/jdocs/myDocs/dodos/finc
+export dir_finc=$DIR_ALTICLOUD/Desktop/hyper/jdocs/myDocs/dodos/finc
+
+
+########################################################
+# python-learns
+########################################################
+export DIR_PY=$PRJ/lpy
+export dir_py=$PRJ/lpy
 
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -37,3 +86,8 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=1000
 export HISTFILESIZE=2000
+
+
+alias ECHOVARS='(cat $dir_dotfiles/.envars && cat $dir_dotfiles/.alias) | grep "^export"'
+alias echovars='(cat $dir_dotfiles/.envars && cat $dir_dotfiles/.alias) | grep "^export"'
+

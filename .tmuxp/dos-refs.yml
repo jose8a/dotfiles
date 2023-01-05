@@ -1,13 +1,24 @@
 session_name: dos-refs
-start_directory: /Users/jose8a/jdocs/myDocs/dodos/refs/
+start_directory: /Users/jose8a/jdev/l0/ref-server/docs/
 windows:
 - layout: even-horizontal
   panes:
-  - vim ref-laterlists.md
-  - vim ref-cuentas.md
+  - ls -ogh
+  - ls -ogh
   window_name: main
 - layout: even-horizontal
   panes:
-  - ls ref-*
-  - ls ref-*
-  window_name: recur
+  - cd 00-inbox-all && ls -ogh
+  window_name: inbox
+- layout: even-horizontal
+  panes:
+  - cd aa-active-tabsets && ls -ogh
+  window_name: active
+- layout: even-horizontal
+  panes:
+  - cd dd-dodos && ls -ogh
+  window_name: dosdos
+- layout: even-horizontal
+  panes:
+  - cd 01-dashes && ls -ogh
+  window_name: dashes

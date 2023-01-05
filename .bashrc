@@ -2,6 +2,26 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+########################################################
+# Display message when debugging the startup scripts
+########################################################
+if [[ ! -z "${STARTUP_DEBUG}" ]]; then
+  echo "I am dot-bashrc"
+fi
+
+
+########################################################
+# conda init changes after 4.4
+########################################################
+. /usr/local/anaconda3/etc/profile.d/conda.sh
+conda activate base
+
+[[ -z $TMUX ]] || conda deactivate; conda activate base
+
+
+########################################################
+# Source other system dotfiles
+########################################################
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -62,7 +82,7 @@ set -o vi
 PATH="/usr/local/bin:$PATH"
 
 # Tmuxinator helper to set up
-source ~/bin/tmuxinator.bash
+# --- source ~/bin/tmuxinator.bash
 
 
 ########################################################
@@ -93,24 +113,26 @@ if [ -d "$HOME/.cabal/bin" ]; then
     PATH="$HOME/.cabal/bin:$PATH"
 fi
 
-########## Utils for xforming aa_repos to proper website
-export PATH="$PATH:$PRJ/scripts/aa_learnutils"
 
 ########################################################
 # Launch projects at PC startup
+# TODO: 2021.1206: can this section be removed?
+# TODO: 2022.0911: delete this section as well as:
+#     - TODO: delete: ./.startapps file
 ########################################################
-if [ -n ${APPSUP} ]
-then
-  #do nothing if this is not already startup
-  export APPSUP=2
-  echo $APPSUP
-else
-  #source ~/.startapps
-  export APPSUP=1
-  echo $APPSUP
-fi
+# if [ -n ${APPSUP} ]
+# then
+#   #do nothing if this is not already startup
+#   export APPSUP=2
+#   echo $APPSUP
+# else
+#   #source ~/.startapps
+#   export APPSUP=1
+#   echo $APPSUP
+# fi
+#
+# echo "Dev Projects should be Up and Running!"
 
-echo "Dev Projects should be Up and Running!"
 
 ########################################################
 # RBENV
@@ -127,12 +149,13 @@ echo "Dev Projects should be Up and Running!"
 
 
 ########################################################
-######## ##Tmuxp completion
-eval "$(_TMUXP_COMPLETE=source tmuxp)"
-
-
-########################################################
 # YARN GLOBAL PATH
 ########################################################
 export PATH="$PATH:$(yarn global bin)"
 
+export PATH="$PATH:$HOME/go/bin/protoc-gen-swagger"
+
+# pnpm
+export PNPM_HOME="/Users/jose8a/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
